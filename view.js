@@ -25,10 +25,11 @@ export default class AppView {
           }).then(function() {
             // add css to DOM to make it look better
             let there = that;
-            let x = `<div class = "user"> ${user.email} ${name}
-            <button class = "signOut"> Sign Out</button>
+            let x = `<div class = "user" style="padding: 1em"> 
+            <div><h1 class="title is-2">${name} </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
+            <em>${user.email}</em>
             <input type = "search" placeholder = "searchusers" id = "searchusers"/>
-            <button class = "notes"> Notes </button>
+            <button class = "button notes is-dark"> Notes </button>
 
             <div class = "usersearch"> </div>
 
@@ -88,14 +89,22 @@ export default class AppView {
     renderHomePage() {
 
         let x =  `<div class = "formContainer">
-        <h1>Form</h1>
+        <div class="login">
+        <h1 class="title">Site Name</h1>
+        <br>
+        <img /> Insert logo here?
         <div id = "header"></div>
-        <input type = "email" placeholder = "email" id = "email" />
-        <input type = "password" placeholder = "password" id = "password"/>
-          
-        <button class = "signUp"> Sign Up</button>
-        <button class = "signIn"> Sign In</button>
-          
+        <label class="subtitle is-3 has-text-weight-semibold">Email</label>
+        <br>
+        <input class="emailBox" type = "email" placeholder = "email" id = "email" />
+        <br>
+        <label class="subtitle is-3 has-text-weight-semibold">Password</label>
+        <br>
+        <input class="passwordBox" type = "password" placeholder = "password" id = "password"/>
+        <br>
+        <button class = "button signUp"> Sign Up</button>
+        <button class = "button signIn"> Sign In</button>
+        </div>
         </div>`
         $('#root').empty().append(x);
     };
@@ -186,13 +195,27 @@ export default class AppView {
     
     renderSignUpForm() {
   
-        let x = `<div id = "signUpForm">
-        <input type = "firstname" placeholder = "firstname" class = "signUpinput1"/>
-        <input type = "lastname" placeholder = "lastname" class = "signUpinput2"/>
-        <input type = "email" placeholder = "email" class = "signUpinput3" />
-        <input type = "password" placeholder = "password" class = "signUpinput4" />
-        <button class = "submitsignup"> Submit </button>
-        <button class = "cancelsignup"> Cancel </button>
+        let x = `<div class = "signUpForm">
+        <div class="signUpBox">
+        <label class="subtitle is-3 has-text-weight-semibold">First Name</label>
+        <br>
+        <input class="firstNameBox" type = "firstname" placeholder = "firstname" class = "signUpinput1"/>
+        <br>
+        <label class="subtitle is-3 has-text-weight-semibold">Last Name</label>
+        <br>
+        <input class="lastNameBox" type = "lastname" placeholder = "lastname" class = "signUpinput2"/>
+        <br>
+        <label class="subtitle is-3 has-text-weight-semibold">Email</label>
+        <br>
+        <input class="emailBox" type = "email" placeholder = "email" class = "signUpinput3" />
+        <br>
+        <label class="subtitle is-3 has-text-weight-semibold">Password</label>
+        <br>
+        <input class="passwordBox" type = "password" placeholder = "password" class = "signUpinput4" />
+        <br>
+        <button class = "button submitsignup"> Submit </button>
+        <button class = "button cancelsignup"> Cancel </button>
+        </div>
         </div>
         `
         $("#root").empty().append(x);

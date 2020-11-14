@@ -1,4 +1,72 @@
-.user {
+.formContainer {
     background-color: #ADD8E6;
-    color: green;
+    opacity: 80%;
+    margin: auto;
+    margin-top: 6.5em;
+    width: 20%;
+    height: 450px;
+    border: 5px solid purple;
+    padding: 10px;
+    text-align: justify;
+}
+.firstNameBox {
+    margin-bottom: 10px;
+    width: 75%;
+}
+.lastNameBox {
+    margin-bottom: 10px;
+    width: 75%;
+}
+.emailBox {
+    margin-bottom: 10px;
+    width: 75%;
+}
+.passwordBox {
+    margin-bottom: 10px;
+    width: 75%;
+}
+.signUp {
+    margin-top: 5px;
+    width: 36%;
+}
+.signIn {
+    margin-top: 5px;
+    width: 36%;
+}
+.submitsignup {
+    margin-top: 5px;
+    width: 36%;
+}
+.cancelsignup {
+    margin-top: 5px;
+    width: 36%;
+}
+.login {
+    margin-top: 0.75em;
+    text-align: center;
+}
+.signOut {
+    float: right;
+}
+.title {
+    display: inline;
+    font-size: 60px;
+}
+#searchusers {
+    float: right;
+}
+.signUpForm {
+    background-color: #ADD8E6;
+    opacity: 80%;
+    margin: auto;
+    margin-top: 6.5em;
+    width: 20%;
+    height: 450px;
+    border: 5px solid purple;
+    padding: 10px;
+    text-align: justify;
+}
+.signUpBox {
+    margin-top: 0.75em;
+    text-align: center;
 }
