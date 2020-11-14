@@ -1,3 +1,4 @@
+/*meowwsfsfsw*/
 export default class AppController {
 
     constructor(model, view) {
@@ -13,7 +14,8 @@ export default class AppController {
         this.view.renderHomePage();
     }
     cancelSignUp() {
-        this.view.renderHomePage();
+        this.view.rend
+        erHomePage();
     }
 
     signIn() {
