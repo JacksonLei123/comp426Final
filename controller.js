@@ -1,4 +1,4 @@
-/*woof*/
+/*meowmeow*/
 export default class AppController {
 
     constructor(model, view) {
