@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+    <head>
+        <title> Form </title>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+        <script src = "node_modules/jquery/dist/jquery.js"></script>
+        <script type = "module" src = "app.js"></script>
+        <script type = "module" src = "view.js"></script>
+        <script type = "module" src = "model.js"></script>
+        <script type = "module" src = "controller.js"></script>
+    </head>
+    <body>
+
+        <div id="root">
+    
+            <div class = "formContainer">
+                <h1>Form</h1>
+                <div id = "header"></div>
+                <input type = "email" placeholder = "email" id = "email" />
+                <input type = "password" placeholder = "password" id = "password"/>
+
+                <button class = "signUp"> Sign Up</button>
+                <button class = "signIn"> Sign In</button>
+            
+            </div>
+        </div>
+    </body>
+    
+</html>
