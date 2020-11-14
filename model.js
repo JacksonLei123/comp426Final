@@ -8,7 +8,7 @@ export default class User {
         
     }
     signUp() {
-
+// testing
         let firstname = $(".signUpinput1").val();
         let lastname = $(".signUpinput2").val();
         let display = firstname + " " + lastname;
