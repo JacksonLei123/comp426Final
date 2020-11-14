@@ -1,3 +1,4 @@
+/*meowww*/
 export default class AppController {
 
     constructor(model, view) {

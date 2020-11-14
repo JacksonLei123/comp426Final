@@ -3,8 +3,7 @@ export default class AppView {
     constructor(model) {
         this.model = model;
     }
-
-    /*testing*/
+    
     renderUser() {
         let that = this;
         let user = this.model.auth.currentUser;
