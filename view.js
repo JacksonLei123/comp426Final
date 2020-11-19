@@ -3,7 +3,7 @@ export default class AppView {
     constructor(model) {
         this.model = model;
     }
-    
+
     renderUser() {
         let that = this;
         let user = this.model.auth.currentUser;
@@ -26,24 +26,52 @@ export default class AppView {
             // add css to DOM to make it look better
             let there = that;
             let x = `<div class = "user" style="padding: 1em"> 
-            <div><h1 class="title is-2">${name} </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
+            <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
             <em>${user.email}</em>
-            <input type = "search" placeholder = "searchusers" id = "searchusers"/>
+            
+            <input type = "search" placeholder = "searchusers" id = "searchusers"/> 
+            <br>
+            <br>
             <button class = "button notes is-dark"> Notes </button>
-
+          
             <div class = "usersearch"> </div>
 
-            <div style = "background-color:black" class = "notescontainer">
+            <div class = "notescontainer">
               <div class = "notereference"> </div>
             </div>
+            <br>
 
-            </div>`
+            <div>
+              <label for="start">Start date:</label>
+              <input type="date" id="start" name="trip-start"
+                   value="2020-10-22"
+                   min="2020-10-22" max="2021-10-22">
+              <label for="start">End date:</label>
+              <input type="date" id="start" name="trip-start"
+                    value="2020-10-22"
+                    min="2020-10-22" max="2021-10-22">       
+            </div>
+
+            <div class="quiz">
+              <div>
+                <button type="button" class="quizButton button notes is-dark">
+                Take the quiz!</button>
+              </div>
+            </div>
+
+            </div>
+          `
         
         
             $("#root").empty().append(x);
             $("body").one("click", ".notes", function() {
               there.renderNotes();
             });
+            $("body").on("click", ".quizButton", function() {
+              there.renderQuizForm(questions);
+            });
+
+
    //         $(".signOut").click(signOut);
             $("#searchusers").on('keypress', function(e) {
               let those = there;
@@ -119,8 +147,9 @@ export default class AppView {
           console.log(querySnapshot);
           querySnapshot.forEach(function(doc) {
             let x = `
-              <div style = "background-color:blue" id = ${doc.id}> 
+              <div style = "background-color:powderblue" id = ${doc.id}> 
               <span>${doc.id}</span>
+              <br>
               <button id = "editnotes${doc.id}">View</button> 
               </div>`
               $('.notereference').append(x);
@@ -134,9 +163,12 @@ export default class AppView {
 
         })
         .then(function() {
-          let x = `<div> <button class = "addNotes"> add </button> 
-          <input class = "noteTitle" placeholder = "new note title"> </input>
-          </div>`
+          let x = `
+            <div>
+              <input class = "noteTitle" placeholder = "new note title"> </input>
+              <button class = "addNotes"> add </button> 
+            </div>
+          `
           $('.notescontainer').append(x);
           if (count == 0) {
             alert("user has no notes");
@@ -155,7 +187,7 @@ export default class AppView {
     addNote(docid) {
       let that = this;
       let x = `
-      <div style = "background-color:blue" id = ${docid}> 
+      <div style = "background-color:powderblue" id = ${docid}> 
       <span>${docid}</span>
       <button id = "editnotes${docid}">View</button> 
       </div>`
@@ -183,16 +215,13 @@ export default class AppView {
       <label>Text Area</label>
       <textarea id = "myTextArea"
               rows = "10"
-              cols = "80">Your text here</textarea>
-    </p>`);
+              cols = "80"
+              placeholder="Your text here"></textarea>
+      </p>`);
 
 
     }
 
-
-
-
-    
     renderSignUpForm() {
   
         let x = `<div class = "signUpForm">
@@ -213,19 +242,36 @@ export default class AppView {
         <br>
         <input class="passwordBox" type = "password" placeholder = "password" class = "signUpinput4" />
         <br>
-        <button class = "button submitsignup"> Submit </button>
-        <button class = "button cancelsignup"> Cancel </button>
+        <button class="button submitsignup"> Submit </button>
+        <button class="button cancelsignup"> Cancel </button>
         </div>
         </div>
         `
         $("#root").empty().append(x);
-            
+        
     };
 
   
+    renderQuizForm(questions) {
+      let x = `
+      <br> 
+      <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1> </div>  
+      <br> 
+      `
+      var answers;
+      for (let i = 0; i < questions.length; i++) {
+        let questionNumber = i + 1;
+        answers = [];
+        x +='<div class="question">' + questionNumber + '. '+ questions[i].question + `<br>` + '</div>'
+          /* add the answers here */
+      }
+      x += `<br> 
+      <div>
+        <button class="submitQuiz button is-dark">Submit</button> 
+        <button class="cancelQuiz button is-dark">Cancel</button>
+      </div>
+      `
+    $('.quiz').replaceWith(x);
+    }
 
-
-
-
-
-}
+  }
