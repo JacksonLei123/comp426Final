@@ -201,7 +201,7 @@ export default class AppView {
       <span>${docid}</span>
       <button class = "editnotes" id = "editnotes${docid}">View</button> 
       <button class = "deletenotes" id = "deletenotes${docid}" Delete </button>
-      </div>`
+      </div>` 
 
       $('.notereference').append(x);
       $('#editnotes').on('click', function() {
