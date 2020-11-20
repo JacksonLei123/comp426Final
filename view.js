@@ -288,19 +288,26 @@ export default class AppView {
       <br> 
       <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1> </div>  
       <br> 
-      `
+      <div class="box">`
+  
       for (let i = 0; i < questions.length; i++) {
         let questionNumber = i + 1;
+
         x +='<div class="question">' + questionNumber + '. '+ questions[i].question + `<br>` + '</div>'
           /* add the answers here */
         x+= `<div class="answers">`
         var obj = questions[i].answers;
         for (const letter in obj) {
-          x+= `${letter}. ${obj[letter]} <br>`
+          x+= 
+          `<div class= choiceButtons> 
+              <input type="radio" name="choice-${i}"> ${letter}. ${obj[letter]}<br>
+          </div>`
         }
         x+=`</div> <br> `
       }
-      x += `<br> 
+      x += `
+      </div>
+      <br> 
       <div>
         <button class="submitQuiz button is-dark">Submit</button> 
         <button class="cancelQuiz button is-dark">Cancel</button>
