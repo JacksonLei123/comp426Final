@@ -25,16 +25,7 @@ export default class AppView {
           }).then(function() {
             // add css to DOM to make it look better
             let there = that;
-            let x = `<div>
-            <nav>
-              <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="portfolio.html">WEATHER</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-              </ul>
-            </nav>
-          </div>
-            <div class = "user" style="padding: 1em"> 
+            let x = `<div class = "user" style="padding: 1em"> 
             <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
             <em>${user.email}</em>
             
@@ -70,7 +61,6 @@ export default class AppView {
 
             </div>
           `
-        
         
             $("#root").empty().append(x);
             $(".notes").one("click", function() {
@@ -199,8 +189,7 @@ export default class AppView {
       <div style = "background-color:powderblue" id = ${docid}> 
       <span>${docid}</span>
       <button class = "editnotes" id = "editnotes${docid}">View</button> 
-      <button class = "deletenotes" id = "deletenotes${docid}" Delete </button>
-      </div>` 
+      </div>`
 
       $('.notereference').append(x);
       $('#editnotes').on('click', function() {
@@ -230,8 +219,6 @@ export default class AppView {
       } else {
         n = note.data().notes;
       }
-
-      console.log(e);
         
       $('#' + e).append(`<p id = "myTextArea${e}" >
       <label>Text Area</label>
@@ -303,5 +290,5 @@ export default class AppView {
       `
     $('.quiz').replaceWith(x);
     }
-//sadfasdfasdf
+
   }
