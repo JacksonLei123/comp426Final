@@ -263,7 +263,7 @@ export default class AppView {
         <button class="button submitsignup"> Submit </button>
         <button class="button cancelsignup"> Cancel </button>
         </div>
-        </div>
+        </div> 
         `
         $("#root").empty().append(x);
         
