@@ -80,6 +80,9 @@ export default class AppView {
             $("body").on("click", ".quizButton", function() {
               there.renderQuizForm(questions);
             });
+            $("body").on("click", ".cancelQuiz", function() {
+              there.cancelQuizForm();
+            });
 
 
    //         $(".signOut").click(signOut);
@@ -292,7 +295,7 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1> </div>  
+      <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1>
       <br> 
       <div class="box">`
   
@@ -300,7 +303,6 @@ export default class AppView {
         let questionNumber = i + 1;
 
         x +='<div class="question">' + questionNumber + '. '+ questions[i].question + `<br>` + '</div>'
-          /* add the answers here */
         x+= `<div class="answers">`
         var obj = questions[i].answers;
         for (const letter in obj) {
@@ -318,8 +320,19 @@ export default class AppView {
         <button class="submitQuiz button is-dark">Submit</button> 
         <button class="cancelQuiz button is-dark">Cancel</button>
       </div>
+      
+      </div>  
       `
     $('.quiz').replaceWith(x);
+    }
+    cancelQuizForm() {
+      let x = 
+              `<div class="quiz">
+                <div>
+                  <button type="button" class="quizButton button is-dark">Take the quiz!</button>
+                </div>
+              </div>`
+      $('.quizForm').replaceWith(x);
     }
 //sadfasdfasdf
   }
