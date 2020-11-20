@@ -29,6 +29,11 @@ export default class AppController {
         this.model.signOut();
     }
 
+    deleteNote(id) {
+        this.model.deleteNote(id);
+        this.view.deleteNote(id);
+    }
+
     async addNote(title) {
         let that = this;
         // this.model.newNote(title)

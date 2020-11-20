@@ -75,4 +75,14 @@ $(document).ready(() => {
         console.log(title);
     })
 
+    $('body').on('click', '.deletenotes', function(e) {
+
+        let id = e.target.id;
+        let note = id.substring(11, id.length);
+        console.log(note);
+
+        controller.deleteNote(note);
+        
+    })
+
 });

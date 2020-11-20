@@ -83,6 +83,16 @@ export default class User {
         
     }
 
+    async deleteNote(notename) {
+        let current = this.auth.currentUser;
+
+        if (current) {
+
+            const res = await this.db.collection('users').doc(current.email).collection('notes').doc(notename).delete();
+
+        }
+    }
+
 
 
 
