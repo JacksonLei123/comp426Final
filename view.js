@@ -289,12 +289,16 @@ export default class AppView {
       <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1> </div>  
       <br> 
       `
-      var answers;
       for (let i = 0; i < questions.length; i++) {
         let questionNumber = i + 1;
-        answers = [];
         x +='<div class="question">' + questionNumber + '. '+ questions[i].question + `<br>` + '</div>'
           /* add the answers here */
+        x+= `<div class="answers">`
+        var obj = questions[i].answers;
+        for (const letter in obj) {
+          x+= `${letter}. ${obj[letter]} <br>`
+        }
+        x+=`</div> <br> `
       }
       x += `<br> 
       <div>
