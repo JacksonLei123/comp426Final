@@ -182,7 +182,7 @@ export default class AppView {
         });
     
     };
-
+    //asdkfjhas;dfhas;
     addNote(docid) {
       let that = this;
       let x = `
