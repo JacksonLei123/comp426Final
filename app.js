@@ -85,4 +85,11 @@ $(document).ready(() => {
         
     })
 
+    // $('body').on('click', '.submitnote', function(e)) {
+
+    //     let id = e.target.id;
+    //     let note = id.substring(10, id.length);
+
+    // }
+
 });

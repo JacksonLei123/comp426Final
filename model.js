@@ -83,6 +83,15 @@ export default class User {
         
     }
 
+    async writeNode(notename, note) {
+        let current = this.auth.currentUser;
+        const notes = db.collection('users').doc(current.email).collection('notes').doc(notename);
+        const write = await note.set({
+        notes: note
+        }, { merge: true });
+
+    }
+
     async deleteNote(notename) {
         let current = this.auth.currentUser;
 
