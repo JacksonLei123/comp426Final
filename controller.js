@@ -23,7 +23,8 @@ export default class AppController {
     }
 
     signOut() {
-
+        $(".notes").off("click");
+        $(".editnotes").off("click");
         this.view.renderHomePage();
         this.model.signOut();
     }
@@ -39,6 +40,31 @@ export default class AppController {
         //     .then(function() {
         //         that.model.alreadyexists = false;
         //     });
+    
+    
+      
+      
+        // let bool = false;
+    
+        // var do_thing;
+        // var y = function () { 
+            
+        //     if (!bool) {
+        //         do_thing = that.view.addNote(title);
+        //     } else {
+        // }
+        
+        // }
+
+        // that.model.newNote(title);
+        // bool = that.model.alreadyexists;
+        
+        
+        // y.then(do_thing);
+
+
+
+
 
         let v = function() {
             if (!that.model.alreadyexists) {
@@ -52,7 +78,7 @@ export default class AppController {
         }
 
         await r();
-        await v();
+        v();
         
         
         

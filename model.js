@@ -52,7 +52,7 @@ export default class User {
     }
 
     newNote(notename) {
-      //  this.alreadyexists = false;
+        this.alreadyexists = false;
         let that = this;
         let current = this.auth.currentUser;
         if (current) {

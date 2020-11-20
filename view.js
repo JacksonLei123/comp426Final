@@ -64,7 +64,7 @@ export default class AppView {
         
         
             $("#root").empty().append(x);
-            $("body").one("click", ".notes", function() {
+            $(".notes").one("click", function() {
               there.renderNotes();
             });
             $("body").on("click", ".quizButton", function() {
@@ -150,10 +150,10 @@ export default class AppView {
               <div style = "background-color:powderblue" id = ${doc.id}> 
               <span>${doc.id}</span>
               <br>
-              <button id = "editnotes${doc.id}">View</button> 
+              <button class = "editnotes" id = "editnotes${doc.id}">View</button> 
               </div>`
               $('.notereference').append(x);
-              $('body').on('click', '#editnotes' + doc.id +'', function() {
+              $('#editnotes' + doc.id).one('click', function() {
                 that.renderNoteView(doc.id);
                 console.log(doc.id);
               })
@@ -173,7 +173,7 @@ export default class AppView {
           if (count == 0) {
             alert("user has no notes");
           } else {
-            $("body").one("click", ".notes", function() {
+            $(".notes").one("click", function() {
               that.closeNotes('.notereference');
             });
           }
@@ -189,11 +189,11 @@ export default class AppView {
       let x = `
       <div style = "background-color:powderblue" id = ${docid}> 
       <span>${docid}</span>
-      <button id = "editnotes${docid}">View</button> 
+      <button class = "editnotes" id = "editnotes${docid}">View</button> 
       </div>`
 
       $('.notereference').append(x);
-      $('body').on('click', '#editnotes' + docid +'', function() {
+      $('#editnotes').on('click', function() {
         that.renderNoteView(docid);
         console.log(docid);
       })
@@ -203,21 +203,39 @@ export default class AppView {
       $('.notescontainer').empty();
       $('.notescontainer').append(`<div class = "notereference"> </div>`);
       let that = this;
-      $('body').one('click', '.notes', function() {
+      $('.notes').one('click', function() {
         that.renderNotes();
       })
       
     };
 
-    renderNoteView(e) {
-    //  this.model.db
-      $('#' + e).replaceWith(`<p>
+    async renderNoteView(e) {
+      let that = this;
+      let current = this.model.auth.currentUser;
+      let notes = this.model.db.collection('users').doc(current.email).collection('notes').doc(e);
+      let note = await notes.get();
+      var n;
+      if (!note.exists) {
+        console.log('No such document!');
+      } else {
+        n = note.data().notes;
+      }
+        
+      $('#' + e).append(`<p id = "myTextArea${e}" >
       <label>Text Area</label>
-      <textarea id = "myTextArea"
+      <textarea
               rows = "10"
               cols = "80"
-              placeholder="Your text here"></textarea>
+              placeholder="Your text here"> ${n} </textarea>
       </p>`);
+
+      $('#' + e).one("click", function() {
+        $('#' + "myTextArea" + e).remove();
+
+        $('#' + e).one('click', function() {
+          that.renderNoteView(e);
+        })
+      })
 
 
     }
