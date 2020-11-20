@@ -241,7 +241,7 @@ export default class AppView {
       console.log(e);
         
       $('#note' + e).append(`<p id = "myTextArea${e}" >
-      <textarea
+      <textarea id = "writtennotes${e}"
               rows = "10"
               cols = "80"
               placeholder="Your text here"> ${n} 

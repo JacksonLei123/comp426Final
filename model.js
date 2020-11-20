@@ -83,10 +83,10 @@ export default class User {
         
     }
 
-    async writeNode(notename, note) {
+    async writeNote(notename, note) {
         let current = this.auth.currentUser;
-        const notes = db.collection('users').doc(current.email).collection('notes').doc(notename);
-        const write = await note.set({
+        const notes = this.db.collection('users').doc(current.email).collection('notes').doc(notename);
+        const write = await notes.set({
         notes: note
         }, { merge: true });
 

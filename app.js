@@ -85,11 +85,15 @@ $(document).ready(() => {
         
     })
 
-    // $('body').on('click', '.submitnote', function(e)) {
+    $('body').on('click', '.submitnote', function(e) {
 
-    //     let id = e.target.id;
-    //     let note = id.substring(10, id.length);
+        let id = e.target.id;
+        let note = id.substring(10, id.length);
+       
+        let val = $('#writtennotes' + note).val();
+        console.log(val);
+        controller.writeNote(note, val);
 
-    // }
+    });
 
 });
