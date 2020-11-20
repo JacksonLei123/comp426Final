@@ -303,5 +303,5 @@ export default class AppView {
       `
     $('.quiz').replaceWith(x);
     }
-
+//sadfasdfasdf
   }
