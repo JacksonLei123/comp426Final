@@ -1,27 +1,57 @@
 var questions  = [
     {
-        question: "Do you want to go somewhere sunny or cold?",
+        question: "When I picture my ideal vacation, it is..",
         answers: {
-            a: 'sunny',
-            b: 'cold',
-            c: 'either'
+            a: 'Hot',
+            b: 'Warm',
+            c: 'Cold',
+            d: 'Cool'
         },
     },
 
     {
-        question: "Do you want to go somewhere in the city or the country?",
+        question: "I want to..",
         answers: {
-            a: 'city',
-            b: 'country',
-            c: 'a mix'
+            a: 'Explore a city',
+            b: 'Relax by the sea',
+            c: 'Do some climbing',
+            d: 'See ancient ruins'
         },
     },
     {
-        question: "Do you want to be near land or sea?",
+        question: "Who is this with?",
         answers: {
-            a: 'land',
-            b: 'sea',
-            c: 'both',
+            a: 'Just me!',
+            b: 'Me and my S/O',
+            c: 'Group of friends',
+            d: 'Family'
+        },
+    },
+    {
+        question: "The purpose of this trip is to..",
+        answers: {
+            a: 'Relax. I need a breather',
+            b: 'Get some thrill!',
+            c: 'Fall in love',
+            d: 'Meet new people',
+        },
+    },
+    {
+        question: "What's important to me about a vacation spot?",
+        answers: {
+            a: 'The rich history',
+            b: 'The good food',
+            c: 'The nature views',
+            d: 'The culture/people'
+        },
+    },
+    {
+        question: "On my ideal trip I enjoy nature by..",
+        answers: {
+            a: "A walk on the way to the hotel",
+            b: "Spending most of my time outside, whether it's deep-diving or mountain climbing!",
+            c: "One or two activities during the day",
+            d: "I prefer the city",
         }
     }
 ];
