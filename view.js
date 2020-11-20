@@ -156,10 +156,11 @@ export default class AppView {
           console.log(querySnapshot);
           querySnapshot.forEach(function(doc) {
             let x = `
-              <div style = "background-color:powderblue" id = ${doc.id}> 
+              <div style = "background-color:powderblue" id = "note${doc.id}"> 
               <span>${doc.id}</span>
               <br>
               <button class = "editnotes" id = "editnotes${doc.id}">View</button> 
+              <button class = "deletenotes" id = "deletenotes${doc.id}"> Delete </button>
               </div>`
               $('.notereference').append(x);
               $('#editnotes' + doc.id).one('click', function() {
@@ -192,14 +193,19 @@ export default class AppView {
         });
     
     };
-    //asdkfjhas;dfhas;
+
+    deleteNote(docid) {
+      $('#note' + docid).remove();
+    }
+    //asdkfjhas;dfh
     addNote(docid) {
       let that = this;
       let x = `
-      <div style = "background-color:powderblue" id = ${docid}> 
+      <div style = "background-color:powderblue" id = "note${docid}"> 
       <span>${docid}</span>
+      <br>
       <button class = "editnotes" id = "editnotes${docid}">View</button> 
-      <button class = "deletenotes" id = "deletenotes${docid}" Delete </button>
+      <button class = "deletenotes" id = "deletenotes${docid}"> Delete </button>
       </div>` 
 
       $('.notereference').append(x);
@@ -233,7 +239,7 @@ export default class AppView {
 
       console.log(e);
         
-      $('#' + e).append(`<p id = "myTextArea${e}" >
+      $('#note' + e).append(`<p id = "myTextArea${e}" >
       <label>Text Area</label>
       <textarea
               rows = "10"
@@ -241,10 +247,10 @@ export default class AppView {
               placeholder="Your text here"> ${n} </textarea>
       </p>`);
 
-      $('#' + e).one("click", function() {
+      $('#note' + e).one("click", function() {
         $('#' + "myTextArea" + e).remove();
 
-        $('#' + e).one('click', function() {
+        $('#note' + e).one('click', function() {
           that.renderNoteView(e);
         })
       })
