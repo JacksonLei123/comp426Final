@@ -34,6 +34,10 @@ export default class AppController {
         this.view.deleteNote(id);
     }
 
+    writeNote(id, val) {
+        this.model.writeNote(id, val);
+    }
+
     async addNote(title) {
         let that = this;
         // this.model.newNote(title)

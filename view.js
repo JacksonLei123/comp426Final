@@ -244,17 +244,20 @@ export default class AppView {
       console.log(e);
         
       $('#note' + e).append(`<p id = "myTextArea${e}" >
-      <label>Text Area</label>
-      <textarea
+      <textarea id = "writtennotes${e}"
               rows = "10"
               cols = "80"
-              placeholder="Your text here"> ${n} </textarea>
+              placeholder="Your text here"> ${n} 
+      </textarea>
+      <br>
+      <button class = "submitnote" id = "submitnote${e}">Submit</button>
+  
       </p>`);
 
-      $('#note' + e).one("click", function() {
+      $('#editnotes' + e).one("click", function() {
         $('#' + "myTextArea" + e).remove();
 
-        $('#note' + e).one('click', function() {
+        $('#editnotes' + e).one('click', function() {
           that.renderNoteView(e);
         })
       })
