@@ -54,7 +54,7 @@ export default class AppView {
 
             <div class="quiz">
               <div>
-                <button type="button" class="quizButton button notes is-dark">
+                <button type="button" class="quizButton button is-dark">
                 Take the quiz!</button>
               </div>
             </div>
@@ -190,6 +190,7 @@ export default class AppView {
       <div style = "background-color:powderblue" id = ${docid}> 
       <span>${docid}</span>
       <button class = "editnotes" id = "editnotes${docid}">View</button> 
+      <button class = "deletenotes" id = "deletenotes${docid}" Delete </button>
       </div>`
 
       $('.notereference').append(x);
@@ -220,6 +221,8 @@ export default class AppView {
       } else {
         n = note.data().notes;
       }
+
+      console.log(e);
         
       $('#' + e).append(`<p id = "myTextArea${e}" >
       <label>Text Area</label>
