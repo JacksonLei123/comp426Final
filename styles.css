@@ -75,3 +75,37 @@
     margin-top: 3.0em;
     text-align: center;
 }
+
+nav {
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    background-color: #003046;
+    overflow: hidden;
+    padding: 10px;
+  }
+  li {
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 1em;
+  }
+  li a {
+    color: white;
+    font-family: 'Lato', cursive;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    border-radius: 10px;
+  }
+  li a:hover {
+    background-color: #d9b3ff;
+  }
+  a {
+    color: navy;
+  }

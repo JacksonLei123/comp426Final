@@ -25,7 +25,16 @@ export default class AppView {
           }).then(function() {
             // add css to DOM to make it look better
             let there = that;
-            let x = `<div class = "user" style="padding: 1em"> 
+            let x = `<div>
+            <nav>
+              <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+              </ul>
+            </nav>
+          </div>
+            <div class = "user" style="padding: 1em"> 
             <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
             <em>${user.email}</em>
             
@@ -54,7 +63,7 @@ export default class AppView {
 
             <div class="quiz">
               <div>
-                <button type="button" class="quizButton button notes is-dark">
+                <button type="button" class="quizButton button is-dark">
                 Take the quiz!</button>
               </div>
             </div>
