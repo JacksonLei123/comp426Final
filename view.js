@@ -5,6 +5,7 @@ export default class AppView {
         this.model = model;
     }
 
+    // show user page
     renderUser() {
         let that = this;
         let user = this.model.auth.currentUser;
@@ -24,7 +25,7 @@ export default class AppView {
               }
               
           }).then(function() {
-            // add css to DOM to make it look better
+            // original user div
             let there = that;
             let x = `<div>
             <nav>
@@ -127,6 +128,7 @@ export default class AppView {
          
     };
 
+    // after signing out replaces DOM with the sign in page
     renderHomePage() {
 
         let x =  `<div class = "formContainer">
@@ -150,6 +152,7 @@ export default class AppView {
         $('#root').empty().append(x);
     };
 
+    // show all notes for the user
     renderNotes() {
       let user = this.model.auth.currentUser;
       let count = 0;
@@ -159,6 +162,8 @@ export default class AppView {
         .then(function(querySnapshot) {
           console.log(querySnapshot);
           querySnapshot.forEach(function(doc) {
+
+            // notes div
             let x = `
               <div style = "background-color:powderblue" id = "note${doc.id}"> 
               <span>${doc.id}</span>
@@ -184,6 +189,11 @@ export default class AppView {
             </div>
           `
           $('.notescontainer').append(x);
+          $('.addNotes').on('click', function() {
+            let title = $('.noteTitle').val()
+            that.addNote(title);
+          });
+
           if (count == 0) {
             alert("user has no notes");
           } else {
@@ -198,27 +208,66 @@ export default class AppView {
     
     };
 
+    // delete a note for user
     deleteNote(docid) {
       $('#note' + docid).remove();
     }
-    //asdkfjhas;dfh
-    addNote(docid) {
+    // add user note asynchrounously; if note title already exists, will not add
+    async addNote(docid) {
       let that = this;
-      let x = `
-      <div style = "background-color:powderblue" id = "note${docid}"> 
-      <span>${docid}</span>
-      <br>
-      <button class = "editnotes" id = "editnotes${docid}">View</button> 
-      <button class = "deletenotes" id = "deletenotes${docid}"> Delete </button>
-      </div>` 
+    
+      console.log(docid);
 
-      $('.notereference').append(x);
-      $('#editnotes').on('click', function() {
-        that.renderNoteView(docid);
-        console.log(docid);
-      })
+      let mod = this.model.newNote(docid);
+
+      setTimeout(function() {
+        // make sure that note title does not already exist in the database 
+        if (!that.model.alreadyexists) {
+
+          let x = `
+          <div style = "background-color:powderblue" id = "note${docid}"> 
+          <span>${docid}</span>
+          <br>
+          <button class = "editnotes" id = "editnotes${docid}">View</button> 
+          <button class = "deletenotes" id = "deletenotes${docid}"> Delete </button>
+          </div>` 
+  
+          $('.notereference').append(x);
+          $('#editnotes' + docid).on('click', function() {
+          that.renderNoteView(docid);
+          })
+  
+  
+  
+        }
+
+
+      }, 200);
+
+      // if (!mod) {
+
+
+      //   let x = `
+      //   <div style = "background-color:powderblue" id = "note${docid}"> 
+      //   <span>${docid}</span>
+      //   <br>
+      //   <button class = "editnotes" id = "editnotes${docid}">View</button> 
+      //   <button class = "deletenotes" id = "deletenotes${docid}"> Delete </button>
+      //   </div>` 
+
+      //   $('.notereference').append(x);
+      //   $('#editnotes' + docid).on('click', function() {
+      //   that.renderNoteView(docid);
+      //   console.log(docid);
+      //   })
+
+
+
+      // }
+
     }
 
+    // minimize notes
     closeNotes() {
       $('.notescontainer').empty();
       $('.notescontainer').append(`<div class = "notereference"> </div>`);
@@ -229,6 +278,7 @@ export default class AppView {
       
     };
 
+    // click on specific note to see what has been written
     async renderNoteView(e) {
       let that = this;
       let current = this.model.auth.currentUser;
@@ -264,7 +314,7 @@ export default class AppView {
 
 
     }
-
+    // show sign up form
     renderSignUpForm() {
   
         let x = `<div class = "signUpForm">
@@ -294,7 +344,7 @@ export default class AppView {
         
     };
 
-  
+  // show quiz form
     renderQuizForm(questions) {
       let x = `
       <br> 
@@ -337,5 +387,5 @@ export default class AppView {
               </div>`
       $('.quizForm').replaceWith(x);
     }
-//sadfasdfasdf
+
   }
