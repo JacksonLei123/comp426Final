@@ -27,6 +27,7 @@ export default class AppView {
             let there = that;
             let x = `<div>
             <nav>
+            
               <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="portfolio.html">PORTFOLIO</a></li>
