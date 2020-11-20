@@ -373,7 +373,7 @@ export default class AppView {
         <button class="submitQuiz button is-dark">Submit</button> 
         <button class="cancelQuiz button is-dark">Cancel</button>
       </div>
-      
+
       </div>  
       `
     $('.quiz').replaceWith(x);
