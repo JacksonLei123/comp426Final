@@ -51,7 +51,7 @@ var questions  = [
             a: "A walk on the way to the hotel",
             b: "Spending most of my time outside, whether it's deep-diving or mountain climbing!",
             c: "One or two activities during the day",
-            d: "I prefer the city",
+            d: "I don't",
         }
     }
 ];
