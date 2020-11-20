@@ -110,3 +110,11 @@ nav {
     color: navy;
     
   }
+
+  html { 
+    background: url(https://cdn.pixabay.com/photo/2015/07/11/23/02/plane-841441_1280.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
