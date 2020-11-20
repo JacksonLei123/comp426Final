@@ -1,3 +1,4 @@
+// MEOW
 export default class AppView {
 
     constructor(model) {
