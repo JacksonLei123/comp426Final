@@ -54,7 +54,7 @@ export default class AppView {
 
             <div class="quiz">
               <div>
-                <button type="button" class="quizButton button notes is-dark">
+                <button type="button" class="quizButton button is-dark">
                 Take the quiz!</button>
               </div>
             </div>
