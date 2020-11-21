@@ -157,12 +157,8 @@ export default class AppView {
                       // doc.data() is never undefined for query doc snapshots
                       console.log(doc.id, " => ", doc.data());
                       // add css to DOM to make look better
-<<<<<<< HEAD
                       let split = doc.data().location.split("/");
                       let x = `<div class = "searchresults"> ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]}`
-=======
-                      let x = `<div class = "searchresults"> ${doc.data().displayName} <br> ${doc.data().emailaddress}`
->>>>>>> 116cb3024d14fc27db6efbeca306e2bde4bb8dd9
                       $(".usersearch").append(x);
                       count++;
                     });
