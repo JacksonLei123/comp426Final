@@ -56,6 +56,10 @@
     float: right;
 }
 
+.searchresults {
+    text-align: right;
+}
+
 .signUpForm {
     background-color: #9ab5d9;
     opacity: 80%;
