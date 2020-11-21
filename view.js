@@ -4,7 +4,7 @@ export default class AppView {
     constructor(model) {
         this.model = model;
     }
-
+    
     // show user page
     renderUser() {
         let that = this;
@@ -167,7 +167,7 @@ export default class AppView {
 
             // notes div
             let x = `
-              <div style = "background-color:powderblue" id = "note${doc.id}"> 
+              <div style = "background-color:powderblue; opacity: 75%; width: 60%; padding-left: 1em" id = "note${doc.id}"> 
               <span>${doc.id}</span>
               <br>
               <button class = "editnotes" id = "editnotes${doc.id}">View</button> 
@@ -302,7 +302,7 @@ export default class AppView {
               placeholder="Your text here"> ${n} 
       </textarea>
       <br>
-      <button class = "submitnote" id = "submitnote${e}">Submit</button>
+      <button class = "submitnote" id = "submitnote${e}">Save</button>
   
       </p>`);
 
