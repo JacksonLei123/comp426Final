@@ -321,6 +321,9 @@ export default class AppView {
 
 
     }
+    saveDate() {
+      
+    }
     // show sign up form
     renderSignUpForm() {
   
