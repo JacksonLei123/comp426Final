@@ -29,6 +29,7 @@ export default class User {
               emailaddress: email,
               quizTaken: false,
               location: ""
+              
         })
         // promise.catch(e => alert("invalid email or password"));
         // console.log(promise);

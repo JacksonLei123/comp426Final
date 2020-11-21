@@ -314,12 +314,12 @@
 // }
 
   
-  $('body').on('click', ".submitQuiz", function() {
+  // $('body').on('click', ".submitQuiz", function() {
 
-    calculateScore();
-  });
+  //   calculateScore();
+  // });
 
-  let calculateScore = function() {
+  // let calculateScore = function() {
 
 
   var questionNumber = 0;
@@ -329,10 +329,6 @@
   var LondonScore = 0;
   var TokyoScore = 0;
   var PhuketScore = 0;
-<<<<<<< HEAD
-  var GCScore = 0;
-
-=======
   var BanffScore = 0;
   
   $('body').on('click', ".submitQuiz", function() {
@@ -341,7 +337,6 @@
   });
 
   let calculateScore = function() {
->>>>>>> 7dd2491a33504525c16e8ed633075038e85ce924
     let q1a1 = $('#0-1').prop('checked');
     let q1a2 = $('#0-2').prop('checked');
     let q1a3 = $('#0-3').prop('checked');
@@ -524,15 +519,20 @@
     //   questionNumber++;
       
     // }
-    console.log("hi");
+    console.log(questionNumber);
+    
     var scores = [BBScore, PhuketScore, LondonScore, NZScore, ParisScore, BanffScore, TokyoScore];
-    if(questionNumber==6) {
-      scores.sort();
-      console.log(scores);
+    
+    let firstmax = -1;
+    for(let i = 0; i < scores.length; i++) {
+      if (scores[i] > firstmax) {
+        firstmax = scores[i];
+      }
     }
+    
   }
 
 
 
   
-
+  
