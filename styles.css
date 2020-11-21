@@ -115,7 +115,6 @@ nav {
     -o-background-size: cover;
     background-size: cover;
   }
-<<<<<<< HEAD
 .ui-menu .ui-menu-item a {
     background-color: #003046;
     color: #6693bc;
@@ -124,7 +123,6 @@ nav {
     font-size: 15px;
     text-align: left;
 }
-=======
 
   .weatherDay {
       background-color: white;
@@ -134,4 +132,3 @@ nav {
       padding-bottom: 40px;
       padding-left: 20px;
   }
->>>>>>> 035e4434b901aa0e5b803b3df3054f40fa4810e9
