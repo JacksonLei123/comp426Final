@@ -412,7 +412,12 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
+<<<<<<< HEAD
       <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1>
+=======
+      <div class="quizForm"><h1 class="title is-3">Welcome to the Quiz</h1>
+      <h4><em>Answer these questions to get your dream destination!</em></h4>
+>>>>>>> 9edffe5373d2abfbf52bb46a8758507ebc12b7bb
       <br> 
       <div class="box">`
   
