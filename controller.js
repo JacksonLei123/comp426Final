@@ -24,7 +24,7 @@ export default class AppController {
     signOut() {
         $(".notes").off("click");
         $(".editnotes").off("click");
-        this.view.renderHomePage();
+        window.location.replace("index.html");
         this.model.signOut();
     }
 
