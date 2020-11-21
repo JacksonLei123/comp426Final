@@ -115,3 +115,7 @@ nav {
     -o-background-size: cover;
     background-size: cover;
   }
+  
+  .resultsPage{
+      text-align: center;
+  }
