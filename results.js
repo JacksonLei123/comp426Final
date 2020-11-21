@@ -313,28 +313,37 @@
   
 // }
 
+  
+  // $('body').on('click', ".submitQuiz", function() {
+
+  //   calculateScore();
+  // });
+
+  // let calculateScore = function() {
 
 
   var questionNumber = 0;
   var ParisScore = 0; 
   var NZScore = 0;
-  var BB = 0;
+  var BBScore = 0;
   var LondonScore = 0;
   var TokyoScore = 0;
   var PhuketScore = 0;
-  var GCScore = 0;
+  var BanffScore = 0;
   
   $('body').on('click', ".submitQuiz", function() {
-
+    console.log("hi");
     calculateScore();
   });
 
   let calculateScore = function() {
-
     let q1a1 = $('#0-1').prop('checked');
     let q1a2 = $('#0-2').prop('checked');
     let q1a3 = $('#0-3').prop('checked');
     let q1a4 = $('#0-4').prop('checked');
+
+    console.log(q1a1);
+    console.log(q1a2);
 
     let q2a1 = $('#1-1').prop('checked');
     let q2a2 = $('#1-2').prop('checked');
@@ -361,49 +370,169 @@
     let q6a3 = $('#5-3').prop('checked');
     let q6a4 = $('#5-4').prop('checked');
 
-    let q7a1 = $('#6-1').prop('checked');
-    let q7a2 = $('#6-2').prop('checked');
-    let q7a3 = $('#6-3').prop('checked');
-    let q7a4 = $('#6-4').prop('checked');
+    // let q7a1 = $('#6-1').prop('checked');
+    // let q7a2 = $('#6-2').prop('checked');
+    // let q7a3 = $('#6-3').prop('checked');
+    // let q7a4 = $('#6-4').prop('checked');
 
+    if(q1a1) {
+      questionNumber++;
+      BBScore++;
+      PhuketScore++;
+    } else if(q1a2) {
+      questionNumber++;
+      TokyoScore++;
+    } else if(q1a3) {
+      questionNumber++;
+      LondonScore++;
+      BanffScore++;
+    } else if(q1a4) {
+      questionNumber++;
+      ParisScore++;
+      NZScore++;
+    }
 
+    if(q2a1) {
+      questionNumber++;
+      ParisScore++;
+      LondonScore++;
+      TokyoScore++;
+    } else if (q2a2) {
+      questionNumber++;
+      BBScore++;
+      PhuketScore++;
+    } else if (q2a3) {
+      questionNumber++;
+      BanffScore++;
+      NZScore++;
+    } else if (q2a4) {
+      questionNumber++;
+      PhuketScore++;
+    }
+
+    if(q3a1) {
+      questionNumber++;
+      BanffScore++;
+      NZScore++;
+    } else if (q3a2) {
+      questionNumber++;
+      ParisScore++;
+      TokyoScore++;
+      BBScore++;
+    } else if (q3a3) {
+      questionNumber++;
+      LondonScore++;
+      BanffScore++;
+      TokyoScore++;
+      ParisScore++;
+      NZScore++;
+      PhuketScore++;
+      BBScore++;
+    } else if (q3a4) {
+      questionNumber++;
+      LondonScore++;
+      BanffScore++;
+      NZScore++;
+    }
+
+    if(q4a1) {
+      questionNumber++;
+      BBScore++;
+      NZScore++;
+      PhuketScore++;
+      BanffScore++;
+    } else if (q4a2) {
+      questionNumber++;
+      ParisScore++;
+      LondonScore++;
+      TokyoScore++;
+    } else if (q4a3) {
+      questionNumber++;
+      ParisScore++;
+      LondonScore++;
+    } else if (q4a4) {
+      questionNumber++;
+      LondonScore++;
+      TokyoScore++;
+      NZScore++;
+      ParisScore++;
+    }
+
+    if(q5a1) {
+      questionNumber++;
+      LondonScore++;
+      ParisScore++;
+      PhuketScore++;
+      BBScore++;
+    } else if (q5a2) {
+      questionNumber++;
+      TokyoScore++;
+      ParisScore++;
+      PhuketScore++;
+      BBScore++;
+      NZScore++;
+    } else if (q5a3) {
+      questionNumber++;
+      BBScore++;
+      NZScore++;
+      PhuketScore++;
+      BanffScore++;
+    } else if (q5a4) {
+      questionNumber++;
+      ParisScore++;
+      LondonScore++;
+      TokyoScore++;
+      BBScore++;
+      PhuketScore++;
+    }
+
+    if(q6a1) {
+      questionNumber++;
+      ParisScore++;
+      LondonScore++;
+      TokyoScore++;
+    } else if (q6a2) {
+      questionNumber++;
+      BanffScore++;
+      BBScore++;
+    } else if (q6a3) {
+      questionNumber++;
+      PhuketScore++;
+      LondonScore++;
+      NZScore++;
+    } else if (q6a4) {
+      questionNumber++;
+      LondonScore++;
+      TokyoScore++;
+    }
+
+    // if(q7a1) {
+    //   questionNumber++;
+
+    // } else if (q7a2) {
+    //   questionNumber++;
+
+    // } else if (q7a3) {
+    //   questionNumber++;
+      
+    // } else if (q7a4) {
+    //   questionNumber++;
+      
+    // }
+    console.log(questionNumber);
+    
+    var scores = [BBScore, PhuketScore, LondonScore, NZScore, ParisScore, BanffScore, TokyoScore];
+    
+    let firstmax = -1;
+    for(let i = 0; i < scores.length; i++) {
+      if (scores[i] > firstmax) {
+        firstmax = scores[i];
+      }
+    }
+    
   }
-// var q1a1 = document.getElementById('0-1');
-// var q1a2 = document.getElementById('0-2');
-// var q1a3 = document.getElementById('0-3');
-// var q1a4 = document.getElementById('0-4');
-
-// var q2a1 = document.getElementById('1-1');
-// var q2a2 = document.getElementById('1-2');
-// var q2a3 = document.getElementById('1-3');
-// var q2a4 = document.getElementById('1-4');
-
-// var q3a1 = document.getElementById('2-1');
-// var q3a2 = document.getElementById('2-2');
-// var q3a3 = document.getElementById('2-3');
-// var q3a4 = document.getElementById('2-4');
-
-// var q4a1 = document.getElementById('3-1');
-// var q4a2 = document.getElementById('3-2');
-// var q4a3 = document.getElementById('3-3');
-// var q4a4 = document.getElementById('3-4');
-
-// var q5a1 = document.getElementById('4-1');
-// var q5a2 = document.getElementById('4-2');
-// var q5a3 = document.getElementById('4-3');
-// var q5a4 = document.getElementById('4-4');
-
-// var q6a1 = document.getElementById('5-1');
-// var q6a2 = document.getElementById('5-2');
-// var q6a3 = document.getElementById('5-3');
-// var q6a4 = document.getElementById('5-4');
-
-// var q7a1 = document.getElementById('6-1');
-// var q7a1 = document.getElementById('6-2');
-// var q7a1 = document.getElementById('6-3');
-// var q7a1 = document.getElementById('6-4');
 
 
 
   
-
+  
