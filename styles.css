@@ -55,6 +55,12 @@
 #searchusers {
     float: right;
 }
+
+/* .user {
+    background-color: white;
+    opacity: 80%;
+    margin: 4em;
+} */
 .signUpForm {
     background-color: #ADD8E6;
     opacity: 80%;
