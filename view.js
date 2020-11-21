@@ -186,7 +186,7 @@ export default class AppView {
 
             // notes div
             let x = `
-              <div style = "background-color:powderblue; opacity: 75%; width: 55%; padding: 1em" id = "note${doc.id}"> 
+              <div style = "opacity: 75%; width: 55%; padding: 1em" id = "note${doc.id}"> 
               <span>${doc.id}</span>
               <br>
               <button class = "editnotes" id = "editnotes${doc.id}">View</button> 
@@ -373,7 +373,7 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"> <h1 class="title is-3" style="color: white">welcome to da quiz</h1>
+      <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1>
       <br> 
       <div class="box">`
   
