@@ -24,7 +24,7 @@ export default class AppController {
     signOut() {
         $(".notes").off("click");
         $(".editnotes").off("click");
-        this.view.renderHomePage();
+        window.location.replace("index.html");
         this.model.signOut();
     }
 
@@ -90,6 +90,14 @@ export default class AppController {
         
         
         
+    }
+
+    tookQuiz() {
+
+        let x = this.model.tookQuiz();
+
+        let split = x.split("/");
+        this.view.tookQuiz(split[0], split[1]);
     }
 
     
