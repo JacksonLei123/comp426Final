@@ -632,7 +632,7 @@ export default class AppView {
       `<div class="resultsPage">
         <h1 class="title is-3">Here are your results!</h1>
         <h2>${finalPlace}</h2>
-        <p class="subtitle is-5">${finalDescription}</p>
+          <p class="subtitle is-5">${finalDescription}</p>
       </div>
       `
 
