@@ -33,8 +33,10 @@ export default class User {
         // promise.catch(e => alert("invalid email or password"));
         // console.log(promise);
         // alert("Account Created");
+
     
       }
+
 
     signIn() {
         let email = document.getElementById("email");

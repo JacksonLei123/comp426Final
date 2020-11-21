@@ -313,6 +313,13 @@
   
 // }
 
+  
+  $('body').on('click', ".submitQuiz", function() {
+
+    calculateScore();
+  });
+
+  let calculateScore = function() {
 
 
   var questionNumber = 0;
@@ -323,13 +330,6 @@
   var TokyoScore = 0;
   var PhuketScore = 0;
   var GCScore = 0;
-  
-  $('body').on('click', ".submitQuiz", function() {
-
-    calculateScore();
-  });
-
-  let calculateScore = function() {
 
     let q1a1 = $('#0-1').prop('checked');
     let q1a2 = $('#0-2').prop('checked');
