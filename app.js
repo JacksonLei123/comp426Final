@@ -68,12 +68,12 @@ $(document).ready(() => {
         controller.signOut();
     });
 
-    $("body").on('click', ".addNotes", function() {
+    // $("body").on('click', ".addNotes", function() {
 
-        let title = $(".noteTitle").val();
-        controller.addNote(title);
-        console.log(title);
-    })
+    //     let title = $(".noteTitle").val();
+    //     controller.addNote(title);
+    //     console.log(title);
+    // })
 
     $('body').on('click', '.deletenotes', function(e) {
 
