@@ -14,6 +14,7 @@ export default class User {
         let display = firstname + " " + lastname;
         let email = $(".signUpinput3").val();
         let password = $(".signUpinput4").val();
+        let search = firstname.toLowerCase() + "" + lastname.toLowerCase();
     
      //   console.log(db.collection("cities").doc("pnandmAJRjI41BTviGZh").get());
      //   alert("hi");
@@ -27,6 +28,7 @@ export default class User {
               last: lastname,
               displayName : display,
               emailaddress: email,
+              searchname: search,
               quizTaken: false,
               location: "",
               startDate: {
