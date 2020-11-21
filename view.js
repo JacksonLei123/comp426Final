@@ -36,8 +36,8 @@ export default class AppView {
             </nav>
           </div>
             <div class = "user" style="padding: 1em"> 
-            <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
-            <em>${user.email}</em>
+            <div><h1 class="title is-2" style="color: white">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
+            <em style="color: white">${user.email}</em>
             
             <input type = "search" placeholder = "searchusers" id = "searchusers"/> 
             <br>
@@ -52,11 +52,11 @@ export default class AppView {
             <br>
 
             <div>
-              <label for="start">Start date:</label>
+              <label for="start" style="color: white">Start date:</label>
               <input type="date" id="start" name="trip-start"
                    value="2020-10-22"
                    min="2020-10-22" max="2021-10-22">
-              <label for="start">End date:</label>
+              <label for="start" style="color: white">End date:</label>
               <input type="date" id="start" name="trip-start"
                     value="2020-10-22"
                     min="2020-10-22" max="2021-10-22">  
@@ -137,9 +137,9 @@ export default class AppView {
 
         let x =  `<div class = "formContainer">
         <div class="login">
-        <h1 class="title">Site Name</h1>
+        <h1 class="title is-1">Site Name</h1>
         <br>
-        <img /> Insert logo here?
+        <img src="426 logo.png" style="height: 125px; padding-top: 10px; padding-bottom: 10px">
         <div id = "header"></div>
         <label class="subtitle is-3 has-text-weight-semibold">Email</label>
         <br>
@@ -169,7 +169,7 @@ export default class AppView {
 
             // notes div
             let x = `
-              <div style = "background-color:powderblue" id = "note${doc.id}"> 
+              <div style = "background-color:powderblue; opacity: 75%; width: 55%; padding: 1em" id = "note${doc.id}"> 
               <span>${doc.id}</span>
               <br>
               <button class = "editnotes" id = "editnotes${doc.id}">View</button> 
@@ -305,7 +305,7 @@ export default class AppView {
               placeholder="Your text here"> ${n} 
       </textarea>
       <br>
-      <button class = "submitnote" id = "submitnote${e}">Submit</button>
+      <button class = "submitnote" id = "submitnote${e}">Save</button>
   
       </p>`);
 
@@ -353,7 +353,7 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1>
+      <div class="quizForm"> <h1 class="title is-3" style="color: white">welcome to da quiz</h1>
       <br> 
       <div class="box">`
   
@@ -378,14 +378,15 @@ export default class AppView {
       </div>
       <br> 
       <div>
-        <button onclick="location.href='results.html'" class="submitQuiz button is-dark">Submit</button>
+        <button class="submitQuiz button is-dark">Submit</button>
         <button class="cancelQuiz button is-dark">Cancel</button>
       </div>
 
       </div>  
       `
     $('.quiz').replaceWith(x);
-    }
+    
+  }
     cancelQuizForm() {
       let x = 
               `<div class="quiz">
