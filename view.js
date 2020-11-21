@@ -37,7 +37,7 @@ export default class AppView {
             let userdiv = `<div>
             <nav>
               <ul>
-                <li><a href="user.html">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="weather.html">WEATHER</a></li>
               </ul>
             </nav>
@@ -50,7 +50,7 @@ export default class AppView {
             <br>
             <button class = "button notes is-dark"> Notes </button>
           
-            <div class = "usersearch"> </div>
+            <div class = "usersearch box"> </div>
 
             <div class = "notescontainer">
               <div class = "notereference"> </div>
@@ -83,7 +83,7 @@ export default class AppView {
               <h2>${split[0]}</h2>
                 <p class="subtitle is-5">${split[1]}</p>
       
-              <button class = "takeagain">Take Again</button
+              <button class = "takeagain button is-dark">Take Again</button
               </div>`
               
             } else {
@@ -158,7 +158,11 @@ export default class AppView {
                       console.log(doc.id, " => ", doc.data());
                       // add css to DOM to make look better
                       let split = doc.data().location.split("/");
-                      let x = `<div class = "searchresults"> ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]} </div>`
+                      let x = `<div class = "searchresults box"> 
+                                <div class="oneSearch">
+                                  ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]}
+                                </div>
+                              </div>`
                       $(".usersearch").append(x);
                       count++;
                     });
@@ -408,10 +412,9 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"><h1 class="title is-3" style="margin-left: 30%">Welcome to the Quiz</h1>
-      <h4 style="margin-left: 17.5%"><em>Answer these questions to get your dream destination!</em></h4>
+      <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1>
       <br> 
-      <div class="box" style="opacity: 75%">`
+      <div class="box">`
   
       for (let i = 0; i < questions.length; i++) {
         let questionNumber = i + 1;
@@ -433,9 +436,9 @@ export default class AppView {
       x += `
       </div>
       <br> 
-      <div style="margin-left: 35%">
-        <button class="submitQuiz button is-dark" style="margin-right: 40px">Submit</button>
-        <button class="cancelQuiz button is-dark" style="margin-left: 30px">Cancel</button>
+      <div>
+        <button class="submitQuiz button is-dark">Submit</button>
+        <button class="cancelQuiz button is-dark">Cancel</button>
       </div>
 
       </div>  
@@ -491,7 +494,7 @@ export default class AppView {
         <h2>${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
 
-        <button class = "takeagain">Take Again</button
+        <button class = "takeagain button is-dark">Take Again</button
       </div>
       `
       let that = this;
