@@ -255,7 +255,7 @@ export default class AppView {
           </div>` 
   
           $('.notereference').append(x);
-          $('#editnotes' + docid).on('click', function() {
+          $('#editnotes' + docid).one('click', function() {
           that.renderNoteView(docid);
           })
   
