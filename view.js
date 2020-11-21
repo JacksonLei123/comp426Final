@@ -38,8 +38,8 @@ export default class AppView {
             </nav>
           </div>
             <div class = "user" style="padding: 1em"> 
-            <div><h1 class="title is-2" style="color: white">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
-            <em style="color: white">${user.email}</em>
+            <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
+            <em>${user.email}</em>
             
             <input type = "search" placeholder = "searchusers" id = "searchusers"/> 
             <br>
@@ -54,11 +54,11 @@ export default class AppView {
             <br>
 
             <div>
-              <label for="start" style="color: white">Start date:</label>
+              <label for="start">Start date:</label>
               <input type="date" id="start" name="trip-start"
                    value="2020-11-21"
                    min="2020-11-21" max="2021-11-21">
-              <label for="start" style="color: white">End date:</label>
+              <label for="start">End date:</label>
               <input type="date" id="start" name="trip-start"
                     value="2020-11-21"
                     min="2020-11-21" max="2021-11-21">  
