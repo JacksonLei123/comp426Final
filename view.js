@@ -247,7 +247,7 @@ export default class AppView {
         if (!that.model.alreadyexists) {
 
           let x = `
-          <div id = "note${docid}"> 
+          <div style = "opacity: 75%; width: 55%; padding: 1em" id = "note${docid}"> 
           <span>${docid}</span>
           <br>
           <button class = "editnotes" id = "editnotes${docid}">View</button> 
