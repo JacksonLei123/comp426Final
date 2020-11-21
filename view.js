@@ -4,7 +4,7 @@ export default class AppView {
     constructor(model) {
         this.model = model;
     }
-
+    
     // show user page
     renderUser() {
         let that = this;
