@@ -26,8 +26,8 @@ export async function getWeather() {
     $('#weatherTitle').append(`<h1 class="title is-2"><center>10-Day Weather - ${cityName}, ${country}</center></h1><br>`);
     for (var i = 0; i < 5; i++) {
         let weath = response.data.list[i].weather[0].description;
-        let min = "Min: " + response.data.list[i].temp.min + "°F";
-        let max = "Max: " + response.data.list[i].temp.max + "°F";
+        let min = "Low: " + response.data.list[i].temp.min + "°F";
+        let max = "High: " + response.data.list[i].temp.max + "°F";
         let humidity = "Humidity: " + response.data.list[i].humidity + "%";
         $('#weather1').append(`<div class="column weatherDay"><center>
         <h1 class="title is-3">DAY ${i+1}</h1><br>
@@ -42,8 +42,8 @@ export async function getWeather() {
 
     for (var i = 5; i < 10; i++) {
         let weath = response.data.list[i].weather[0].description;
-        let min = "Min: " + response.data.list[i].temp.min + "°F";
-        let max = "Max: " + response.data.list[i].temp.max + "°F";
+        let min = "Low: " + response.data.list[i].temp.min + "°F";
+        let max = "High: " + response.data.list[i].temp.max + "°F";
         let humidity = "Humidity: " + response.data.list[i].humidity + "%";
         $('#weather2').append(`<div class="column weatherDay"><center>
         <h1 class="title is-3">DAY ${i+1}</h1><br>
