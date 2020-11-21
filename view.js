@@ -416,10 +416,16 @@ export default class AppView {
               </div>`
       $('.quizForm').replaceWith(x);
     }
-
+    compileResults() {
+      let x = 
+      `<div class="resultsPage">
+        <h1 class="title is-2" style="color: white">Here are your results!</h1>
+      </div>
+      `
+      $('.quizForm').replaceWith(x);
+    }
    
 
-    
-
+  
 
 }
