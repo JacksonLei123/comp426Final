@@ -7,55 +7,55 @@ export default class User {
         this.alreadyexists = false;
         
     }
-    signUp() {
-// testing
-        let firstname = $(".signUpinput1").val();
-        let lastname = $(".signUpinput2").val();
-        let display = firstname + " " + lastname;
-        let email = $(".signUpinput3").val();
-        let password = $(".signUpinput4").val();
-        let search = firstname.toLowerCase() + "" + lastname.toLowerCase();
+//     signUp() {
+// // testing
+//         let firstname = $(".signUpinput1").val();
+//         let lastname = $(".signUpinput2").val();
+//         let display = firstname + " " + lastname;
+//         let email = $(".signUpinput3").val();
+//         let password = $(".signUpinput4").val();
+//         let search = firstname.toLowerCase() + "" + lastname.toLowerCase();
     
-     //   console.log(db.collection("cities").doc("pnandmAJRjI41BTviGZh").get());
-     //   alert("hi");
-        // maybe fix this later this is a little faulty
-        const promise = this.auth.createUserWithEmailAndPassword(email, password)
-            .then((e) => alert("Account Created"))
-            .catch(error => alert("invalid email or password"));
+//      //   console.log(db.collection("cities").doc("pnandmAJRjI41BTviGZh").get());
+//      //   alert("hi");
+//         // maybe fix this later this is a little faulty
+//         const promise = this.auth.createUserWithEmailAndPassword(email, password)
+//             .then((e) => alert("Account Created"))
+//             .catch(error => alert("invalid email or password"));
     
-        this.db.collection("users").doc(email).set({
-              first: firstname,
-              last: lastname,
-              displayName : display,
-              emailaddress: email,
-              searchname: search,
-              quizTaken: false,
-              location: "",
-              startDate: {
+//         this.db.collection("users").doc(email).set({
+//               first: firstname,
+//               last: lastname,
+//               displayName : display,
+//               emailaddress: email,
+//               searchname: search,
+//               quizTaken: false,
+//               location: "",
+//               startDate: {
 
-              },
-              endDate: {
+//               },
+//               endDate: {
 
-              }
-        })
-        // promise.catch(e => alert("invalid email or password"));
-        // console.log(promise);
-        // alert("Account Created");
+//               }
+//         })
+//         // promise.catch(e => alert("invalid email or password"));
+//         // console.log(promise);
+//         // alert("Account Created");
 
     
-      }
+//       }
 
 
-    signIn() {
-        let email = document.getElementById("email");
-        let password = document.getElementById("password");
+    // signIn() {
+    //     let email = document.getElementById("email");
+    //     let password = document.getElementById("password");
     
-        const promise = this.auth.signInWithEmailAndPassword(email.value, password.value)
-            .then((e) => alert("Signed In as " + email.value))
-      //      .then((e) => window.location.replace("user.html"))
-            .catch(error => alert("Could not sign in"));
+    //     const promise = this.auth.signInWithEmailAndPassword(email.value, password.value)
+    //         .then((e) => alert("Signed In as " + email.value))
+    //   //      .then((e) => window.location.replace("user.html"))
+    //         .catch(error => alert("Could not sign in"));
         
-      }
+    //   }
 
     signOut() {
         this.auth.signOut();

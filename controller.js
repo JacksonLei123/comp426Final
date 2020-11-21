@@ -6,20 +6,20 @@ export default class AppController {
         this.view = view;
     }
 
-    signUp() {
-        this.view.renderSignUpForm();
-    }
-    submitSignUp() {
-        this.model.signUp();
-        this.view.renderHomePage();
-    }
-    cancelSignUp() {
-        this.view.renderHomePage();
-    }
+    // signUp() {
+    //     this.view.renderSignUpForm();
+    // }
+    // submitSignUp() {
+    //     this.model.signUp();
+    //     this.view.renderHomePage();
+    // }
+    // cancelSignUp() {
+    //     this.view.renderHomePage();
+    // }
 
-    signIn() {
-        this.model.signIn();
-    }
+    // signIn() {
+    //     this.model.signIn();
+    // }
 
     signOut() {
         $(".notes").off("click");

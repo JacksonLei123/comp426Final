@@ -22,7 +22,92 @@ let signIn = function() {
         .then((e) => window.location.replace("user.html"))
         .catch(error => alert("Could not sign in"));
     
-  }
+}
+
+let signUp = function() {
+    // testing
+    let firstname = $(".firstNameBox").val();
+    let lastname = $(".lastNameBox").val();
+    let display = firstname + " " + lastname;
+    let email = $(".emailBox").val();
+    let password = $(".passwordBox").val();
+    let search = firstname.toLowerCase() + "" + lastname.toLowerCase();
+    
+            // maybe fix this later this is a little faulty
+        const promise = auth.createUserWithEmailAndPassword(email, password)
+            .then((e) => alert("Account Created"))
+            .then((e) => renderLoginPage())
+            .then((e) => {
+                db.collection("users").doc(email).set({
+                    first: firstname,
+                    last: lastname,
+                    displayName : display,
+                    emailaddress: email,
+                    searchname: search,
+                    quizTaken: false,
+                    location: "",
+                    startDate: {},
+                    endDate: {}
+                    })
+            })
+            .catch(error => alert("invalid email or password"));
+
+            // promise.catch(e => alert("invalid email or password"));
+            // console.log(promise);
+            // alert("Account Created");
+}
+
+let renderSignUpForm = function() {
+  
+    let x = `<div class = "signUpForm">
+    <div class="signUpBox">
+    <label class="subtitle is-3 has-text-weight-semibold">First Name</label>
+    <br>
+    <input class="firstNameBox" type = "firstname" placeholder = "firstname"/>
+    <br>
+    <label class="subtitle is-3 has-text-weight-semibold">Last Name</label>
+    <br>
+    <input class="lastNameBox" type = "lastname" placeholder = "lastname"/>
+    <br>
+    <label class="subtitle is-3 has-text-weight-semibold">Email</label>
+    <br>
+    <input class="emailBox" type = "email" placeholder = "email"/>
+    <br>
+    <label class="subtitle is-3 has-text-weight-semibold">Password</label>
+    <br>
+    <input class="passwordBox" type = "password" placeholder = "password"/>
+    <br>
+    <button class="button submitsignup"> Submit </button>
+    <button class="button cancelsignup"> Cancel </button>
+    </div>
+    </div> 
+    `
+    $("#root").empty().append(x);
+    
+};
+
+let renderLoginPage = function() {
+      
+    let x =  `<div class = "formContainer">
+    <div class="login">
+    <h1 class="title is-1">Site Name</h1>
+    <br>
+    <img src="426 logo.png" style="height: 125px; padding-top: 10px; padding-bottom: 10px">
+    <div id = "header"></div>
+    <label class="subtitle is-3 has-text-weight-semibold">Email</label>
+    <br>
+    <input class="emailBox" type = "email" placeholder = "email" id = "email" />
+    <br>
+    <label class="subtitle is-3 has-text-weight-semibold">Password</label>
+    <br>
+    <input class="passwordBox" type = "password" placeholder = "password" id = "password"/>
+    <br>
+    <button class = "button signUp"> Sign Up</button>
+    <button class = "button signIn"> Sign In</button>
+    </div>
+    </div>`
+    $('#root').empty().append(x);
+};
 
 
 $(document).ready(() => {
@@ -31,6 +116,21 @@ $(document).ready(() => {
 
         signIn();
 
+    })
+
+    $('body').on('click', '.signUp', function() {
+
+        renderSignUpForm();
+    })
+
+    $('body').on('click', '.submitsignup', function() {
+
+        signUp();
+    })
+
+    $('body').on('click', '.cancelsignup', function() {
+
+        renderLoginPage();
     })
 
 

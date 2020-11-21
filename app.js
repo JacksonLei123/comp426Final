@@ -47,21 +47,21 @@ $(document).ready(() => {
     
       })
 
-    $('body').on('click', '.signUp', function() {
+    // $('body').on('click', '.signUp', function() {
 
-        controller.signUp();
-    })
+    //     controller.signUp();
+    // })
 
-    $("body").on("click", ".submitsignup", function() {
-        controller.submitSignUp();
-      });
-    $("body").on("click", ".cancelsignup", function() {
-        controller.cancelSignUp();
-    });
+    // $("body").on("click", ".submitsignup", function() {
+    //     controller.submitSignUp();
+    //   });
+    // $("body").on("click", ".cancelsignup", function() {
+    //     controller.cancelSignUp();
+    // });
 
-    $("body").on("click", ".signIn", function() {
-        controller.signIn();
-    });
+    // $("body").on("click", ".signIn", function() {
+    //     controller.signIn();
+    // });
 
     $("body").on("click", ".signOut", function() {
         controller.signOut();
