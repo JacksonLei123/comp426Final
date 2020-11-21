@@ -115,10 +115,24 @@ nav {
     -o-background-size: cover;
     background-size: cover;
   }
+<<<<<<< HEAD
   
   .resultsPage{
       text-align: center;
   }
+=======
+<<<<<<< HEAD
+.ui-menu .ui-menu-item a {
+    background-color: #003046;
+    color: #6693bc;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    font-size: 15px;
+    text-align: left;
+}
+=======
+
+>>>>>>> bd9286d7c6d523f94a87604794466df541d3835f
   .weatherDay {
       background-color: white;
       opacity: 80%;
@@ -127,3 +141,4 @@ nav {
       padding-bottom: 40px;
       padding-left: 20px;
   }
+>>>>>>> 035e4434b901aa0e5b803b3df3054f40fa4810e9
