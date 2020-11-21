@@ -7,6 +7,8 @@ export async function logCity() {
 export async function getWeather() {
    // console.log("hey");
     event.preventDefault();
+    $('#weather1').empty();
+    $('#weather2').empty();
     var city = $("#cityName").val();
     console.log(city);
     const response = await axios({
@@ -23,7 +25,21 @@ export async function getWeather() {
         let min = "Min: " + response.data.list[i].temp.min + "°F";
         let max = "Max: " + response.data.list[i].temp.max + "°F";
         let humidity = "Humidity: " + response.data.list[i].humidity + "%";
-        $('#weather').append(`<div class="column"><center>
+        $('#weather1').append(`<div class="column"><center>
+        <h1 class="title is-4">DAY ${i+1}</h1><br>
+        ${weath}<br>
+        ${min}<br>
+        ${max}<br>
+        ${humidity}
+        </center></div>`);
+    }
+
+    for (var i = 5; i < 10; i++) {
+        let weath = response.data.list[i].weather[0].description;
+        let min = "Min: " + response.data.list[i].temp.min + "°F";
+        let max = "Max: " + response.data.list[i].temp.max + "°F";
+        let humidity = "Humidity: " + response.data.list[i].humidity + "%";
+        $('#weather2').append(`<div class="column"><center>
         <h1 class="title is-4">DAY ${i+1}</h1><br>
         ${weath}<br>
         ${min}<br>
