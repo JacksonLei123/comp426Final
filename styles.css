@@ -119,3 +119,20 @@ nav {
   .resultsPage{
       text-align: center;
   }
+.ui-menu .ui-menu-item a {
+    background-color: #003046;
+    color: #6693bc;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    font-size: 16px;
+    text-align: left;
+}
+
+  .weatherDay {
+      background-color: white;
+      opacity: 80%;
+      padding-top: 40px;
+      padding-right: 20px;
+      padding-bottom: 40px;
+      padding-left: 20px;
+  }
