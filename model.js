@@ -74,14 +74,7 @@ export default class User {
                })
 
         
-        }
-
-
-        
-    
-
-
-        
+        }   
     }
 
     async writeNote(notename, note) {
