@@ -14,8 +14,7 @@ export default class AppController {
         this.view.renderHomePage();
     }
     cancelSignUp() {
-        this.view.rend
-        erHomePage();
+        this.view.renderHomePage();
     }
 
     signIn() {
