@@ -7,6 +7,7 @@ export default class AppView {
     
     // show user page
     renderUser() {
+      $('#root').empty()
         let that = this;
         let user = this.model.auth.currentUser;
         console.log(user);
@@ -26,6 +27,7 @@ export default class AppView {
               
           }).then(function() {
             // original user div
+            
             let there = that;
             let x = `<div>
             <nav>
@@ -134,7 +136,7 @@ export default class AppView {
 
     // after signing out replaces DOM with the sign in page
     renderHomePage() {
-
+      
         let x =  `<div class = "formContainer">
         <div class="login">
         <h1 class="title is-1">Site Name</h1>
