@@ -7,6 +7,7 @@ export default class AppView {
     
     // show user page
     renderUser() {
+      $('#root').empty()
         let that = this;
         let user = this.model.auth.currentUser;
         console.log(user);
@@ -26,6 +27,7 @@ export default class AppView {
               
           }).then(function() {
             // original user div
+            
             let there = that;
             let x = `<div>
             <nav>
@@ -54,12 +56,12 @@ export default class AppView {
             <div>
               <label for="start" style="color: white">Start date:</label>
               <input type="date" id="start" name="trip-start"
-                   value="2020-10-22"
-                   min="2020-10-22" max="2021-10-22">
+                   value="2020-11-21"
+                   min="2020-11-21" max="2021-11-21">
               <label for="start" style="color: white">End date:</label>
               <input type="date" id="start" name="trip-start"
-                    value="2020-10-22"
-                    min="2020-10-22" max="2021-10-22">  
+                    value="2020-11-21"
+                    min="2020-11-21" max="2021-11-21">  
                     <button type="button" class="saveDates button is-dark">
                     Save</button>     
             </div>
@@ -134,7 +136,7 @@ export default class AppView {
 
     // after signing out replaces DOM with the sign in page
     renderHomePage() {
-
+      
         let x =  `<div class = "formContainer">
         <div class="login">
         <h1 class="title is-1">Site Name</h1>

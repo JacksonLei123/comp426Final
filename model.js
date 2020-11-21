@@ -28,8 +28,13 @@ export default class User {
               displayName : display,
               emailaddress: email,
               quizTaken: false,
-              location: ""
-              
+              location: "",
+              startDate: {
+
+              },
+              endDate: {
+
+              }
         })
         // promise.catch(e => alert("invalid email or password"));
         // console.log(promise);
