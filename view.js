@@ -246,7 +246,7 @@ export default class AppView {
         if (!that.model.alreadyexists) {
 
           let x = `
-          <div id = "note${docid}"> 
+          <div style = "opacity: 75%; width: 55%; padding: 1em" id = "note${docid}"> 
           <span>${docid}</span>
           <br>
           <button class = "editnotes" id = "editnotes${docid}">View</button> 
@@ -254,7 +254,7 @@ export default class AppView {
           </div>` 
   
           $('.notereference').append(x);
-          $('#editnotes' + docid).on('click', function() {
+          $('#editnotes' + docid).one('click', function() {
           that.renderNoteView(docid);
           })
   
