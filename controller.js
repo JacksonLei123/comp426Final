@@ -92,6 +92,14 @@ export default class AppController {
         
     }
 
+    tookQuiz() {
+
+        let x = this.model.tookQuiz();
+
+        let split = x.split("/");
+        this.view.tookQuiz(split[0], split[1]);
+    }
+
     
 
 

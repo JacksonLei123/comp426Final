@@ -22,7 +22,6 @@ var firebaseConfig = {
   const auth = firebase.auth();
   const db = firebase.firestore();
 
-
 $(document).ready(() => {
    
     model = new User(db, auth);
@@ -95,5 +94,9 @@ $(document).ready(() => {
         controller.writeNote(note, val);
 
     });
+
+    $("body").on("click", ".submitQuiz", function() {
+        controller.tookQuiz();
+      });
 
 });
