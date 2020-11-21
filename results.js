@@ -320,8 +320,8 @@
   // });
 
   // let calculateScore = function() {
-
-
+  
+  
   var questionNumber = 0;
   var ParisScore = 0; 
   var NZScore = 0;
@@ -531,6 +531,9 @@
     }
     
   }
+
+
+
 
 
 

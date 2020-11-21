@@ -24,7 +24,7 @@ export default class AppView {
                   console.log("No such document!");
               }
               
-          }).then(function() {
+          }).then(async function() {
             // original user div
             let there = that;
             let x = `<div>
@@ -89,6 +89,20 @@ export default class AppView {
               there.compileResults();
             });
 
+            let usernames = that.model.db.collection('users').doc('usernames');
+            let userslist = await usernames.get();
+            let list = [];
+            if (!userslist) {
+              console.log('No such document!');
+            } else {
+              list = userslist.data().names;
+            }
+
+            $('#searchusers').autocomplete({
+              source: list,
+              autoFocus: true
+            })
+
 
    //         $(".signOut").click(signOut);
             $("#searchusers").on('keypress', function(e) {
@@ -96,8 +110,9 @@ export default class AppView {
               if(e.which == 13) {
                 let count = 0;
                 let val = $("#searchusers").val();
-                
-                those.model.db.collection("users").where("displayName", "==", val)
+                let lowercased = val.replace(/\s+/g, '').toLowerCase();
+
+                those.model.db.collection("users").where("searchname", "==", lowercased)
                   .get()
                   .then(function(querySnapshot) {
             
