@@ -29,13 +29,20 @@ export default class User {
               emailaddress: email,
               quizTaken: false,
               location: "",
-              
+              startDate: {
+
+              },
+              endDate: {
+
+              }
         })
         // promise.catch(e => alert("invalid email or password"));
         // console.log(promise);
         // alert("Account Created");
+
     
       }
+
 
     signIn() {
         let email = document.getElementById("email");

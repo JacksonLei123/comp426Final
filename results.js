@@ -313,6 +313,13 @@
   
 // }
 
+  
+  // $('body').on('click', ".submitQuiz", function() {
+
+  //   calculateScore();
+  // });
+
+  // let calculateScore = function() {
 
 
   var questionNumber = 0;
@@ -512,15 +519,20 @@
     //   questionNumber++;
       
     // }
-    console.log("hi");
+    console.log(questionNumber);
+    
     var scores = [BBScore, PhuketScore, LondonScore, NZScore, ParisScore, BanffScore, TokyoScore];
-    if(questionNumber==6) {
-      scores.sort();
-      console.log(scores);
+    
+    let firstmax = -1;
+    for(let i = 0; i < scores.length; i++) {
+      if (scores[i] > firstmax) {
+        firstmax = scores[i];
+      }
     }
+    
   }
 
 
 
   
-
+  
