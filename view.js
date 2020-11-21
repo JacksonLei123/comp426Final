@@ -33,11 +33,10 @@ export default class AppView {
             // original user div
             
             let there = that;
-
             let userdiv = `<div>
             <nav>
               <ul>
-                <li><a href="user.html">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="weather.html">WEATHER</a></li>
               </ul>
             </nav>
@@ -50,7 +49,7 @@ export default class AppView {
             <br>
             <button class = "button notes is-dark"> Notes </button>
           
-            <div class = "usersearch"> </div>
+            <div class = "usersearch box"> </div>
 
             <div class = "notescontainer">
               <div class = "notereference"> </div>
@@ -83,7 +82,7 @@ export default class AppView {
               <h2>${split[0]}</h2>
                 <p class="subtitle is-5">${split[1]}</p>
       
-              <button class = "takeagain">Take Again</button
+              <button class = "takeagain button is-dark">Take Again</button
               </div>`
               
             } else {
@@ -158,7 +157,11 @@ export default class AppView {
                       console.log(doc.id, " => ", doc.data());
                       // add css to DOM to make look better
                       let split = doc.data().location.split("/");
-                      let x = `<div class = "searchresults"> ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]} </div>`
+                      let x = `<div class = "searchresults box"> 
+                                <div class="oneSearch">
+                                  ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]}
+                                </div>
+                              </div>`
                       $(".usersearch").append(x);
                       count++;
                     });
@@ -408,7 +411,8 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1>
+      <div class="quizForm"><h1 class="title is-3">Welcome to the Quiz</h1>
+      <h4><em>Answer these questions to get your dream destination!</em></h4>
       <br> 
       <div class="box">`
   
@@ -490,7 +494,7 @@ export default class AppView {
         <h2>${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
 
-        <button class = "takeagain">Take Again</button
+        <button class = "takeagain button is-dark">Take Again</button
       </div>
       `
       let that = this;
