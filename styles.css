@@ -109,9 +109,18 @@ nav {
   }
 
   html { 
-    background: url(https://cdn.pixabay.com/photo/2015/07/11/23/02/plane-841441_1280.jpg) no-repeat center center fixed; 
+    background: url(https://images.pexels.com/photos/449751/pexels-photo-449751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  .weatherDay {
+      background-color: white;
+      opacity: 80%;
+      padding-top: 40px;
+      padding-right: 20px;
+      padding-bottom: 40px;
+      padding-left: 20px;
   }
