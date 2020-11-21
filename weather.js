@@ -25,12 +25,14 @@ export async function getWeather() {
         let min = "Min: " + response.data.list[i].temp.min + "°F";
         let max = "Max: " + response.data.list[i].temp.max + "°F";
         let humidity = "Humidity: " + response.data.list[i].humidity + "%";
-        $('#weather1').append(`<div class="column"><center>
-        <h1 class="title is-4">DAY ${i+1}</h1><br>
+        $('#weather1').append(`<div class="column weatherDay"><center>
+        <h1 class="title is-3">DAY ${i+1}</h1><br>
+        <div class="is-size-5">
         ${weath}<br>
         ${min}<br>
         ${max}<br>
         ${humidity}
+        </div>
         </center></div>`);
     }
 
@@ -39,12 +41,14 @@ export async function getWeather() {
         let min = "Min: " + response.data.list[i].temp.min + "°F";
         let max = "Max: " + response.data.list[i].temp.max + "°F";
         let humidity = "Humidity: " + response.data.list[i].humidity + "%";
-        $('#weather2').append(`<div class="column"><center>
-        <h1 class="title is-4">DAY ${i+1}</h1><br>
+        $('#weather2').append(`<div class="column weatherDay"><center>
+        <h1 class="title is-3">DAY ${i+1}</h1><br>
+        <div class="is-size-5">
         ${weath}<br>
         ${min}<br>
         ${max}<br>
         ${humidity}
+        </div>
         </center></div>`);
     }
     
