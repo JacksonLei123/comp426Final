@@ -37,7 +37,7 @@ export default class AppView {
             let userdiv = `<div>
             <nav>
               <ul>
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="user.html">HOME</a></li>
                 <li><a href="weather.html">WEATHER</a></li>
               </ul>
             </nav>
@@ -158,7 +158,7 @@ export default class AppView {
                       console.log(doc.id, " => ", doc.data());
                       // add css to DOM to make look better
                       let split = doc.data().location.split("/");
-                      let x = `<div class = "searchresults"> ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]}`
+                      let x = `<div class = "searchresults"> ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]} </div>`
                       $(".usersearch").append(x);
                       count++;
                     });
