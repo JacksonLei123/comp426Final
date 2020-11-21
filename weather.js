@@ -11,15 +11,27 @@ export async function getWeather() {
     console.log(city);
     const response = await axios({
         method: 'GET',
-        url: 'https://community-open-weather-map.p.rapidapi.com/find',
-        params: {q: city, units: 'imperial'},
+        url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
+        params: {q: city, cnt: '10', units: 'imperial'},
         headers: {
             'x-rapidapi-key': '77a0f8f416mshc4af7c3543d5f9bp1a812fjsn303daa15f8cc',
             'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com'
         }
     });
-    let weath = response.data.list[0].weather[0].description;
-    $('#weather').replaceWith(`<div id="weather">${weath}</div>`);
+    for (var i = 0; i < 5; i++) {
+        let weath = response.data.list[i].weather[0].description;
+        let min = "Min: " + response.data.list[i].temp.min + "°F";
+        let max = "Max: " + response.data.list[i].temp.max + "°F";
+        let humidity = "Humidity: " + response.data.list[i].humidity + "%";
+        $('#weather').append(`<div class="column"><center>
+        <h1 class="title is-4">DAY ${i+1}</h1><br>
+        ${weath}<br>
+        ${min}<br>
+        ${max}<br>
+        ${humidity}
+        </center></div>`);
+    }
+    
 }
 
 
