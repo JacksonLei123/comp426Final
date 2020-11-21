@@ -33,7 +33,6 @@ export default class AppView {
             // original user div
             
             let there = that;
-
             let userdiv = `<div>
             <nav>
               <ul>
