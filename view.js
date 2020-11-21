@@ -375,14 +375,15 @@ export default class AppView {
       </div>
       <br> 
       <div>
-        <button onclick="location.href='results.html'" class="submitQuiz button is-dark">Submit</button>
+        <button class="submitQuiz button is-dark">Submit</button>
         <button class="cancelQuiz button is-dark">Cancel</button>
       </div>
 
       </div>  
       `
     $('.quiz').replaceWith(x);
-    }
+    
+  }
     cancelQuizForm() {
       let x = 
               `<div class="quiz">
