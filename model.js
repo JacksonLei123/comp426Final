@@ -304,19 +304,23 @@ export default class User {
         var scores = [ParisScore, NZScore, BBScore, LondonScore, TokyoScore, PhuketScore, BanffScore];
         let places = [];
         let descriptions = [];
+        let images = [];
         for (let i = 0; i < data.length; i++) {
             places.push(data[i].location);
             descriptions.push(data[i].description);
+            images.push(data[i].image);
         }
 
         let max = -1;
         let finalPlace = "";
         let finalDescription = "";
+        let finalImage = "";
         for (let i =0; i < scores.length; i++) {
             if (scores[i] > max) {
             max = scores[i];
             finalPlace = places[i];
             finalDescription = descriptions[i];
+            finalImage = images[i];
             }
         }
         let current = this.auth.currentUser;

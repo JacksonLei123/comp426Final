@@ -9,6 +9,10 @@
     padding: 10px;
     text-align: justify;
 }
+.quizForm {
+    margin: auto;
+    width: 60%;
+}
 .firstNameBox {
     margin-bottom: 10px;
     width: 75%;

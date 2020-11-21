@@ -408,9 +408,10 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"> <h1 class="title is-3">welcome to da quiz</h1>
+      <div class="quizForm"><h1 class="title is-3" style="margin-left: 30%">Welcome to the Quiz</h1>
+      <h4 style="margin-left: 17.5%"><em>Answer these questions to get your dream destination!</em></h4>
       <br> 
-      <div class="box">`
+      <div class="box" style="opacity: 75%">`
   
       for (let i = 0; i < questions.length; i++) {
         let questionNumber = i + 1;
@@ -432,9 +433,9 @@ export default class AppView {
       x += `
       </div>
       <br> 
-      <div>
-        <button class="submitQuiz button is-dark">Submit</button>
-        <button class="cancelQuiz button is-dark">Cancel</button>
+      <div style="margin-left: 35%">
+        <button class="submitQuiz button is-dark" style="margin-right: 40px">Submit</button>
+        <button class="cancelQuiz button is-dark" style="margin-left: 30px">Cancel</button>
       </div>
 
       </div>  
