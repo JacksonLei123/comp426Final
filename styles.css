@@ -115,3 +115,11 @@ nav {
     -o-background-size: cover;
     background-size: cover;
   }
+.ui-menu .ui-menu-item a {
+    background-color: #003046;
+    color: #6693bc;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    font-size: 15px;
+    text-align: left;
+}
