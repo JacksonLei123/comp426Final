@@ -54,12 +54,12 @@ export default class AppView {
             <div>
               <label for="start" style="color: white">Start date:</label>
               <input type="date" id="start" name="trip-start"
-                   value="2020-10-22"
-                   min="2020-10-22" max="2021-10-22">
+                   value="2020-11-21"
+                   min="2020-11-21" max="2021-11-21">
               <label for="start" style="color: white">End date:</label>
               <input type="date" id="start" name="trip-start"
-                    value="2020-10-22"
-                    min="2020-10-22" max="2021-10-22">  
+                    value="2020-11-21"
+                    min="2020-11-21" max="2021-11-21">  
                     <button type="button" class="saveDates button is-dark">
                     Save</button>     
             </div>
