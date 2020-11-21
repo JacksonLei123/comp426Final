@@ -59,7 +59,9 @@ export default class AppView {
               <label for="start">End date:</label>
               <input type="date" id="start" name="trip-start"
                     value="2020-10-22"
-                    min="2020-10-22" max="2021-10-22">       
+                    min="2020-10-22" max="2021-10-22">  
+                    <button type="button" class="saveDates button is-dark">
+                    Save</button>     
             </div>
 
             <div class="quiz">
@@ -214,6 +216,7 @@ export default class AppView {
     deleteNote(docid) {
       $('#note' + docid).remove();
     }
+    
     // add user note asynchrounously; if note title already exists, will not add
     async addNote(docid) {
       let that = this;
