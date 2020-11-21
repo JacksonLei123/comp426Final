@@ -348,7 +348,24 @@
 
     let q4a1 = $('#3-1').prop('checked');
     let q4a2 = $('#3-2').prop('checked');
-    
+    let q4a3 = $('#3-3').prop('checked');
+    let q4a4 = $('#3-4').prop('checked');
+
+    let q5a1 = $('#4-1').prop('checked');
+    let q5a2 = $('#4-2').prop('checked');
+    let q5a3 = $('#4-3').prop('checked');
+    let q5a4 = $('#4-4').prop('checked');
+
+    let q6a1 = $('#5-1').prop('checked');
+    let q6a2 = $('#5-2').prop('checked');
+    let q6a3 = $('#5-3').prop('checked');
+    let q6a4 = $('#5-4').prop('checked');
+
+    let q7a1 = $('#6-1').prop('checked');
+    let q7a2 = $('#6-2').prop('checked');
+    let q7a3 = $('#6-3').prop('checked');
+    let q7a4 = $('#6-4').prop('checked');
+
 
   }
 // var q1a1 = document.getElementById('0-1');
