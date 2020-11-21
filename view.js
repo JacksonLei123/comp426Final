@@ -31,8 +31,7 @@ export default class AppView {
             <nav>
               <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="portfolio.html">WEATHER</a></li>
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="weather.html">WEATHER</a></li>
               </ul>
             </nav>
           </div>
