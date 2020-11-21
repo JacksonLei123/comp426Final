@@ -37,11 +37,7 @@ $(document).ready(() => {
       //     $(".formContainer").replaceWith(x);
       //      $(".signOut").click(signOut);
             view.renderUser();
-<<<<<<< HEAD
          //   alert("Active user: " + user.email);
-=======
-            // alert("Active user: " + user.email);
->>>>>>> 73c7915933940114f066767298ce6d684363c2f1
     
         } else {
        //     controller.signOut();
