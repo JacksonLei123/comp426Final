@@ -56,11 +56,10 @@
     float: right;
 }
 
-/* .user {
-    background-color: white;
-    opacity: 80%;
-    margin: 4em;
-} */
+.searchresults {
+    text-align: right;
+}
+
 .signUpForm {
     background-color: #9ab5d9;
     opacity: 80%;

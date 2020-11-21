@@ -45,7 +45,6 @@ export default class AppView {
             <div class = "user" style="padding: 1em"> 
             <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
             <em>${user.email}</em>
-            
             <input type = "search" placeholder = "searchusers" id = "searchusers"/> 
             <br>
             <br>
@@ -158,8 +157,12 @@ export default class AppView {
                       // doc.data() is never undefined for query doc snapshots
                       console.log(doc.id, " => ", doc.data());
                       // add css to DOM to make look better
+<<<<<<< HEAD
                       let split = doc.data().location.split("/");
                       let x = `<div class = "searchresults"> ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]}`
+=======
+                      let x = `<div class = "searchresults"> ${doc.data().displayName} <br> ${doc.data().emailaddress}`
+>>>>>>> 116cb3024d14fc27db6efbeca306e2bde4bb8dd9
                       $(".usersearch").append(x);
                       count++;
                     });

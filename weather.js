@@ -9,6 +9,7 @@ export async function getWeather() {
     event.preventDefault();
     $('#weather1').empty();
     $('#weather2').empty();
+    $('#weatherTitle').empty();
     var city = $("#cityName").val();
     console.log(city);
     const response = await axios({
@@ -20,6 +21,9 @@ export async function getWeather() {
             'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com'
         }
     });
+    var cityName = response.data.city.name;
+    var country = response.data.city.country;
+    $('#weatherTitle').append(`<h1 class="title is-2"><center>10-Day Weather - ${cityName}, ${country}</center></h1><br>`);
     for (var i = 0; i < 5; i++) {
         let weath = response.data.list[i].weather[0].description;
         let min = "Min: " + response.data.list[i].temp.min + "°F";
