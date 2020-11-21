@@ -24,8 +24,8 @@ var results = [
         description: "Enjoy the gorgeous white sand beaches and temples of during the day, and the bustling nightlife and boat tours at night."
     },
     {
-        location: "Grand Canyon",
-        description: "Roughly 277 miles long, the Grand Canyon national park offers long hikes and whitewater rafting for anyone looking for an outdoor adventure."
+        location: "Banff",
+        description: "Hike, boat, and ski at the Alberta town filled with some of the world's most beautiful views."
     },
 
 ]
