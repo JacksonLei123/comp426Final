@@ -36,7 +36,7 @@ export default class AppView {
             let userdiv = `<div>
             <nav>
               <ul>
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="user.html">HOME</a></li>
                 <li><a href="weather.html">WEATHER</a></li>
               </ul>
             </nav>
