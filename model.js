@@ -88,7 +88,34 @@ export default class User {
         
         }   
     }
+    saveDate() {
 
+        let current = this.auth.currentUser;
+        let x = $('#startDate').val();
+        let y = $('#endDate').val();
+        // yyyy-MM-dd
+        let split1 = x.split("-");
+        let split2 = y.split("-");
+
+        let startDate = new Date(split1[0], split1[1]-1, split1[2]);
+        let endDate = new Date(split2[0], split2[1]-1, split2[2]);
+
+        this.db.collection("users").doc(current.email).update({
+            startDate: startDate,
+            endDate: endDate
+        });
+        // if(current) {
+        //     this.db.collection('users').doc(current.email).update()
+        //     .then((doc) => {
+        //     if(doc.exists) {
+        //         console.log(doc.data().startDate);
+        //         startDate = doc.data().startDate;
+        //     }
+        //     })
+        // }
+        
+
+    }
     async writeNote(notename, note) {
         let current = this.auth.currentUser;
         const notes = this.db.collection('users').doc(current.email).collection('notes').doc(notename);

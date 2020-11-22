@@ -6,20 +6,6 @@ export default class AppController {
         this.view = view;
     }
 
-    // signUp() {
-    //     this.view.renderSignUpForm();
-    // }
-    // submitSignUp() {
-    //     this.model.signUp();
-    //     this.view.renderHomePage();
-    // }
-    // cancelSignUp() {
-    //     this.view.renderHomePage();
-    // }
-
-    // signIn() {
-    //     this.model.signIn();
-    // }
 
     signOut() {
         $(".notes").off("click");
@@ -100,7 +86,9 @@ export default class AppController {
         this.view.tookQuiz(split[0], split[1], split[2]);
     }
 
-    
+    saveDate() {
+        this.model.saveDate();
+    }
 
 
 

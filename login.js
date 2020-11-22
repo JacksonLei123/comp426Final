@@ -32,6 +32,8 @@ let signUp = function() {
     let email = $(".emailBox").val();
     let password = $(".passwordBox").val();
     let search = firstname.toLowerCase() + "" + lastname.toLowerCase();
+    let start = new Date(2020, 10, 24);
+    let end = new Date (2020, 10, 25);
     
             // maybe fix this later this is a little faulty
         const promise = auth.createUserWithEmailAndPassword(email, password)
@@ -46,8 +48,8 @@ let signUp = function() {
                     searchname: search,
                     quizTaken: false,
                     location: "",
-                    startDate: {},
-                    endDate: {}
+                    startDate: start,
+                    endDate: end
                     })
             })
             .catch(error => alert("invalid email or password"));

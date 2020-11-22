@@ -15,6 +15,8 @@ export default class AppView {
         let name = "";
         let tookQuiz;
         let location = ""; 
+        let startDate;
+        let endDate;
         docRef.get().then(function(doc) {
             
               if (doc.exists) {
@@ -23,7 +25,8 @@ export default class AppView {
                   name = doc.data().displayName;
                   tookQuiz = doc.data().quizTaken;
                   location = doc.data().location;
-                  
+                  startDate = doc.data().startDate;
+                  endDate = doc.data().endDate;
               } else {
                   // doc.data() will be undefined in this case
                   console.log("No such document!");
@@ -31,13 +34,33 @@ export default class AppView {
               
           }).then(async function() {
             // original user div
-            
+            let startMonth = startDate.toDate().getMonth()+1;
+            let startDay = startDate.toDate().getDate();
+            let endMonth = endDate.toDate().getMonth()+1;
+            let endDay = endDate.toDate().getDate();
             let there = that;
+            if(startMonth<10) {
+              startMonth = "0"+ startMonth;
+            }     
+            if (startDay < 10) {
+              startDay = "0" + startDay;
+            }
+            if (endMonth < 10) {
+              endMonth = "0" + endMonth;
+            }
+            if (endDay < 10) {
+              endDay = "0" + endDay;
+            }
             let userdiv = `<div>
           </div>
             <div class = "user" style="padding: 1em"> 
-            <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
-            <em>${user.email}</em>
+            <div><h1 class="title is-2" style="font-family: 'Quicksand', sans-serif">${name}<i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
+
+            <br>
+            
+            <br>
+
+            <em style="font-family: 'Quicksand', sans-serif">${user.email}</em>
             <input type = "search" placeholder = "Search users" id = "searchusers"/> 
             <br>
             <br>
@@ -51,29 +74,33 @@ export default class AppView {
 
             <div>
               <label for="start">Start date:</label>
-              <input type="date" id="start" name="trip-start"
-                   value="2020-11-21"
-                   min="2020-11-21" max="2021-11-21">
+              <input type="date" id="startDate" name="trip-start" placeholder="yyyy-MM-dd"
+                   value="${startDate.toDate().getFullYear()}-${startMonth}-${startDay}"
+                   min="2020-01-01" max="2021-11-21">
               <label for="start">End date:</label>
-              <input type="date" id="start" name="trip-start"
-                    value="2020-11-21"
-                    min="2020-11-21" max="2021-11-21">  
+              <input type="date" id="endDate" name="trip-end"
+                    value="${endDate.toDate().getFullYear()}-${endMonth}-${endDay}"
+                    min="2020-01-01" max="2021-11-21">  
                     <button type="button" class="saveDates button is-dark">
                     Save</button>     
             </div>
             <div style="display: flex">
             <div class="quiz" style="flex-grow:1"> </div>
 
-            <div class = "usersearch box"> </div>
+            <div class = "usersearch box" style="opacity: 75%">
+            <h1 class="title is-3" style="font-family: 'Quicksand', sans-serif"><u>Profiles</u></h1>
+            </div>
           
             </div>`
+            console.log(startDate);
             var quiz;
             if (tookQuiz) {
           
               console.log(location);
               let split = location.split("/");
               quiz = `<div class="resultsPage">
-              <h1 class="title is-3">Here are your results!</h1>
+              <h1 class="title is-3">
+              Your results: </h1>
               <h2>${split[0]}</h2>
                 <p class="subtitle is-5">${split[1]}</p>
                 <img src="${split[2]}" style="width: 800px; padding-bottom: 10px"/><br>
@@ -96,15 +123,15 @@ export default class AppView {
               there.renderQuizForm(questions);
           })
 
-            let ja = that.model.db.collection('users').doc('briannali2018@gmail.com');
-    let y = await ja.get();
+    //         let ja = that.model.db.collection('users').doc('briannali2018@gmail.com');
+    // let y = await ja.get();
 
-    if (!y) {
-        console.log("no such doc");
-    } else {
+    // if (!y) {
+    //     console.log("no such doc");
+    // } else {
 
-      console.log(y.data().startDate.toDate().getDate());
-    }
+    //   console.log(y.data().startDate.toDate().getDate());
+    // }
 
 
 
@@ -119,6 +146,7 @@ export default class AppView {
               there.cancelQuizForm();
             });
 
+      
             let usernames = that.model.db.collection('users').doc('usernames');
             let userslist = await usernames.get();
             let list = [];
@@ -129,8 +157,9 @@ export default class AppView {
             }
 
             $('#searchusers').autocomplete({
-              source: list,
-              autoFocus: true
+              source: list
+
+           
             })
 
 
@@ -154,7 +183,7 @@ export default class AppView {
                       let split = doc.data().location.split("/");
                       let x = `<div class = "searchresults box"> 
                                 <div class="oneSearch">
-                                  ${doc.data().displayName} <br>${doc.data().emailaddress}<br> ${split[0]}
+                                  <strong>${doc.data().displayName}</strong> <br><em>${doc.data().emailaddress}</em><br> Destination: ${split[0]}
                                 </div>
                               </div>`
                       $(".usersearch").append(x);
@@ -182,29 +211,6 @@ export default class AppView {
          
     };
 
-    // after signing out replaces DOM with the sign in page
-    // renderHomePage() {
-      
-    //     let x =  `<div class = "formContainer">
-    //     <div class="login">
-    //     <h1 class="title is-1">Site Name</h1>
-    //     <br>
-    //     <img src="426 logo.png" style="height: 125px; padding-top: 10px; padding-bottom: 10px">
-    //     <div id = "header"></div>
-    //     <label class="subtitle is-3 has-text-weight-semibold">Email</label>
-    //     <br>
-    //     <input class="emailBox" type = "email" placeholder = "email" id = "email" />
-    //     <br>
-    //     <label class="subtitle is-3 has-text-weight-semibold">Password</label>
-    //     <br>
-    //     <input class="passwordBox" type = "password" placeholder = "password" id = "password"/>
-    //     <br>
-    //     <button class = "button signUp"> Sign Up</button>
-    //     <button class = "button signIn"> Sign In</button>
-    //     </div>
-    //     </div>`
-    //     $('#root').empty().append(x);
-    // };
 
     // show all notes for the user
     renderNotes() {
@@ -299,26 +305,6 @@ export default class AppView {
 
       }, 200);
 
-      // if (!mod) {
-
-
-      //   let x = `
-      //   <div style = "background-color:powderblue" id = "note${docid}"> 
-      //   <span>${docid}</span>
-      //   <br>
-      //   <button class = "editnotes" id = "editnotes${docid}">View</button> 
-      //   <button class = "deletenotes" id = "deletenotes${docid}"> Delete </button>
-      //   </div>` 
-
-      //   $('.notereference').append(x);
-      //   $('#editnotes' + docid).on('click', function() {
-      //   that.renderNoteView(docid);
-      //   console.log(docid);
-      //   })
-
-
-
-      // }
 
     }
 
@@ -372,42 +358,13 @@ export default class AppView {
     saveDate() {
       
     }
-    // show sign up form
-    // renderSignUpForm() {
-  
-    //     let x = `<div class = "signUpForm">
-    //     <div class="signUpBox">
-    //     <label class="subtitle is-3 has-text-weight-semibold">First Name</label>
-    //     <br>
-    //     <input class="firstNameBox" type = "firstname" placeholder = "firstname" class = "signUpinput1"/>
-    //     <br>
-    //     <label class="subtitle is-3 has-text-weight-semibold">Last Name</label>
-    //     <br>
-    //     <input class="lastNameBox" type = "lastname" placeholder = "lastname" class = "signUpinput2"/>
-    //     <br>
-    //     <label class="subtitle is-3 has-text-weight-semibold">Email</label>
-    //     <br>
-    //     <input class="emailBox" type = "email" placeholder = "email" class = "signUpinput3" />
-    //     <br>
-    //     <label class="subtitle is-3 has-text-weight-semibold">Password</label>
-    //     <br>
-    //     <input class="passwordBox" type = "password" placeholder = "password" class = "signUpinput4" />
-    //     <br>
-    //     <button class="button submitsignup"> Submit </button>
-    //     <button class="button cancelsignup"> Cancel </button>
-    //     </div>
-    //     </div> 
-    //     `
-    //     $("#root").empty().append(x);
-        
-    // };
 
   // show quiz form
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"><h1 class="title is-3">Welcome to the Quiz</h1>
-      <h4><em>Answer these questions to get your dream destination!</em></h4>
+      <div class="quizForm" style="opacity: 75%"><h1 class="title is-3" style="font-family: 'Quicksand', sans-serif">Welcome to the Quiz</h1>
+      <h4 style="font-family: 'Quicksand', sans-serif"><em>Answer these questions to get your dream destination!</em></h4>
       <br> 
       <div class="box">`
   
@@ -484,8 +441,8 @@ export default class AppView {
   tookQuiz(finalPlace, finalDescription, finalImage) {
     
       let x = 
-      `<div class="resultsPage">
-        <h1 class="title is-3">Here are your results!</h1>
+      `<div class="resultsPage" style="font-family: 'Quicksand', sans-serif">
+        <h1 class="title is-3">Your results: </h1>
         <h2>${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
         <img src = "${finalImage}" style = "width: 800px;padding-bottom: 10px"/> 
