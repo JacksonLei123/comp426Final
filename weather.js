@@ -1,4 +1,9 @@
-// var cities = ["Paris", "New Zealand", "Bora Bora", "London", "Tokyo", "Phuket"];
+var cities = ["Paris", "New Zealand", "Bora Bora", "London", "Tokyo", "Phuket"];
+
+$('#cityName').autocomplete({
+    source: cities,
+    autoFocus: true
+});
 
 var firebaseConfig = {
     apiKey: "AIzaSyAhcDRlR3RBFEMtRjanuuDMDKqFHqjzJuU",
@@ -8,7 +13,7 @@ var firebaseConfig = {
     storageBucket: "comp426-19a60.appspot.com",
     messagingSenderId: "311446455287",
     appId: "1:311446455287:web:82692dda4340b7ae6f24f2"
-  };
+};
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
