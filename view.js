@@ -141,6 +141,7 @@ export default class AppView {
               there.cancelQuizForm();
             });
 
+      
             let usernames = that.model.db.collection('users').doc('usernames');
             let userslist = await usernames.get();
             let list = [];
@@ -151,8 +152,9 @@ export default class AppView {
             }
 
             $('#searchusers').autocomplete({
-              source: list,
-              autoFocus: true
+              source: list
+
+           
             })
 
 

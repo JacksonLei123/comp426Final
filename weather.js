@@ -1,10 +1,5 @@
 var cities = ["Paris", "New Zealand", "London", "Tokyo", "Phuket"];
 
-$('#cityName').autocomplete({
-    source: cities,
-    autoFocus: true
-});
-
 var firebaseConfig = {
     apiKey: "AIzaSyAhcDRlR3RBFEMtRjanuuDMDKqFHqjzJuU",
     authDomain: "comp426-19a60.firebaseapp.com",
@@ -21,6 +16,33 @@ const db = firebase.firestore();
 
 var location;
 var initialCity;
+
+// let debounce = function() {
+//     var timer;
+//     return function() {
+//       var args = [].slice.call(arguments);
+//       var context = this;
+//       if (timer) {
+//         window.clearTimeout(timer);
+//       }
+//       timer = window.setTimeout(function() {
+//         fn.apply(context, args);
+//       }, delay);
+//     };
+//   };
+
+// let querySourceData = function (request, response) {
+//     $.ajax({
+//        url: '/your_api',
+//        success: function(data = []) {
+//           response(data);
+//        },
+//        error: function() {
+//           response([]);
+//        }
+// });
+
+
 
 
 $(document).ready(() => {
@@ -89,6 +111,7 @@ export async function initialWeather() {
                         'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com'
                     }
                 });
+
                 var cityName = response.data.city.name;
                 var country = response.data.city.country;
                 $('#weatherTitle').append(`<h1 class="title is-2"><center>10-Day Weather - ${cityName}, ${country}</center></h1><br>`);
@@ -192,8 +215,87 @@ export async function getWeather() {
     
 }
 
+
+let querySourceData = function(request, response) {
+    
+    $.ajax(settings).done(function(response) {
+        console.log(response);
+        return response;
+    })
+
+    // $.ajax({
+    //    url: 'https://andruxnet-world-cities-v1.p.rapidapi.com/',
+    //    success: function(data = []) {
+    //       response(data);
+    //    },
+    //    error: function() {
+    //       response([]);
+    //    }
+    // });
+
+}
+
+let debounce = function(fn, delay) {
+    var timer;
+    return function() {
+      var args = [].slice.call(arguments);
+      var context = this;
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+      timer = window.setTimeout(function() {
+        fn.apply(context, args);
+      }, delay);
+    };
+  };
+
+  const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://andruxnet-world-cities-v1.p.rapidapi.com/?query=paris&searchby=city",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "43400b8ec8mshb4369054fa959f0p158ac2jsn93dac0c502b3",
+		"x-rapidapi-host": "andruxnet-world-cities-v1.p.rapidapi.com"
+	}
+};
+
 $(function() {
+    
+    
     initialWeather();
     $(document).on("click", ".searchCity", getWeather);
     $(document).on("click", "#ogWeather", initialWeather);
+
+    // $('#cityName').autocomplete({
+
+    //     source: querySourceData,
+
+    // });
+    
+    // debouncing 
+    let array = [];
+    $('#cityName').keypress(async function() {
+        let value = $('#cityName').val();
+        const result = await axios({
+            method: 'GET',
+            url: 'https://andruxnet-world-cities-v1.p.rapidapi.com/',
+            params: {query: value, searchby: 'city'},
+            headers: {
+                'x-rapidapi-key': '43400b8ec8mshb4369054fa959f0p158ac2jsn93dac0c502b3',
+                'x-rapidapi-host': 'andruxnet-world-cities-v1.p.rapidapi.com'
+            }
+        });
+
+        array = result.data;
+               
+    });
+
+    console.log(array);
+    $('#cityName').autocomplete({
+        source: cities,
+        delay: 200
+    });
+
+
 });
