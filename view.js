@@ -54,8 +54,8 @@ export default class AppView {
             let userdiv = `<div>
           </div>
             <div class = "user" style="padding: 1em"> 
-            <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
-            <em>${user.email}</em>
+            <div><h1 class="title is-2" style="font-family: 'Quicksand', sans-serif">${name}<i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
+            <em style="font-family: 'Quicksand', sans-serif">${user.email}</em>
             <input type = "search" placeholder = "Search users" id = "searchusers"/> 
             <br>
             <br>
@@ -82,7 +82,9 @@ export default class AppView {
             <div style="display: flex">
             <div class="quiz" style="flex-grow:1"> </div>
 
-            <div class = "usersearch box"> </div>
+            <div class = "usersearch box">
+            <h1 class="title is-3" style="font-family: 'Quicksand', sans-serif"            ><u>Profiles</u></h1>
+            </div>
           
             </div>`
             console.log(startDate);
@@ -92,7 +94,8 @@ export default class AppView {
               console.log(location);
               let split = location.split("/");
               quiz = `<div class="resultsPage">
-              <h1 class="title is-3">Here are your results!</h1>
+              <h1 class="title is-3"style="font-family: 'Quicksand', sans-serif">
+              Here are your results!</h1>
               <h2>${split[0]}</h2>
                 <p class="subtitle is-5">${split[1]}</p>
                 <img src="${split[2]}" style="width: 800px; padding-bottom: 10px"/><br>
@@ -173,7 +176,7 @@ export default class AppView {
                       let split = doc.data().location.split("/");
                       let x = `<div class = "searchresults box"> 
                                 <div class="oneSearch">
-                                  ${doc.data().displayName} <br>${doc.data().emailaddress}<br> ${split[0]}
+                                  <strong>${doc.data().displayName}</strong> <br><em>${doc.data().emailaddress}</em><br> Destination: ${split[0]}
                                 </div>
                               </div>`
                       $(".usersearch").append(x);
@@ -425,8 +428,8 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"><h1 class="title is-3">Welcome to the Quiz</h1>
-      <h4><em>Answer these questions to get your dream destination!</em></h4>
+      <div class="quizForm"><h1 class="title is-3" style="font-family: 'Quicksand', sans-serif">Welcome to the Quiz</h1>
+      <h4 style="font-family: 'Quicksand', sans-serif"><em>Answer these questions to get your dream destination!</em></h4>
       <br> 
       <div class="box">`
   

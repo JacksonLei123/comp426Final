@@ -12,6 +12,8 @@
 .quizForm {
     margin: auto;
     width: 60%;
+    font-family: 'Quicksand', sans-serif;
+
 }
 .firstNameBox {
     margin-bottom: 10px;
@@ -58,18 +60,20 @@
 }
 #searchusers {
     float: right;
+    font-family: 'Quicksand', sans-serif;
+
 }
 
 .flex-parent {
     display: flex;
 }
 .searchresults {
-    text-align: right;
+    text-align: left;
     flex-grow: 1;
 }
 .usersearch{
     overflow: scroll;
-    height: 500px;
+    height: 600px;
     width: 350px;
 }
 
@@ -136,6 +140,8 @@ nav {
   
   .resultsPage{
       text-align: center;
+      font-family: 'Quicksand', sans-serif;
+
   }
 .ui-menu .ui-menu-item a {
     background-color: #003046;
