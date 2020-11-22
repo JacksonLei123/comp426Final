@@ -462,7 +462,7 @@ export default class AppView {
       if (quizTaken) {
         let split = location.split("/");
 
-        that.tookQuiz(split[0], split[1]);
+        that.tookQuiz(split[0], split[1], split[2]);
         
       } else {
 
