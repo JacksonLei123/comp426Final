@@ -2,7 +2,7 @@ var data = [
     {
         location: "Paris",
         description: "Home of the Eiffel Tower, Louvre, and Arc de Triomphe. Sit down at a cafe, grab a croissant, and maybe even fall in love.",
-        img: "images/paris-4154456_1920.jpg"
+        img: "Paris.jpg"
     },
     {
         location: "New Zealand",
