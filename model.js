@@ -308,7 +308,7 @@ export default class User {
         for (let i = 0; i < data.length; i++) {
             places.push(data[i].location);
             descriptions.push(data[i].description);
-            images.push(data[i].image);
+            images.push(data[i].img);
         }
 
         let max = -1;
@@ -326,10 +326,10 @@ export default class User {
         let current = this.auth.currentUser;
         this.db.collection("users").doc(current.email).update({
             quizTaken: true,
-            location: finalPlace + "/" + finalDescription,
+            location: finalPlace + "/" + finalDescription + "/" + finalImage,
         });
 
-        return finalPlace + "/" + finalDescription;
+        return finalPlace + "/" + finalDescription + "/" + finalImage;
 
 
 

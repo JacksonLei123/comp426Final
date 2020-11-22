@@ -70,6 +70,7 @@ export default class AppView {
             </div>
 
             <div class="quiz">
+            </div>
 
             </div>`
             var quiz;
