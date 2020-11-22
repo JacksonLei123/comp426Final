@@ -95,7 +95,7 @@ export default class AppView {
               let split = location.split("/");
               quiz = `<div class="resultsPage">
               <h1 class="title is-3">
-              Here are your results!</h1>
+              Your results: </h1>
               <h2>${split[0]}</h2>
                 <p class="subtitle is-5">${split[1]}</p>
                 <img src="${split[2]}" style="width: 800px; padding-bottom: 10px"/><br>
@@ -509,7 +509,7 @@ export default class AppView {
     
       let x = 
       `<div class="resultsPage" style="font-family: 'Quicksand', sans-serif">
-        <h1 class="title is-3">Here are your results!</h1>
+        <h1 class="title is-3">Your results: </h1>
         <h2>${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
         <img src = "${finalImage}" style = "width: 800px;padding-bottom: 10px"/> 
