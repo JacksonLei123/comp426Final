@@ -182,6 +182,6 @@ export async function getWeather() {
 }
 
 $(function() {
-    initialWeather();
+//    initialWeather();
     $(document).on("click", ".searchCity", getWeather);
 });
