@@ -100,7 +100,9 @@ export default class AppController {
         this.view.tookQuiz(split[0], split[1], split[2]);
     }
 
-    
+    saveDate() {
+        this.model.saveDate();
+    }
 
 
 

@@ -15,6 +15,8 @@ export default class AppView {
         let name = "";
         let tookQuiz;
         let location = ""; 
+        let startDate;
+        let endDate;
         docRef.get().then(function(doc) {
             
               if (doc.exists) {
@@ -23,7 +25,8 @@ export default class AppView {
                   name = doc.data().displayName;
                   tookQuiz = doc.data().quizTaken;
                   location = doc.data().location;
-                  
+                  startDate = doc.data().startDate;
+                  endDate = doc.data().endDate;
               } else {
                   // doc.data() will be undefined in this case
                   console.log("No such document!");
@@ -31,8 +34,23 @@ export default class AppView {
               
           }).then(async function() {
             // original user div
-            
+            let startMonth = startDate.toDate().getMonth()+1;
+            let startDay = startDate.toDate().getDate();
+            let endMonth = endDate.toDate().getMonth()+1;
+            let endDay = endDate.toDate().getDate();
             let there = that;
+            if(startMonth<10) {
+              startMonth = "0"+ startMonth;
+            }     
+            if (startDay < 10) {
+              startDay = "0" + startDay;
+            }
+            if (endMonth < 10) {
+              endMonth = "0" + endMonth;
+            }
+            if (endDay < 10) {
+              endDay = "0" + endDay;
+            }
             let userdiv = `<div>
           </div>
             <div class = "user" style="padding: 1em"> 
@@ -51,13 +69,13 @@ export default class AppView {
 
             <div>
               <label for="start">Start date:</label>
-              <input type="date" id="start" name="trip-start"
-                   value="2020-11-21"
-                   min="2020-11-21" max="2021-11-21">
+              <input type="date" id="startDate" name="trip-start" placeholder="yyyy-MM-dd"
+                   value="${startDate.toDate().getFullYear()}-${startMonth}-${startDay}"
+                   min="2020-01-01" max="2021-11-21">
               <label for="start">End date:</label>
-              <input type="date" id="start" name="trip-start"
-                    value="2020-11-21"
-                    min="2020-11-21" max="2021-11-21">  
+              <input type="date" id="endDate" name="trip-end"
+                    value="${endDate.toDate().getFullYear()}-${endMonth}-${endDay}"
+                    min="2020-01-01" max="2021-11-21">  
                     <button type="button" class="saveDates button is-dark">
                     Save</button>     
             </div>
@@ -67,6 +85,7 @@ export default class AppView {
             <div class = "usersearch box"> </div>
           
             </div>`
+            console.log(startDate);
             var quiz;
             if (tookQuiz) {
           
@@ -96,15 +115,15 @@ export default class AppView {
               there.renderQuizForm(questions);
           })
 
-            let ja = that.model.db.collection('users').doc('briannali2018@gmail.com');
-    let y = await ja.get();
+    //         let ja = that.model.db.collection('users').doc('briannali2018@gmail.com');
+    // let y = await ja.get();
 
-    if (!y) {
-        console.log("no such doc");
-    } else {
+    // if (!y) {
+    //     console.log("no such doc");
+    // } else {
 
-      console.log(y.data().startDate.toDate().getDate());
-    }
+    //   console.log(y.data().startDate.toDate().getDate());
+    // }
 
 
 

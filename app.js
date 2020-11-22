@@ -99,4 +99,8 @@ $(document).ready(() => {
         controller.tookQuiz();
       });
 
+    $("body").on("click", ".saveDates", function() {
+        controller.saveDate();
+    });
+
 });
