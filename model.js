@@ -308,7 +308,7 @@ export default class User {
         for (let i = 0; i < data.length; i++) {
             places.push(data[i].location);
             descriptions.push(data[i].description);
-            images.push(data[i].image);
+            images.push(data[i].img);
         }
 
         let max = -1;
