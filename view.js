@@ -8,7 +8,7 @@ export default class AppView {
     
     // show user page
     async renderUser() {
-      $('#root').empty();
+     // $('#root').empty();
         let that = this;
         let user = this.model.auth.currentUser;
         let docRef = this.model.db.collection("users").doc(user.email);
@@ -34,12 +34,6 @@ export default class AppView {
             
             let there = that;
             let userdiv = `<div>
-            <nav>
-              <ul>
-                <li><a href="user.html">HOME</a></li>
-                <li><a href="weather.html">WEATHER</a></li>
-              </ul>
-            </nav>
           </div>
             <div class = "user" style="padding: 1em"> 
             <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
