@@ -481,14 +481,15 @@ export default class AppView {
   
 
     }
-  tookQuiz(finalPlace, finalDescription) {
+  tookQuiz(finalPlace, finalDescription, finalImage) {
     
       let x = 
       `<div class="resultsPage">
         <h1 class="title is-3">Here are your results!</h1>
         <h2>${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
-
+        <img src = "${finalImage}" style = "width: 500px;padding-bottom: 10px"/> 
+        <br>
         <button class = "takeagain button is-dark">Take Again</button
       </div>
       `
