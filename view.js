@@ -48,8 +48,7 @@ export default class AppView {
             <br>
             <br>
             <button class = "button notes is-dark"> Notes </button>
-          
-            <div class = "usersearch box"> </div>
+  
 
             <div class = "notescontainer">
               <div class = "notereference"> </div>
@@ -68,10 +67,11 @@ export default class AppView {
                     <button type="button" class="saveDates button is-dark">
                     Save</button>     
             </div>
+            <div style="display: flex">
+            <div class="quiz" style="flex-grow:1"> </div>
 
-            <div class="quiz">
-            </div>
-
+            <div class = "usersearch box"> </div>
+          
             </div>`
             var quiz;
             if (tookQuiz) {
@@ -160,7 +160,7 @@ export default class AppView {
                       let split = doc.data().location.split("/");
                       let x = `<div class = "searchresults box"> 
                                 <div class="oneSearch">
-                                  ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]}
+                                  ${doc.data().displayName} <br>${doc.data().emailaddress}<br> ${split[0]}
                                 </div>
                               </div>`
                       $(".usersearch").append(x);
