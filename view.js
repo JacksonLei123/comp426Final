@@ -82,7 +82,7 @@ export default class AppView {
               <h1 class="title is-3">Here are your results!</h1>
               <h2>${split[0]}</h2>
                 <p class="subtitle is-5">${split[1]}</p>
-                <img src = "${split[2]}"/>
+                <img src="${split[2]}" style="width: 500px; padding-bottom: 10px"/><br>
               <button class = "takeagain button is-dark">Take Again</button
               </div>`
               

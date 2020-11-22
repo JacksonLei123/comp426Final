@@ -6,7 +6,8 @@ var data = [
     },
     {
         location: "New Zealand",
-        description: "From beautiful landscapes at mountains to glaciers, New Zealand brims with delicious food and age-old wine."
+        description: "From beautiful landscapes at mountains to glaciers, New Zealand brims with delicious food and age-old wine.",
+        img: "NZ.jpg"
     },
     {
         location: "Bora Bora",
@@ -14,19 +15,23 @@ var data = [
     },
     {
         location: "London",
-        description: "A blend of historical landmarks and modern tourist attractions, London will capture and attention and keep it. Grab some tea and pay a visit to the Tower of London!"
+        description: "A blend of historical landmarks and modern tourist attractions, London will capture and attention and keep it. Grab some tea and pay a visit to the Tower of London!",
+        img: "London.jpg"
     },
     {
         location: "Tokyo",
-        description: "Step foot into this cosmopolitan capital, known for its bustling streets and vibrant nightlife. Grab some ramen and sweep the skylines!"
+        description: "Step foot into this cosmopolitan capital, known for its bustling streets and vibrant nightlife. Grab some ramen and sweep the skylines!",
+        img: "Tokyo.jpg"
     },
     {
         location: "Phuket",
-        description: "Enjoy the gorgeous white sand beaches and temples of during the day, and the bustling nightlife and boat tours at night."
+        description: "Enjoy the gorgeous white sand beaches and temples of during the day, and the bustling nightlife and boat tours at night.",
+        img: "Phuket.jpg"
     },
     {
         location: "Banff",
-        description: "Hike, boat, and ski at the Alberta town filled with some of the world's most beautiful views."
+        description: "Hike, boat, and ski at the Alberta town filled with some of the world's most beautiful views.",
+        img: "Banff.jpg"
     },
 
 ]
