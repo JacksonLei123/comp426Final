@@ -69,12 +69,8 @@ export default class AppView {
                     Save</button>     
             </div>
 
-<<<<<<< HEAD
             <div class="quiz">
             </div>
-=======
-            <div class="quiz"></div>
->>>>>>> ec9926384531fc9c6a002b2df6aa41360dc9a071
 
             </div>`
             var quiz;
