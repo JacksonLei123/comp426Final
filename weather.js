@@ -49,9 +49,18 @@ $(document).ready(() => {
 })
 
 export async function initialWeather() {
+    $('#weather1').empty();
+    $('#weather2').empty();
+    $('#weatherTitle').empty();
     auth.onAuthStateChanged(function(user) {
         if (user) {
+       //     controller.signIn(user);
+      //     $(".formContainer").replaceWith(x);
+      //      $(".signOut").click(signOut);
+            
             const curr = auth.currentUser;
+            console.log(curr.email);
+          //location = db.collection("users").doc(curr.email).data.location;
           let docRef = db.collection("users").doc(curr.email);
             docRef.get().then(function(doc) {
             
@@ -59,7 +68,9 @@ export async function initialWeather() {
                  console.log("Document data:", doc.data());
                     
                     location = doc.data().location;
+                 //   console.log(location);
                     let split = location.split("/");
+                    console.log(split[0]);
                     initialCity = split[0];
                     
                 } else {
@@ -182,6 +193,7 @@ export async function getWeather() {
 }
 
 $(function() {
-//    initialWeather();
+    initialWeather();
     $(document).on("click", ".searchCity", getWeather);
+    $(document).on("click", "#ogWeather", initialWeather);
 });
