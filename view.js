@@ -44,7 +44,7 @@ export default class AppView {
             <div class = "user" style="padding: 1em"> 
             <div><h1 class="title is-2">${name}  <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
             <em>${user.email}</em>
-            <input type = "search" placeholder = "searchusers" id = "searchusers"/> 
+            <input type = "search" placeholder = "Search users" id = "searchusers"/> 
             <br>
             <br>
             <button class = "button notes is-dark"> Notes </button>
