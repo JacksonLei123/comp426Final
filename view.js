@@ -82,8 +82,8 @@ export default class AppView {
             <div style="display: flex">
             <div class="quiz" style="flex-grow:1"> </div>
 
-            <div class = "usersearch box">
-            <h1 class="title is-3" style="font-family: 'Quicksand', sans-serif"            ><u>Profiles</u></h1>
+            <div class = "usersearch box" style="opacity: 75%">
+            <h1 class="title is-3" style="font-family: 'Quicksand', sans-serif"><u>Profiles</u></h1>
             </div>
           
             </div>`
@@ -94,7 +94,7 @@ export default class AppView {
               console.log(location);
               let split = location.split("/");
               quiz = `<div class="resultsPage">
-              <h1 class="title is-3"style="font-family: 'Quicksand', sans-serif">
+              <h1 class="title is-3">
               Here are your results!</h1>
               <h2>${split[0]}</h2>
                 <p class="subtitle is-5">${split[1]}</p>
@@ -428,7 +428,7 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm"><h1 class="title is-3" style="font-family: 'Quicksand', sans-serif">Welcome to the Quiz</h1>
+      <div class="quizForm" style="opacity: 75%"><h1 class="title is-3" style="font-family: 'Quicksand', sans-serif">Welcome to the Quiz</h1>
       <h4 style="font-family: 'Quicksand', sans-serif"><em>Answer these questions to get your dream destination!</em></h4>
       <br> 
       <div class="box">`
@@ -506,7 +506,7 @@ export default class AppView {
   tookQuiz(finalPlace, finalDescription, finalImage) {
     
       let x = 
-      `<div class="resultsPage">
+      `<div class="resultsPage" style="font-family: 'Quicksand', sans-serif">
         <h1 class="title is-3">Here are your results!</h1>
         <h2>${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
