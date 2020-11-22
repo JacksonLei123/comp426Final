@@ -60,9 +60,19 @@
     float: right;
 }
 
+.flex-parent {
+    display: flex;
+}
 .searchresults {
     text-align: right;
+    flex-grow: 1;
 }
+.usersearch{
+    overflow: scroll;
+    height: 500px;
+    width: 350px;
+}
+
 
 .signUpForm {
     background-color: #9ab5d9;

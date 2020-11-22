@@ -42,8 +42,7 @@ export default class AppView {
             <br>
             <br>
             <button class = "button notes is-dark"> Notes </button>
-          
-            <div class = "usersearch box"> </div>
+  
 
             <div class = "notescontainer">
               <div class = "notereference"> </div>
@@ -62,10 +61,11 @@ export default class AppView {
                     <button type="button" class="saveDates button is-dark">
                     Save</button>     
             </div>
+            <div style="display: flex">
+            <div class="quiz" style="flex-grow:1"> </div>
 
-            <div class="quiz">
-            </div>
-
+            <div class = "usersearch box"> </div>
+          
             </div>`
             var quiz;
             if (tookQuiz) {
@@ -76,7 +76,7 @@ export default class AppView {
               <h1 class="title is-3">Here are your results!</h1>
               <h2>${split[0]}</h2>
                 <p class="subtitle is-5">${split[1]}</p>
-                <img src="${split[2]}" style="width: 500px; padding-bottom: 10px"/><br>
+                <img src="${split[2]}" style="width: 800px; padding-bottom: 10px"/><br>
               <button class = "takeagain button is-dark">Take Again</button
               </div>`
               
@@ -154,7 +154,7 @@ export default class AppView {
                       let split = doc.data().location.split("/");
                       let x = `<div class = "searchresults box"> 
                                 <div class="oneSearch">
-                                  ${doc.data().displayName} ${doc.data().emailaddress} ${split[0]}
+                                  ${doc.data().displayName} <br>${doc.data().emailaddress}<br> ${split[0]}
                                 </div>
                               </div>`
                       $(".usersearch").append(x);
@@ -462,7 +462,7 @@ export default class AppView {
       if (quizTaken) {
         let split = location.split("/");
 
-        that.tookQuiz(split[0], split[1]);
+        that.tookQuiz(split[0], split[1], split[2]);
         
       } else {
 
@@ -488,7 +488,7 @@ export default class AppView {
         <h1 class="title is-3">Here are your results!</h1>
         <h2>${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
-        <img src = "${finalImage}" style = "width: 500px;padding-bottom: 10px"/> 
+        <img src = "${finalImage}" style = "width: 800px;padding-bottom: 10px"/> 
         <br>
         <button class = "takeagain button is-dark">Take Again</button
       </div>

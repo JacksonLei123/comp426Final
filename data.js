@@ -7,7 +7,7 @@ var data = [
     {
         location: "New Zealand",
         description: "From beautiful landscapes at mountains to glaciers, New Zealand brims with delicious food and age-old wine.",
-        img: "NZ.jpg"
+        img: "New Zealand.jpg"
     },
     {
         location: "Bora Bora",
