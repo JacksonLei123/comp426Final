@@ -1,5 +1,4 @@
-
-var cities = ["Paris", "New Zealand", "Maldives", "London", "Tokyo", "Phuket", "Banff"];
+import {cities} from './cities.js'
 
 var firebaseConfig = {
     apiKey: "AIzaSyAhcDRlR3RBFEMtRjanuuDMDKqFHqjzJuU",
@@ -47,6 +46,18 @@ var initialCity;
 
 
 $(document).ready(() => {
+
+    $('#cityName').autocomplete({
+        source: function(request, response) {
+            var results = $.ui.autocomplete.filter(cities, request.term);
+            response(results.slice(0, 10));
+        },
+        delay: 200,
+        max: 10
+    });
+    
+
+    
     auth.onAuthStateChanged(function(user) {
         if (user) {
        //     controller.signIn(user);
@@ -239,6 +250,7 @@ export async function getWeather() {
 }
 
 
+
 let querySourceData = function(request, response) {
     
     $.ajax(settings).done(function(response) {
@@ -298,28 +310,25 @@ $(function() {
     // });
     
     // debouncing 
-    let array = [];
-    $('#cityName').keypress(async function() {
-        let value = $('#cityName').val();
-        const result = await axios({
-            method: 'GET',
-            url: 'https://andruxnet-world-cities-v1.p.rapidapi.com/',
-            params: {query: value, searchby: 'city'},
-            headers: {
-                'x-rapidapi-key': '43400b8ec8mshb4369054fa959f0p158ac2jsn93dac0c502b3',
-                'x-rapidapi-host': 'andruxnet-world-cities-v1.p.rapidapi.com'
-            }
-        });
+    // let array = [];
+    // $('#cityName').keypress(async function() {
+    //     let value = $('#cityName').val();
+    //     const result = await axios({
+    //         method: 'GET',
+    //         url: 'https://andruxnet-world-cities-v1.p.rapidapi.com/',
+    //         params: {query: value, searchby: 'city'},
+    //         headers: {
+    //             'x-rapidapi-key': '43400b8ec8mshb4369054fa959f0p158ac2jsn93dac0c502b3',
+    //             'x-rapidapi-host': 'andruxnet-world-cities-v1.p.rapidapi.com'
+    //         }
+    //     });
 
-        array = result.data;
+    //     array = result.data;
                
-    });
+    // });
 
-    console.log(array);
-    $('#cityName').autocomplete({
-        source: cities,
-        delay: 200
-    });
+    // console.log(array);
+    
 
 
 });
