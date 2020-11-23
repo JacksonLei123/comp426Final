@@ -14,7 +14,7 @@ body {
 }
 .quizForm {
     margin: auto;
-    width: 60%;
+    width: 75%;
     font-family: 'Quicksand', sans-serif;
 
 }
@@ -46,6 +46,7 @@ body {
     margin-top: 5px;
     width: 36%;
 }
+
 .cancelsignup {
     margin-top: 5px;
     width: 36%;
@@ -56,6 +57,13 @@ body {
 }
 .signOut {
     float: right;
+}
+.heelscation {
+    float: left;
+}
+
+.topBar {
+    background-color: white;
 }
 .title {
     display: inline;

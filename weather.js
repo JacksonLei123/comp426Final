@@ -1,5 +1,5 @@
 
-var cities = ["Paris", "New Zealand", "London", "Tokyo", "Phuket", "Banff"];
+var cities = ["Paris", "New Zealand", "Maldives", "London", "Tokyo", "Phuket", "Banff"];
 
 var firebaseConfig = {
     apiKey: "AIzaSyAhcDRlR3RBFEMtRjanuuDMDKqFHqjzJuU",
@@ -53,7 +53,7 @@ $(document).ready(() => {
       //     $(".formContainer").replaceWith(x);
       //      $(".signOut").click(signOut);
             
-            alert("Active user: " + user.email);
+          //  alert("Active user: " + user.email);
             const curr = auth.currentUser;
             console.log(curr.email);
             var isTaken;

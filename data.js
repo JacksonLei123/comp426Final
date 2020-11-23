@@ -4,9 +4,9 @@ var data = [
         description: "Home of the Eiffel Tower, Louvre, and Arc de Triomphe. Sit down at a cafe, grab a croissant, and maybe even fall in love.",
         img: "Paris.jpg",
         activity: {
-            a: "Musée du Louvre",
-            b: "Eiffel Tower",
-            c: "Le Marais"
+            a: "#1 Musée du Louvre",
+            b: "#2 Eiffel Tower",
+            c: "#3 Le Marais"
         },
         actdesc: {
             a: "Considered one of the world's finest art museums, Musée du Louvre houses a variety of masterpieces from the Mona Lisa to Egyptian mummy tombs to Grecian sculptures.",
@@ -19,9 +19,9 @@ var data = [
         description: "From beautiful landscapes at mountains to glaciers, New Zealand brims with delicious food and age-old wine.",
         img: "New Zealand.jpg",
         activity: {
-            a: "Milford Sound",
-            b: "Auckland Sky Tower",
-            c: "Queenstown"
+            a: "#1 Milford Sound",
+            b: "#2 Auckland Sky Tower",
+            c: "#3 Queenstown"
         },
         actdesc: {
             a: "Hop on a boat to see the surreal sights of Milford Sound. Formed by glaciers in the Ice Age, it is considered the world's eighth wonder with its beautiful mountains, waterfalls, and aquatic life.",
@@ -31,16 +31,27 @@ var data = [
     },
     {
         location: "Maldives",
-        description: "A nation of islands in the Indian Ocean, the Maldives offer vibrant coral reefs, turquoise water, and its own unique culture and tradition."
+        description: "A nation of islands in the Indian Ocean, the Maldives offer vibrant coral reefs, turquoise water, and its own unique culture and tradition.",
+        img: "Maldives.jpg",
+        activity: {
+            a: "#1 Maldive Beaches",
+            b: "#2 Malé",
+            c: "#3 Maldive Victory"
+        },
+        actdesc: {
+            a: "The sugar white sand and striking blue water make for the perfect beach vacation backdrop. Many island resorts include private stretches and relaxing lounging. Travelers can also enjoy numerous water activities such as scuba diving, snorkeling, kayaking, and more.",
+            b: "Malé is one of the world's smallest capital cities at just 2.2 square miles, but it is packed with people and sights to see. Top places to check out are Republic Square, the National Museum, and Sultan Park.",
+            c: "The Maldive Victory sunk in 1981 after hitting a reef. Now it has become a popular dive site, attracting scuba aficionados thanks to its particularly challenging currents and the rich sea life that has made the wreck a bucket list place to see."
+        }
     },
     {
         location: "London",
         description: "A blend of historical landmarks and modern tourist attractions, London will capture and attention and keep it. Grab some tea and pay a visit to the Tower of London!",
         img: "London.jpg",
         activity: {
-            a: "Buckingham Palace",
-            b: "Tower of London",
-            c: "Tower Bridge"
+            a: "#1 Buckingham Palace",
+            b: "#2 Tower of London",
+            c: "#3 Tower Bridge"
         },
         actdesc: {
             a: "Buckingham Palace is the residential and administrative home to the monarchy of the United Kingdom. Visitors can see the 19 magnificent State Rooms, which provide the setting for ceremonial occasions and official entertaining.",
@@ -53,9 +64,9 @@ var data = [
         description: "Step foot into this cosmopolitan capital, known for its bustling streets and vibrant nightlife. Grab some ramen and sweep the skylines!",
         img: "Tokyo.jpg",
         activity: {
-            a: "Sensō-ji",
-            b: "Tokyo Tower",
-            c: "Ueno Onshi Park"
+            a: "#1 Sensō-ji",
+            b: "#2 Tokyo Tower",
+            c: "#3 Ueno Onshi Park"
         },
         actdesc: {
             a: "Sensō-ji is Tokyo's oldest temple, an ancient Buddhist temple located in Asakusa, Tokyo, Japan. Adjacent to the temple is a five-story pagoda, the Asakusa Shinto shrine, as well as many shops with traditional goods in the Nakamise-dōri.",
@@ -68,9 +79,9 @@ var data = [
         description: "Enjoy the gorgeous white sand beaches and temples of during the day, and the bustling nightlife and boat tours at night.",
         img: "Phuket.jpg",
         activity: {
-            a: "Phuket Big Buddha",
-            b: "Phuket Town Weekend Night Market",
-            c: "Nai Harn Beach"
+            a: "#1 Phuket Big Buddha",
+            b: "#2 Phuket Town Weekend Night Market",
+            c: "#3 Nai Harn Beach"
         },
         actdesc: {
             a: "The Phuket Big Buddha is one of the most famous landmarks in all of Phuket, sitting at the top of the Nakkerd Hills and standing at forty five meters tall and made from white Burmese marble sparkling elegantly in the sun. From the top of the hill you are able to get a panoramic view of the island .",
@@ -83,9 +94,9 @@ var data = [
         description: "Hike, boat, and ski at the Alberta town filled with some of the world's most beautiful views.",
         img: "Banff.jpg",
         activity: {
-            a: "Banff Gondola",
-            b: "Moraine Lake",
-            c: "Banff National Park"
+            a: "#1 Banff Gondola",
+            b: "#2 Moraine Lake",
+            c: "#3 Banff National Park"
         },
         actdesc: {
             a: "The Banff Gondola is a relaxing way to experience the town's natural beauty. The eight-minute ride to the summit of Sulphur Mountain leads to breathtaking views of the Bow River Valley and Banff, as well as a boardwalk, a theater, a 360-view observation deck, and more.",

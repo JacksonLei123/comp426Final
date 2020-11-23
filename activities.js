@@ -1,4 +1,4 @@
-var cities = ["Paris", "New Zealand", "London", "Tokyo", "Phuket", "Banff"];
+var cities = ["Paris", "New Zealand", "Maldives", "London", "Tokyo", "Phuket", "Banff"];
 
 $('#cityName').autocomplete({
     source: cities,
@@ -30,7 +30,7 @@ $(document).ready(() => {
       //     $(".formContainer").replaceWith(x);
       //      $(".signOut").click(signOut);
             
-            alert("Active user: " + user.email);
+           // alert("Active user: " + user.email);
             const curr = auth.currentUser;
             console.log(curr.email);
           //location = db.collection("users").doc(curr.email).data.location;
@@ -152,10 +152,21 @@ export async function getActivities(event) {
     }
   
     for (let i =0; i < 3; i++) {
-       let x = `<div><h1 class="title is-3" style="font-family: 'Poppins', sans-serif">${oneactivity[i]}</h1> </div>`
-       let y = `<div> <h1 class="title is-5" style="font-family: 'Poppins', sans-serif">${onedescription[i]}</h1> </div>`
-      $('#activity' + i).append(x)
-      $('#activity' + i).append(y)
+       let x = `<div style="text-align: center; background-color: white; opacity: 75%;
+       padding-top: 20px;
+       padding-right: 30px;
+       padding-left: 30px;
+       margin: auto; width: 60%">
+       <h1 class="title is-3 has-text-centered" style="font-family: 'Poppins', sans-serif">${oneactivity[i]}</h1></div>`;
+       let y = `<div style="background-color: white; opacity: 75%; 
+       padding-top: 10px;
+       padding-right: 30px;
+       padding-left: 30px;
+       padding-bottom: 20px;
+       margin: auto; width: 60%">
+       <h1 class="title is-5" style="font-family: 'Poppins', sans-serif">${onedescription[i]}</h1></div>`;
+      $('#activity' + i).append(x);
+      $('#activity' + i).append(y);
     }
 
     
@@ -166,7 +177,7 @@ export async function getActivities(event) {
     //       <h2 class="title is-5" style="font-family: 'Poppins', sans-serif">${actdescriptions[2]}</h2>
     //       </div>`;
     $('#activitiesTitle').append(`<div class="column"><center>
-    <h1 class="title is-3" style="font-family: 'Poppins', sans-serif">Top Attractions for: ${city}</h1><br>`);
+    <h1 class="title is-2" style="font-family: 'Poppins', sans-serif">Top Attractions for: ${city}</h1><br>`);
     $('#activity1').append(x);
     // $('#activity2').append(y);
     // $('#activity3').append(z);

@@ -54,12 +54,7 @@ export default class AppView {
             let userdiv = `<div>
           </div>
             <div class = "user" style="padding: 1em"> 
-            <div><h1 class="title is-2" style="font-family: 'Poppins', sans-serif">${name} <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
-
-            <br>
-            
-            <br>
-
+            <div><h1 class="title is-2" style="font-family: 'Poppins', sans-serif">${name} <i class="fa fa-plane"></i> </h1> <button class = "button signOut is-dark has-text-right">Sign Out</button></div>
             <em style="font-family: 'Poppins', sans-serif">${user.email}</em>
             <input type = "search" placeholder = "Search users" id = "searchusers" style="font-family: 'Poppins', sans-serif"/> 
             <br>
@@ -245,8 +240,8 @@ export default class AppView {
         .then(function() {
           let x = `
             <div>
-              <input class = "noteTitle" placeholder = "new note title"> </input>
-              <button class = "addNotes"> add </button> 
+              <br><input class = "noteTitle" placeholder = "New note"> </input>
+              <button class = "addNotes"> Add </button> 
             </div>
           `
           $('.notescontainer').append(x);
@@ -440,8 +435,8 @@ export default class AppView {
     
       let x = 
       `<div class="resultsPage" style="font-family: 'Poppins', sans-serif", sans-serif">
-        <h1 class="title is-3">Your results: </h1>
-        <h2>${finalPlace}</h2>
+        <h1 class="title is-3" style="font-family: 'Poppins', sans-serif">Your results: </h1>
+        <h2 style="font-family: 'Poppins', sans-serif">${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
         <img src = "${finalImage}" style = "width: 800px;padding-bottom: 10px"/> 
         <br>
