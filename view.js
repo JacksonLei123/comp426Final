@@ -184,6 +184,7 @@ export default class AppView {
                       let x = `<div class = "searchresults box"> 
                                 <div class="oneSearch">
                                   <strong>${doc.data().displayName}</strong> <br><em>${doc.data().emailaddress}</em><br> Destination: ${split[0]}
+                                  <button class = "addfriend" id = "addfriend${doc.data().emailaddress}"> Add </button>
                                 </div>
                               </div>`
                       $(".usersearch").append(x);
@@ -355,9 +356,6 @@ export default class AppView {
 
 
     }
-    saveDate() {
-      
-    }
 
   // show quiz form
     renderQuizForm(questions) {
@@ -457,5 +455,6 @@ export default class AppView {
       })
 
     }
+
    
 }

@@ -363,6 +363,115 @@ export default class User {
 
     }
 
+    addFriend(emailaddress) {
+
+        let current = this.auth.currentUser;
+        var potential;
+        let that = this;
+
+        var firstname;
+        var lastname;
+        var loc;
+
+        if (current) {
+
+            this.db.collection('users').doc(current.email)
+                .get()
+                .then((docSnapshot) => {
+                    if (!docSnapshot.data().friends.includes(emailaddress)) {
+
+                        console.log("two users preparing to friend");
+
+                        this.db.collection('users').doc(current.email)
+                        .get()
+                        .then((docSnapshot) => {
+                            let friendrequests = docSnapshot.data().requests;
+                            let friendslist = docSnapshot.data().friends;
+    
+                            // if the person you are has already requested to be your friend
+                            if (friendrequests.includes(emailaddress)) {
+                                friendslist.push(emailaddress);
+                                let removed = friendrequests.filter(function(value) {
+                                    return value != emailaddress;
+                                })
+                                // remove the requests list and add to the friends list
+                                that.db.collection('users').doc(current.email).update({
+                                    requests: removed,
+                                    friends: friendslist
+                                })
+                            // add current user to the friends list of the potential friend
+                                that.db.collection('users').doc(emailaddress)
+                                    .get()
+                                    .then((docSnapshot) => {
+                                        let friendslist2 = docSnapshot.data().friends;
+                                        friendslist2.push(current.email);
+                                        that.db.collection('users').doc(emailaddress).update({
+                                            friends: friendslist2
+                                        })
+                                    })
+                               
+                                // add new friends in the friends doc for both users
+                                that.db.collection('users').doc(emailaddress)
+                                    .get()
+                                    .then((docSnapshot) => {
+                                        firstname = docSnapshot.data().first;
+                                        lastname = docSnapshot.data().last;
+                                        loc= docSnapshot.data().location;
+                                        that.db.collection('users').doc(current.email).collection('friends').doc(emailaddress).set({
+    
+                                            first: firstname,
+                                            last: lastname,
+                                            location: loc
+                                        })
+                                        that.db.collection('users').doc(current.email)
+                                            .get()
+                                            .then((docSnapshot) => {
+    
+                                                that.db.collection('users').doc(emailaddress).collection('friends').doc(current.email).set({
+                                                    first: docSnapshot.data().first,
+                                                    last: docSnapshot.data().last,
+                                                    location: docSnapshot.data().location
+                                                })
+                                            })
+                                    
+                                    })                        
+                    // if the person you are requesting has NOT requested to be your friend
+                            } else {
+                                console.log("else");
+                                this.db.collection('users').doc(emailaddress)
+                                    .get()
+                                    .then((docSnapshot) => {
+                                        potential = docSnapshot.data().requests;
+                                        
+                                        if (!potential.includes(current.email)) {
+                                            potential.push(current.email);
+                                        }
+    
+                                        that.db.collection('users').doc(emailaddress).update({
+    
+                                            requests: potential
+                                        })
+                                    })
+    
+                                    .catch((error) => {
+    
+                                        console.log("Error getting documents: "+ error);
+                                    })
+    
+    
+    
+                            }
+                        })
+
+
+
+                    }
+                })
+
+            
+        }
+    }
+
 
 
 

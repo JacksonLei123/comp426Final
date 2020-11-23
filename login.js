@@ -49,7 +49,9 @@ let signUp = function() {
                     quizTaken: false,
                     location: "",
                     startDate: start,
-                    endDate: end
+                    endDate: end,
+                    requests: [],
+                    friends: []
                     })
             })
             .catch(error => alert("invalid email or password"));
