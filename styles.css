@@ -3,11 +3,11 @@ body {
 }
 .formContainer {
     background-color: #8ba7bf;
-    opacity: 80%;
+    opacity: 100%;
     margin: auto;
     margin-top: 7em;
     width: 25%;
-    height: 360px;
+    height: 380px;
     /* border: 5px solid purple; */
     padding: 10px;
     text-align: justify;
@@ -92,7 +92,7 @@ body {
 
 .signUpForm {
     background-color: #8ba7bf;
-    opacity: 80%;
+    opacity: 100%;
     margin: auto;
     margin-top: 7em;
     width: 25%;
