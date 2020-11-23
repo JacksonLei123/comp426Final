@@ -2,12 +2,32 @@ var data = [
     {
         location: "Paris",
         description: "Home of the Eiffel Tower, Louvre, and Arc de Triomphe. Sit down at a cafe, grab a croissant, and maybe even fall in love.",
-        img: "Paris.jpg"
+        img: "Paris.jpg",
+        activity: {
+            a: "Musée du Louvre",
+            b: "Eiffel Tower",
+            c: "Le Marais"
+        },
+        actdesc: {
+            a: "Considered one of the world's finest art museums, Musée du Louvre houses a variety of masterpieces from the Mona Lisa to Egyptian mummy tombs to Grecian sculptures.",
+            b: "One of the most visited attractions in the whole world, Eiffel Tower is a contemporary structure used for communication transmissions and highly admired for its grandeur and its panoramic view of the city.",
+            c: "Home to Victor Hugo, the author of The Hunchback of Notre Dame and Les Misérables, Le Marais is one of Paris's oldest districts. Spend the day exploring the roots of Paris with its cobblestone streets, tucked away courtyards, and stone architecture as well as many cultural quarters and shopping centers."
+        }
     },
     {
         location: "New Zealand",
         description: "From beautiful landscapes at mountains to glaciers, New Zealand brims with delicious food and age-old wine.",
-        img: "New Zealand.jpg"
+        img: "New Zealand.jpg",
+        activity: {
+            a: "Milford Sound",
+            b: "Auckland Sky Tower",
+            c: "Queenstown"
+        },
+        actdesc: {
+            a: "Hop on a boat to see the surreal sights of Milford Sound. Formed by glaciers in the Ice Age, it is considered the world's eighth wonder with its beautiful mountains, waterfalls, and aquatic life.",
+            b: "Auckland's SkyTower is the tallest structure in the Southern Hemisphere, offering stunning views, top rated restaurants, and a thrill inducing SkyJump.",
+            c: "An adrenaline-fuelled city, Queenstown is filled with numerous activities from the Shotover Canyon Swing to its ski scene."
+        }
     },
     {
         location: "Bora Bora",
@@ -16,22 +36,62 @@ var data = [
     {
         location: "London",
         description: "A blend of historical landmarks and modern tourist attractions, London will capture and attention and keep it. Grab some tea and pay a visit to the Tower of London!",
-        img: "London.jpg"
+        img: "London.jpg",
+        activity: {
+            a: "Buckingham Palace",
+            b: "Tower of London",
+            c: "Tower Bridge"
+        },
+        actdesc: {
+            a: "Buckingham Palace is the residential and administrative home to the monarchy of the United Kingdom. Visitors can see the 19 magnificent State Rooms, which provide the setting for ceremonial occasions and official entertaining.",
+            b: "Explore London’s castle, a secure fortress, royal palace and infamous prison with 1000 years of history and prepare to be dazzled by the breathtaking, world famous Crown Jewels.",
+            c: "An iconic landmark of London, Tower Bridge is a combined bascule and suspension bridge in London, built between 1886 and 1894 crossing the River Thames close to the Tower of London."
+        }
     },
     {
         location: "Tokyo",
         description: "Step foot into this cosmopolitan capital, known for its bustling streets and vibrant nightlife. Grab some ramen and sweep the skylines!",
-        img: "Tokyo.jpg"
+        img: "Tokyo.jpg",
+        activity: {
+            a: "Sensō-ji",
+            b: "Tokyo Tower",
+            c: "Ueno Onshi Park"
+        },
+        actdesc: {
+            a: "Sensō-ji is Tokyo's oldest temple, an ancient Buddhist temple located in Asakusa, Tokyo, Japan. Adjacent to the temple is a five-story pagoda, the Asakusa Shinto shrine, as well as many shops with traditional goods in the Nakamise-dōri.",
+            b: "Tokyo Tower is a communications and observation tower in the Shiba-koen district of Minato, Tokyo, Japan. The structure is an Eiffel Tower-inspired lattice tower that is painted white and international orange to comply with air safety regulations.",
+            c: "A spacious public park in the Ueno district of Taitō, Tokyo, Japan, Ueno Park is the home to a number of major museums and is also celebrated in spring for its cherry blossoms and hanami."
+        }
     },
     {
         location: "Phuket",
         description: "Enjoy the gorgeous white sand beaches and temples of during the day, and the bustling nightlife and boat tours at night.",
-        img: "Phuket.jpg"
+        img: "Phuket.jpg",
+        activity: {
+            a: "Phuket Big Buddha",
+            b: "Phuket Town Weekend Night Market",
+            c: "Nai Harn Beach"
+        },
+        actdesc: {
+            a: "The Phuket Big Buddha is one of the most famous landmarks in all of Phuket, sitting at the top of the Nakkerd Hills and standing at forty five meters tall and made from white Burmese marble sparkling elegantly in the sun. From the top of the hill you are able to get a panoramic view of the island .",
+            b: "Known by the locals as Naka Market and sitting just a little way from Phuket Town is the Phuket Town Weekend Night Market. There you can buy all sorts of things such as fruits, old curiosities, animals and clothes.",
+            c: "Situated in the south of the island, Nai Harn Beach is a popular beach but is still relatively untouched and maintains a lot of its originality. With beautifully soft sand and crystal clear water under the shade of large trees, the beach also houses various restaurants selling popular Thai cuisine and shops selling local novelty items."
+        }
     },
     {
         location: "Banff",
         description: "Hike, boat, and ski at the Alberta town filled with some of the world's most beautiful views.",
-        img: "Banff.jpg"
+        img: "Banff.jpg",
+        activity: {
+            a: "Banff Gondola",
+            b: "Moraine Lake",
+            c: "Banff National Park"
+        },
+        actdesc: {
+            a: "The Banff Gondola is a relaxing way to experience the town's natural beauty. The eight-minute ride to the summit of Sulphur Mountain leads to breathtaking views of the Bow River Valley and Banff, as well as a boardwalk, a theater, a 360-view observation deck, and more.",
+            b: "Moraine Lake is the visual highlight of any Banff trip. Nestled in the Valley of the Ten Peaks, the lake mirrors the snowcapped peaks and is surrounded by backcountry hiking trails.",
+            c: "Banff National Park is Canada's oldest national park, established in 1885. As a natural hot spring, it is one of the world’s premier destinations, spanning a region of unparalleled majestic mountain scenery and arsenal of activities."
+        }
     },
 
 ]

@@ -13,27 +13,28 @@
          rel = "stylesheet">
         <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles.css"/>
+       
     </head>
     <body>
         <div id="root">
             <nav>
                 <ul>
-                  <li><a href="user.html">HOME</a></li>
+                  <li><a href="user.html">PROFILE</a></li>
                   <li><a href="weather.html">WEATHER</a></li>
                   <li><a href="activities.html">ACTIVITIES</a></li>
                 </ul>
               </nav>
               <div class = "user" style="padding: 1em">
-                <h1 class="title is-2">Weather Center</h1><br>
+                <h1 class="title is-2" style="font-family: 'Poppins', sans-serif">Weather Center</h1><br>
                 <em>Get a real-time forecast for any destination!</em><br><br>
                 <input type="search" id="cityName" placeholder="Enter a city name">
                 <button class = "searchCity button notes is-dark"> Search </button>
-                <button class="button is-dark" id="ogWeather">View My Destination</button><br><br>
+                <span id="ifTaken"></span>
                 <div id="weatherTitle"></div>
                 <div id="weather1" class="columns"></div><br><br>
                 <div id="weather2" class="columns"></div>

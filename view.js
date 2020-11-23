@@ -54,25 +54,25 @@ export default class AppView {
             let userdiv = `<div>
           </div>
             <div class = "user" style="padding: 1em"> 
-            <div><h1 class="title is-2" style="font-family: 'Quicksand', sans-serif">${name}<i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
+            <div><h1 class="title is-2" style="font-family: 'Poppins', sans-serif">${name} <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
 
             <br>
             
             <br>
 
-            <em style="font-family: 'Quicksand', sans-serif">${user.email}</em>
-            <input type = "search" placeholder = "Search users" id = "searchusers"/> 
+            <em style="font-family: 'Poppins', sans-serif">${user.email}</em>
+            <input type = "search" placeholder = "Search users" id = "searchusers" style="font-family: 'Poppins', sans-serif"/> 
             <br>
             <br>
-            <button class = "button notes is-dark"> Notes </button>
+            <button class = "button notes is-dark" style="font-family: 'Poppins', sans-serif"> Notes </button>
   
 
-            <div class = "notescontainer">
+            <div class = "notescontainer" style="font-family: 'Poppins', sans-serif">
               <div class = "notereference"> </div>
             </div>
             <br>
 
-            <div>
+            <div style="font-family: 'Poppins', sans-serif">
               <label for="start">Start date:</label>
               <input type="date" id="startDate" name="trip-start" placeholder="yyyy-MM-dd"
                    value="${startDate.toDate().getFullYear()}-${startMonth}-${startDay}"
@@ -84,11 +84,11 @@ export default class AppView {
                     <button type="button" class="saveDates button is-dark">
                     Save</button>     
             </div>
-            <div style="display: flex">
+            <div style="display: flex" style="font-family: 'Poppins', sans-serif">
             <div class="quiz" style="flex-grow:1"> </div>
 
-            <div class = "usersearch box" style="opacity: 75%">
-            <h1 class="title is-3" style="font-family: 'Quicksand', sans-serif"><u>Profiles</u></h1>
+            <div class = "usersearch box" style="opacity: 75%" style="font-family: 'Poppins', sans-serif">
+            <h1 class="title is-3" style="font-family: 'Poppins', sans-serif"><u>Profiles</u></h1>
             </div>
           
             </div>`
@@ -98,11 +98,11 @@ export default class AppView {
           
               console.log(location);
               let split = location.split("/");
-              quiz = `<div class="resultsPage">
-              <h1 class="title is-3">
+              quiz = `<div class="resultsPage" style="font-family: 'Poppins', sans-serif">
+              <h1 class="title is-3" style="font-family: 'Poppins', sans-serif">
               Your results: </h1>
-              <h2>${split[0]}</h2>
-                <p class="subtitle is-5">${split[1]}</p>
+              <h2 style="font-family: 'Poppins', sans-serif">${split[0]}</h2>
+                <p class="subtitle is-5" >${split[1]}</p>
                 <img src="${split[2]}" style="width: 800px; padding-bottom: 10px"/><br>
               <button class = "takeagain button is-dark">Take Again</button
               </div>`
@@ -110,7 +110,7 @@ export default class AppView {
             } else {
 
               quiz = `
-              <div>
+              <div style="font-family: 'Poppins', sans-serif">
               <button type="button" class="quizButton button is-dark">
               Take the quiz!</button>
               </div>`
@@ -361,8 +361,8 @@ export default class AppView {
     renderQuizForm(questions) {
       let x = `
       <br> 
-      <div class="quizForm" style="opacity: 75%"><h1 class="title is-3" style="font-family: 'Quicksand', sans-serif">Welcome to the Quiz</h1>
-      <h4 style="font-family: 'Quicksand', sans-serif"><em>Answer these questions to get your dream destination!</em></h4>
+      <div class="quizForm" style="opacity: 75%"><h1 class="title is-3" style="font-family: 'Poppins', sans-serif">Welcome to the Quiz</h1>
+      <h4 style="font-family: 'Poppins', sans-serif"><em>Answer these questions to get your dream destination!</em></h4>
       <br> 
       <div class="box">`
   
@@ -439,7 +439,7 @@ export default class AppView {
   tookQuiz(finalPlace, finalDescription, finalImage) {
     
       let x = 
-      `<div class="resultsPage" style="font-family: 'Quicksand', sans-serif">
+      `<div class="resultsPage" style="font-family: 'Poppins', sans-serif", sans-serif">
         <h1 class="title is-3">Your results: </h1>
         <h2>${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
