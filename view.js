@@ -176,13 +176,29 @@ export default class AppView {
                       console.log(doc.id, " => ", doc.data());
                       // add css to DOM to make look better
                       let split = doc.data().location.split("/");
+
+                      // three if statements: 1) if you have already requested to be friends, make the div element say "pending"
+                      // if you are already friends, make the div element say "friend"
+                      // else just make the button for add
+
+                      let emailwithoutat = doc.data().emailaddress.replace('@', '');
+                      var div = "";
+                      if (doc.data().requests.includes(user.email)) {
+                        div = `<div class = "pending" id = "pending${doc.data().emailaddress}"> pending </div>`;
+                      } else if (doc.data().friends.includes(user.email)) {
+                        div = `<div class = "friend" id = "friend${doc.data().emailaddress}"> friend </div>`;
+                      } else {
+                        console.log(doc.data().emailaddress);
+                        div = `<button class = "addfriend" id = "addfriend${doc.data().emailaddress}"> Add </button>`;
+                      }
+
                       let x = `<div class = "searchresults box"> 
                                 <div class="oneSearch">
                                   <strong>${doc.data().displayName}</strong> <br><em>${doc.data().emailaddress}</em><br> Destination: ${split[0]}
-                                  <button class = "addfriend" id = "addfriend${doc.data().emailaddress}"> Add </button>
+                                  ${div}
                                 </div>
                               </div>`
-                      $(".usersearch").append(x);
+                      $(".usersearch").empty().append(x);
                       count++;
                     });
                 })
@@ -449,6 +465,36 @@ export default class AppView {
         that.renderQuizForm(questions);
       })
 
+    }
+
+
+    addFriend(emailaddress) {
+
+      // i need to access the backend to see how to reflect it in the view
+
+      // this will be for if there is a button to click at all 
+
+      // once I click the button, the div should either show "pending" or "friend"
+
+      // so all I need to do is check whether or not the other person has requested
+
+      let user = this.model.auth.currentUser;
+      let emailwithoutat = emailaddress.replace('@', '');
+
+      this.model.db.collection('users').doc(user.email)
+        .get()
+        .then((doc) => {
+          if (doc.data().requests.includes(emailaddress)) { 
+            
+            $(".addfriend").replaceWith(`<div class = "friend" id = "friend${doc.data().emailaddress}"> friend </div>`);
+
+          } else {
+        
+            $(".addfriend").replaceWith(`<div class = "pending" id = "pending${doc.data().emailaddress}"> pending </div>`);
+          }
+        })
+
+      
     }
 
     

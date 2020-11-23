@@ -33,7 +33,7 @@ $(document).ready(() => {
       //     $(".formContainer").replaceWith(x);
       //      $(".signOut").click(signOut);
             
-            alert("Active user: " + user.email);
+           
             const curr = auth.currentUser;
             console.log(curr.email);
             
@@ -162,7 +162,7 @@ export async function initialActivities(event) {
           });
   
   } else {
-    alert("No active user");
+    
   }
 
   
