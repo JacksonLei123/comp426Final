@@ -26,13 +26,15 @@ var location;
 var initialCity;
 
 $(document).ready(() => {
+    $('body').on('click', ".signOut", signOut);
     auth.onAuthStateChanged(function(user) {
         if (user) {
        //     controller.signIn(user);
       //     $(".formContainer").replaceWith(x);
       //      $(".signOut").click(signOut);
             
-            alert("Active user: " + user.email);
+           
+            
             const curr = auth.currentUser;
             console.log(curr.email);
             
@@ -66,7 +68,7 @@ $(document).ready(() => {
         } else {
        //     controller.signOut();
            // $('.user').replaceWith(x);
-            alert("No active user");
+         
            
         }
     
@@ -115,7 +117,7 @@ export async function initialActivities(event) {
               $('#activitiesTitle').empty();
               // var city = $("#cityName").val();
               console.log(initialCity);
-              var places = [];
+              var places = []; 
           
               //logic for getting right activities
               for (let i=0; i<data.length; i++) {
@@ -161,11 +163,16 @@ export async function initialActivities(event) {
           });
   
   } else {
-    alert("No active user");
+    
   }
 
   
   })
+}
+
+let signOut = function() {
+  auth.signOut();
+  window.location.replace('index.html');
 }
 
 

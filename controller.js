@@ -90,6 +90,12 @@ export default class AppController {
         this.model.saveDate();
     }
 
+    addFriend(emailaddress) {
+
+        this.model.addFriend(emailaddress);
+        this.view.addFriend(emailaddress);
+    }
+
 
 
 
