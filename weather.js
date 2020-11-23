@@ -90,6 +90,11 @@ $(document).ready(() => {
       
 })
 
+function signOut() {
+    window.location.replace('index.html');
+    auth.signOut();
+}
+
 export async function initialWeather() {
     $('#weather1').empty();
     $('#weather2').empty();
@@ -171,7 +176,7 @@ export async function initialWeather() {
         } else {
        //     controller.signOut();
            // $('.user').replaceWith(x);
-            alert("No active user");
+          
            
         }
     
@@ -284,6 +289,7 @@ $(function() {
     initialWeather();
     $(document).on("click", ".searchCity", getWeather);
     $(document).on("click", "#ogWeather", initialWeather);
+    $(document).on("click", ".signOut", signOut);
 
     // $('#cityName').autocomplete({
 

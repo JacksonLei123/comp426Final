@@ -40,7 +40,7 @@ $(document).ready(() => {
         } else {
        //     controller.signOut();
            // $('.user').replaceWith(x);
-            alert("No active user");
+        
            
         }
     
@@ -112,6 +112,11 @@ $(document).ready(() => {
 //       })
     
 // }
+
+function signOut() {
+  auth.signOut();
+  window.location.replace("index.html");
+}
 
 export async function getActivities(event) {
    // console.log("hey");
@@ -232,6 +237,7 @@ let debounce = function(fn, delay) {
 
 $(function() {
     $(document).on("click", ".searchCity", data, getActivities);
+    $(document).on("click", ".signOut", signOut);
 
     // $('#cityName').autocomplete({
 

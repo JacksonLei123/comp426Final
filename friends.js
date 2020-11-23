@@ -12,8 +12,14 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+let signOut = function() {
+    auth.signOut();
+    window.location.replace("index.html");
+}
 
 $(document).ready(() => {
+
+    $("body").on("click", ".signOut", signOut);
 
     auth.onAuthStateChanged(function(user) {
 
