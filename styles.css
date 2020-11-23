@@ -57,6 +57,7 @@ body {
 }
 .signOut {
     float: right;
+    margin: .5em;
 }
 .heelscation {
     float: left;
