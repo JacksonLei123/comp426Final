@@ -440,8 +440,8 @@ export default class AppView {
     
       let x = 
       `<div class="resultsPage" style="font-family: 'Poppins', sans-serif", sans-serif">
-        <h1 class="title is-3">Your results: </h1>
-        <h2>${finalPlace}</h2>
+        <h1 class="title is-3" style="font-family: 'Poppins', sans-serif">Your results: </h1>
+        <h2 style="font-family: 'Poppins', sans-serif">${finalPlace}</h2>
           <p class="subtitle is-5">${finalDescription}</p>
         <img src = "${finalImage}" style = "width: 800px;padding-bottom: 10px"/> 
         <br>
