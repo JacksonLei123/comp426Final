@@ -89,6 +89,9 @@ body {
     width: 350px;
 }
 
+.title {
+    opacity: 100%;
+}
 
 .signUpForm {
     background-color: #8ba7bf;
