@@ -176,13 +176,12 @@ nav {
   }
 
   .friendCard {
-    text-align: center;
+    text-align: left;
     background-color: white;
     opacity: 80%;
     padding-top: 10px;
     padding-right: 40px;
     padding-left: 40px;
     padding-bottom: 10px;
-    margin: auto;
     width: 25%;
   }
