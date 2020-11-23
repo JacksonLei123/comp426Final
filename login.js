@@ -108,7 +108,7 @@ let renderLoginPage = function() {
     <h1 class="title is-1" style="font-family: 'Poppins', sans-serif">heelscation</h1>
     <br>
     <img src="426 logo.png" style="height: 125px; padding-top: 10px; padding-bottom: 10px"/>
-    <div id = "header"></div><br>
+    <div id = "header" class="is-size-5">a dream vacation planner</div><br>
     <input class="emailBox" type = "email" placeholder = "Email" id = "email" />
     <br>
     <input class="passwordBox" type = "password" placeholder = "Password" id = "password"/>
