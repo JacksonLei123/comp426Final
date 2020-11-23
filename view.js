@@ -267,7 +267,7 @@ export default class AppView {
           });
 
           if (count == 0) {
-            alert("user has no notes");
+            // alert("user has no notes");
           } else {
             $(".notes").one("click", function() {
               that.closeNotes('.notereference');
@@ -380,8 +380,8 @@ export default class AppView {
       for (let i = 0; i < questions.length; i++) {
         let questionNumber = i + 1;
 
-        x +='<div class="question">' + questionNumber + '. '+ questions[i].question + `<br>` + '</div>'
-        x+= `<div class="answers">`
+        x +=`<div class="question" style="font-family: 'Poppins', sans-serif">` + questionNumber + '. '+ questions[i].question + `<br>` + '</div>'
+        x+= `<div class="answers" style="font-family: 'Poppins', sans-serif">`
         var obj = questions[i].answers;
         let j = 0;
         for (const letter in obj) {

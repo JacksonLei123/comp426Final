@@ -151,7 +151,7 @@ export async function initialActivities(event) {
                 padding-left: 30px;
                 padding-bottom: 20px;
                 margin: auto; width: 60%">
-                <h1 class="title is-5" style="font-family: 'Poppins', sans-serif">${onedescription[i]}</h1></div>`;
+                <h1 class="is-size-5" style="font-family: 'Poppins', sans-serif">${onedescription[i]}</h1></div>`;
                $('#activity' + i).append(x);
                $('#activity' + i).append(y);
 

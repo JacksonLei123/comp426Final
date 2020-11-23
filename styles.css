@@ -174,3 +174,14 @@ nav {
       padding-left: 20px;
       margin: 1em;
   }
+
+  .friendCard {
+    text-align: left;
+    background-color: white;
+    opacity: 80%;
+    padding-top: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    width: 25%;
+  }
