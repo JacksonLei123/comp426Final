@@ -2,28 +2,148 @@
 
     <head>
         <title> Form </title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles.css"/>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
    
     </head>
     <body>
+        <style> img{height: 200px; width: 200px; border: 2px solid black;} </style>
 
-        <div class = "formContainer">
-            <div class="login">
-            <h1 class="title">Site Name</h1>
-            <br>
-            <img /> Insert logo here?
-            <div id = "header"></div>
-            <label class="subtitle is-3 has-text-weight-semibold">Email</label>
-            <br>
-            <input class="emailBox" type = "email" placeholder = "email" id = "email" />
-            <br>
-            <label class="subtitle is-3 has-text-weight-semibold">Password</label>
-            <br>
-            <input class="passwordBox" type = "password" placeholder = "password" id = "password"/>
-            <br>
-            <button class = "button signUp"> Sign Up</button>
-            <button class = "button signIn"> Sign In</button>
-            </div>
-            </div>
+        Image Name <input id = "namebox" type = "text"> <br> <br>
+        <img id = "myimg"> <label id = "UpProgress"></label> <br> <br>
+
+        <button id = "select"> Select Image </button>
+        <button id = "upload"> Upload Image </button>
+        <button id = "retrieve"> Retrieve Image </button>
+
+        <input type="file">
+
+                            <!------FIREBASE LIBRARIES------>
+
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+ <!-----      <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script> --->
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+
+        <script id = "MainScript">
+
+                                //------VARIABLES------
+        var reader;
+        var ImgName, ImgUrl;
+        var files = [];
+    
+                             ///------CONFIGURATION------
+
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyAhcDRlR3RBFEMtRjanuuDMDKqFHqjzJuU",
+            authDomain: "comp426-19a60.firebaseapp.com",
+            databaseURL: "https://comp426-19a60.firebaseio.com",
+            projectId: "comp426-19a60",
+            storageBucket: "comp426-19a60.appspot.com",
+            messagingSenderId: "311446455287",
+            appId: "1:311446455287:web:82692dda4340b7ae6f24f2"
+        };
+
+        // Initialize firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // document.getElementById("select").onclick = function(e) {
+        //     var input = document.createElement('input');
+        //     input.type = 'file';
+
+        //     input.onchange = function(e) {
+        //         files = e.target.files;
+        //         reader = new FileReader();
+        //         reader.onload = function () {
+        //             document.getElementById("myimg").src = reader.result;
+        //         }
+        //         reader.readAsDataURL(files[0]);
+        //         console.log(reader.result);
+        //     }
+
+
+
+        //     input.click();
+
+        // }
+
+        $(document).ready(function() {
+
+            var storageRef = firebase.storage().ref('hello.jpg');
+
+            $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            alert('The file "' + fileName +  '" has been selected.');
+
+            var reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);
+            setTimeout(function() {
+
+                storageRef.put(e.target.files[0]).then(function(snapshot) {
+                    console.log("uploaded a blob");
+                })
+                
+    
+            }, 1000)
+        
+        });
+
+        })
+
+
+
+
+        
+        
+        // UPLOAD PROCESS
+
+        document.getElementById('upload').onclick = function() {
+
+            ImgName = document.getElementById("namebox").value;
+            var uploadTask = firebase.storage().ref('Images/' + ImgName + ".png").put(files[0]);
+            uploadTask.on('state_changed', function(snapshot) {
+
+                var progress = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
+                document.getElementById('UpProgress').innerHTML = 'Upload' + progress + '%';
+
+            },
+            function(error) {
+                alert('error in saving image');
+            },
+            
+            function() {
+                console.log('hi');
+                uploadTask.snapshot.ref.getDownloadURL().then(function(url) {
+                    ImgUrl = url;
+
+                    firebase.database().ref('Pictures/' + ImgName).set({
+                        Name: ImgName,
+                        Link: ImgUrl
+                    });
+
+                    alert("image added successfully");
+
+                });
+
+
+            }
+            ); 
+        }
+        
+        
+        
+        
+        
+        </script>
+        
     </body>
     
 </html>
