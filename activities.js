@@ -26,6 +26,7 @@ var location;
 var initialCity;
 
 $(document).ready(() => {
+    $('body').on('click', ".signOut", signOut);
     auth.onAuthStateChanged(function(user) {
         if (user) {
        //     controller.signIn(user);
@@ -66,7 +67,7 @@ $(document).ready(() => {
         } else {
        //     controller.signOut();
            // $('.user').replaceWith(x);
-            alert("No active user");
+         
            
         }
     
@@ -166,6 +167,11 @@ export async function initialActivities(event) {
 
   
   })
+}
+
+let signOut = function() {
+  auth.signOut();
+  window.location.replace('index.html');
 }
 
 
