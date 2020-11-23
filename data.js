@@ -53,14 +53,14 @@ var data = [
         description: "Step foot into this cosmopolitan capital, known for its bustling streets and vibrant nightlife. Grab some ramen and sweep the skylines!",
         img: "Tokyo.jpg",
         activity: {
-            a: "",
-            b: "",
-            c: ""
+            a: "Sensō-ji",
+            b: "Tokyo Tower",
+            c: "Ueno Onshi Park"
         },
         actdesc: {
-            a: "",
-            b: "",
-            c: ""
+            a: "Sensō-ji is Tokyo's oldest temple, an ancient Buddhist temple located in Asakusa, Tokyo, Japan. Adjacent to the temple is a five-story pagoda, the Asakusa Shinto shrine, as well as many shops with traditional goods in the Nakamise-dōri.",
+            b: "Tokyo Tower is a communications and observation tower in the Shiba-koen district of Minato, Tokyo, Japan. The structure is an Eiffel Tower-inspired lattice tower that is painted white and international orange to comply with air safety regulations.",
+            c: "A spacious public park in the Ueno district of Taitō, Tokyo, Japan, Ueno Park is the home to a number of major museums and is also celebrated in spring for its cherry blossoms and hanami."
         }
     },
     {
@@ -68,14 +68,14 @@ var data = [
         description: "Enjoy the gorgeous white sand beaches and temples of during the day, and the bustling nightlife and boat tours at night.",
         img: "Phuket.jpg",
         activity: {
-            a: "",
-            b: "",
-            c: ""
+            a: "Phuket Big Buddha",
+            b: "Phuket Town Weekend Night Market",
+            c: "Nai Harn Beach"
         },
         actdesc: {
-            a: "",
-            b: "",
-            c: ""
+            a: "The Phuket Big Buddha is one of the most famous landmarks in all of Phuket, sitting at the top of the Nakkerd Hills and standing at forty five meters tall and made from white Burmese marble sparkling elegantly in the sun. From the top of the hill you are able to get a panoramic view of the island .",
+            b: "Known by the locals as Naka Market and sitting just a little way from Phuket Town is the Phuket Town Weekend Night Market. There you can buy all sorts of things such as fruits, old curiosities, animals and clothes.",
+            c: "Situated in the south of the island, Nai Harn Beach is a popular beach but is still relatively untouched and maintains a lot of its originality. With beautifully soft sand and crystal clear water under the shade of large trees, the beach also houses various restaurants selling popular Thai cuisine and shops selling local novelty items."
         }
     },
     {
@@ -83,14 +83,14 @@ var data = [
         description: "Hike, boat, and ski at the Alberta town filled with some of the world's most beautiful views.",
         img: "Banff.jpg",
         activity: {
-            a: "",
-            b: "",
-            c: ""
+            a: "Banff Gondola",
+            b: "Moraine Lake",
+            c: "Banff National Park"
         },
         actdesc: {
-            a: "",
-            b: "",
-            c: ""
+            a: "The Banff Gondola is a relaxing way to experience the town's natural beauty. The eight-minute ride to the summit of Sulphur Mountain leads to breathtaking views of the Bow River Valley and Banff, as well as a boardwalk, a theater, a 360-view observation deck, and more.",
+            b: "Moraine Lake is the visual highlight of any Banff trip. Nestled in the Valley of the Ten Peaks, the lake mirrors the snowcapped peaks and is surrounded by backcountry hiking trails.",
+            c: "Banff National Park is Canada's oldest national park, established in 1885. As a natural hot spring, it is one of the world’s premier destinations, spanning a region of unparalleled majestic mountain scenery and arsenal of activities."
         }
     },
 
