@@ -30,8 +30,8 @@ var data = [
         }
     },
     {
-        location: "Bora Bora",
-        description: "A beautiful, small and secluded island away from the business of the cities. Read a book by the beach, explore the jungles, or climb the island's dormant volcano, Mount Otemanu!"
+        location: "Maldives",
+        description: "A nation of islands in the Indian Ocean, the Maldives offer vibrant coral reefs, turquoise water, and its own unique culture and tradition."
     },
     {
         location: "London",
