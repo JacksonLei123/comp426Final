@@ -26,6 +26,7 @@ var location;
 var initialCity;
 
 $(document).ready(() => {
+    $('body').on('click', ".signOut", signOut);
     auth.onAuthStateChanged(function(user) {
         if (user) {
        //     controller.signIn(user);
@@ -66,7 +67,7 @@ $(document).ready(() => {
         } else {
        //     controller.signOut();
            // $('.user').replaceWith(x);
-            alert("No active user");
+         
            
         }
     
@@ -115,7 +116,7 @@ export async function initialActivities(event) {
               $('#activitiesTitle').empty();
               // var city = $("#cityName").val();
               console.log(initialCity);
-              var places = [];
+              var places = []; 
           
               //logic for getting right activities
               for (let i=0; i<data.length; i++) {
@@ -166,6 +167,11 @@ export async function initialActivities(event) {
 
   
   })
+}
+
+let signOut = function() {
+  auth.signOut();
+  window.location.replace('index.html');
 }
 
 
