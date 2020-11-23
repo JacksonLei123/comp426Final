@@ -1,5 +1,5 @@
 
-var cities = ["Paris", "New Zealand", "London", "Tokyo", "Phuket"];
+var cities = ["Paris", "New Zealand", "London", "Tokyo", "Phuket", "Banff"];
 
 var firebaseConfig = {
     apiKey: "AIzaSyAhcDRlR3RBFEMtRjanuuDMDKqFHqjzJuU",
