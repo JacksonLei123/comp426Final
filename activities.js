@@ -1,4 +1,4 @@
-var cities = ["Paris", "New Zealand", "London", "Tokyo", "Phuket", "Banff"];
+var cities = ["Paris", "New Zealand", "Maldives", "London", "Tokyo", "Phuket", "Banff"];
 
 $('#cityName').autocomplete({
     source: cities,
