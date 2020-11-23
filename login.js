@@ -63,21 +63,14 @@ let renderSignUpForm = function() {
   
     let x = `<div class = "signUpForm">
     <div class="signUpBox">
-    <label class="subtitle is-3 has-text-weight-semibold">First Name</label>
+    <h1 class="title is-1" style="font-family: 'Poppins', sans-serif">Sign Up</h1><br><br>
+    <input class="firstNameBox" type = "firstname" placeholder = "First Name"/>
     <br>
-    <input class="firstNameBox" type = "firstname" placeholder = "firstname"/>
+    <input class="lastNameBox" type = "lastname" placeholder = "Last Name"/>
     <br>
-    <label class="subtitle is-3 has-text-weight-semibold">Last Name</label>
+    <input class="emailBox" type = "email" placeholder = "Email"/>
     <br>
-    <input class="lastNameBox" type = "lastname" placeholder = "lastname"/>
-    <br>
-    <label class="subtitle is-3 has-text-weight-semibold">Email</label>
-    <br>
-    <input class="emailBox" type = "email" placeholder = "email"/>
-    <br>
-    <label class="subtitle is-3 has-text-weight-semibold">Password</label>
-    <br>
-    <input class="passwordBox" type = "password" placeholder = "password"/>
+    <input class="passwordBox" type = "password" placeholder = "Password"/>
     <br>
     <button class="button submitsignup"> Submit </button>
     <button class="button cancelsignup"> Cancel </button>
@@ -92,17 +85,13 @@ let renderLoginPage = function() {
       
     let x =  `<div class = "formContainer">
     <div class="login">
-    <h1 class="title is-1">Site Name</h1>
+    <h1 class="title is-1" style="font-family: 'Poppins', sans-serif">heelscation</h1>
     <br>
-    <img src="426 logo.png" style="height: 125px; padding-top: 10px; padding-bottom: 10px">
-    <div id = "header"></div>
-    <label class="subtitle is-3 has-text-weight-semibold">Email</label>
+    <img src="426 logo.png" style="height: 125px; padding-top: 10px; padding-bottom: 10px"/>
+    <div id = "header"></div><br>
+    <input class="emailBox" type = "email" placeholder = "Email" id = "email" />
     <br>
-    <input class="emailBox" type = "email" placeholder = "email" id = "email" />
-    <br>
-    <label class="subtitle is-3 has-text-weight-semibold">Password</label>
-    <br>
-    <input class="passwordBox" type = "password" placeholder = "password" id = "password"/>
+    <input class="passwordBox" type = "password" placeholder = "Password" id = "password"/>
     <br>
     <button class = "button signUp"> Sign Up</button>
     <button class = "button signIn"> Sign In</button>
