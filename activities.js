@@ -1,3 +1,5 @@
+// please oml
+
 var cities = ["Paris", "New Zealand", "Maldives", "London", "Tokyo", "Phuket", "Banff"];
 
 $('#cityName').autocomplete({
