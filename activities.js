@@ -116,7 +116,7 @@ export async function initialActivities(event) {
               $('#activitiesTitle').empty();
               // var city = $("#cityName").val();
               console.log(initialCity);
-              var places = [];
+              var places = []; 
           
               //logic for getting right activities
               for (let i=0; i<data.length; i++) {
