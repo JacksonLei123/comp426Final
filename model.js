@@ -139,7 +139,7 @@ export default class User {
         var questionNumber = 0;
         var ParisScore = 0; 
         var NZScore = 0;
-        var BBScore = 0;
+        var MaldivesScore = 0;
         var LondonScore = 0;
         var TokyoScore = 0;
         var PhuketScore = 0;
@@ -184,7 +184,7 @@ export default class User {
     
         if(q1a1) {
             questionNumber++;
-            BBScore++;
+            MaldivesScore++;
             PhuketScore++;
         } else if(q1a2) {
             questionNumber++;
@@ -206,7 +206,7 @@ export default class User {
             TokyoScore++;
         } else if (q2a2) {
             questionNumber++;
-            BBScore++;
+            MaldivesScore++;
             PhuketScore++;
         } else if (q2a3) {
             questionNumber++;
@@ -225,7 +225,7 @@ export default class User {
             questionNumber++;
             ParisScore++;
             TokyoScore++;
-            BBScore++;
+            MaldivesScore++;
         } else if (q3a3) {
             questionNumber++;
             LondonScore++;
@@ -234,7 +234,7 @@ export default class User {
             ParisScore++;
             NZScore++;
             PhuketScore++;
-            BBScore++;
+            MaldivesScore++;
         } else if (q3a4) {
             questionNumber++;
             LondonScore++;
@@ -244,7 +244,7 @@ export default class User {
     
         if(q4a1) {
             questionNumber++;
-            BBScore++;
+            MaldivesScore++;
             NZScore++;
             PhuketScore++;
             BanffScore++;
@@ -270,17 +270,15 @@ export default class User {
             LondonScore++;
             ParisScore++;
             PhuketScore++;
-            BBScore++;
         } else if (q5a2) {
             questionNumber++;
             TokyoScore++;
             ParisScore++;
             PhuketScore++;
-            BBScore++;
             NZScore++;
         } else if (q5a3) {
             questionNumber++;
-            BBScore++;
+            MaldivesScore++;
             NZScore++;
             PhuketScore++;
             BanffScore++;
@@ -289,7 +287,7 @@ export default class User {
             ParisScore++;
             LondonScore++;
             TokyoScore++;
-            BBScore++;
+            MaldivesScore++;
             PhuketScore++;
         }
     
@@ -301,7 +299,7 @@ export default class User {
         } else if (q6a2) {
             questionNumber++;
             BanffScore++;
-            BBScore++;
+            MaldivesScore++;
         } else if (q6a3) {
             questionNumber++;
             PhuketScore++;
@@ -328,7 +326,7 @@ export default class User {
         // }
         console.log(questionNumber);
         
-        var scores = [ParisScore, NZScore, BBScore, LondonScore, TokyoScore, PhuketScore, BanffScore];
+        var scores = [ParisScore, NZScore, MaldivesScore, LondonScore, TokyoScore, PhuketScore, BanffScore];
         let places = [];
         let descriptions = [];
         let images = [];
