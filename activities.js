@@ -113,35 +113,66 @@ $(document).ready(() => {
     
 // }
 
-export async function getActivities(data) {
+export async function getActivities(event) {
    // console.log("hey");
     event.preventDefault();
+    let data = event.data;
+    $('#activity0').empty();
     $('#activity1').empty();
     $('#activity2').empty();
-    $('#activity3').empty();
     $('#activitiesTitle').empty();
     var city = $("#cityName").val();
     console.log(city);
     var places = [];
-    var activities = [];
-    var actdescriptions = [];
+
     for (let i=0; i<data.length; i++) {
+        
+        if (data[i].location == city) {
         console.log("hi");
         places.push(data[i].location);
         var oneactivity = [];
         var onedescription = [];
         var obj = data[i].activity;
+        var obj2 = data[i].actdesc;
         for (const letter in obj) {
             oneactivity.push(obj[letter]);
             // oneactivity.push(data[i].activity[j]);
             // onedescription.push(data[i].actdesc[j]);
+            //x += `<div><h1 class="title is-3" style="font-family: 'Poppins', sans-serif">${obj[letter]}</h1> </div>`
+
         }
-        console.log(oneactivity[0]);
-        activities.push(oneactivity);
+        // console.log(oneactivity);
+        for (const letter in obj2) {
+            onedescription.push(obj2[letter]);
+            // y += `<div> <h1 class="title is-5" style="font-family: 'Poppins', sans-serif">${obj2[letter]}</h1> </div>`;
+        }
+
         // actdescriptions.push(onedescription);
+        }
     }
-    console.log(activities[0]);
-}
+  
+    for (let i =0; i < 3; i++) {
+       let x = `<div><h1 class="title is-3" style="font-family: 'Poppins', sans-serif">${oneactivity[i]}</h1> </div>`
+       let y = `<div> <h1 class="title is-5" style="font-family: 'Poppins', sans-serif">${onedescription[i]}</h1> </div>`
+      $('#activity' + i).append(x)
+      $('#activity' + i).append(y)
+    }
+
+    
+    // let y = `<div>
+    //       <h1 class="title is-3" style="font-family: 'Poppins', sans-serif">${activities[1]}</h1>
+    //       <h2 class="title is-5" style="font-family: 'Poppins', sans-serif">${actdescriptions[1]}</h2> </div>`;
+    // let z = `<div> <h1 class="title is-3" style="font-family: 'Poppins', sans-serif">${activities[2]}</h1>
+    //       <h2 class="title is-5" style="font-family: 'Poppins', sans-serif">${actdescriptions[2]}</h2>
+    //       </div>`;
+    $('#activitiesTitle').append(`<div class="column"><center>
+    <h1 class="title is-3" style="font-family: 'Poppins', sans-serif">Top Attractions for: ${city}</h1><br>`);
+    $('#activity1').append(x);
+    // $('#activity2').append(y);
+    // $('#activity3').append(z);
+
+    
+  }
 
 
 let querySourceData = function(request, response) {
@@ -189,8 +220,7 @@ let debounce = function(fn, delay) {
 };
 
 $(function() {
-    
-    $(document).on("click", ".searchCity", getActivities);
+    $(document).on("click", ".searchCity", data, getActivities);
 
     // $('#cityName').autocomplete({
 
