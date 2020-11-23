@@ -31,7 +31,18 @@ var data = [
     },
     {
         location: "Maldives",
-        description: "A nation of islands in the Indian Ocean, the Maldives offer vibrant coral reefs, turquoise water, and its own unique culture and tradition."
+        description: "A nation of islands in the Indian Ocean, the Maldives offer vibrant coral reefs, turquoise water, and its own unique culture and tradition.",
+        img: "Maldives.jpg",
+        activity: {
+            a: "#1 Maldive Beaches",
+            b: "#2 Malé",
+            c: "#3 Maldive Victory"
+        },
+        actdesc: {
+            a: "The sugar white sand and striking blue water make for the perfect beach vacation backdrop. Many island resorts include private stretches and relaxing lounging. Travelers can also enjoy numerous water activities such as scuba diving, snorkeling, kayaking, and more",
+            b: "Malé is one of the world's smallest capital cities at just 2.2 square miles, but it is packed with people and sights to see. Top places to check out are Republic Square, the National Museum, and Sultan Park.",
+            c: "The Maldive Victory sunk in 1981 after hitting a reef. Now it has become a popular dive site, attracting scuba aficionados thanks to its particularly challenging currents and the rich sea life that has made the wreck a bucket list place to see."
+        }
     },
     {
         location: "London",
