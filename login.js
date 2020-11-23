@@ -56,6 +56,24 @@ let signUp = function() {
             })
             .catch(error => alert("invalid email or password"));
 
+
+
+    db.collection('users').doc('usernames')
+        .get()
+        .then((doc) => {
+
+            let nameslist = doc.data().names;
+
+            nameslist.push(firstname + " " + lastname);
+
+            db.collection('users').doc('usernames').update({
+
+                names: nameslist
+            })
+
+            
+        })
+
             // promise.catch(e => alert("invalid email or password"));
             // console.log(promise);
             // alert("Account Created");
