@@ -66,7 +66,8 @@ $(document).ready(() => {
     $("body").on("click", ".addfriend", function(e) {
       let id = e.target.id;
       let email = id.substring(9, id.length);
-      model.addFriend(email);
+      console.log(email);
+      controller.addFriend(email);
     })
 
     $("body").on("click", ".signOut", function() {
