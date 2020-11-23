@@ -54,11 +54,6 @@ export default class AppView {
             let userdiv = `<div>
           </div>
             <div class = "user" style="padding: 1em"> 
-<<<<<<< HEAD
-            <div><h1 class="title is-2" style="font-family: 'Quicksand', sans-serif">${name}<i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
-            <em style="font-family: 'Quicksand', sans-serif">${user.email}</em>
-            <input type = "search" placeholder = "Search users" id = "searchusers"/> 
-=======
             <div><h1 class="title is-2" style="font-family: 'Poppins', sans-serif">${name} <i class="fa fa-plane"></i> </h1><button class = "button signOut is-dark has-text-right"> Sign Out</button></div>
 
             <br>
@@ -67,7 +62,6 @@ export default class AppView {
 
             <em style="font-family: 'Poppins', sans-serif">${user.email}</em>
             <input type = "search" placeholder = "Search users" id = "searchusers" style="font-family: 'Poppins', sans-serif"/> 
->>>>>>> 14076d10986336ad9ec4a67b8b1b69604f030c61
             <br>
             <br>
             <button class = "button notes is-dark" style="font-family: 'Poppins', sans-serif"> Notes </button>
