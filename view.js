@@ -267,7 +267,7 @@ export default class AppView {
           });
 
           if (count == 0) {
-            alert("user has no notes");
+            // alert("user has no notes");
           } else {
             $(".notes").one("click", function() {
               that.closeNotes('.notereference');

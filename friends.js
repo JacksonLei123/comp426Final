@@ -33,10 +33,14 @@ $(document).ready(() => {
 
                         let location = doc.data().location;
                         let split = location.split("/");
+                        let friendCard = `<div class="friendCard column">
+                        <h1 class="title is-3" style="font-family: 'Poppins', sans-serif">${doc.data().first} ${doc.data().last}</h1><br>
+                        <p class="is-size-5">
+                        Destination: ${split[0]}</p> </div><br>`
 
                         $('#root').append(
 
-                            `<div>${doc.data().first} ${doc.data().last} ${split[0]} </div>`
+                            friendCard
                         )
                     })
                 })
