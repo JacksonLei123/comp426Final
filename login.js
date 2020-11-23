@@ -18,7 +18,7 @@ let signIn = function() {
     let password = document.getElementById("password");
 
     const promise = auth.signInWithEmailAndPassword(email.value, password.value)
-        .then((e) => alert("Signed In as " + email.value))
+     //   .then((e) => alert("Signed In as " + email.value))
         .then((e) => window.location.replace("user.html"))
         .catch(error => alert("Could not sign in"));
     
@@ -37,7 +37,7 @@ let signUp = function() {
     
             // maybe fix this later this is a little faulty
         const promise = auth.createUserWithEmailAndPassword(email, password)
-            .then((e) => alert("Account Created"))
+           // .then((e) => alert("Account Created"))
             .then((e) => renderLoginPage())
             .then((e) => {
                 db.collection("users").doc(email).set({

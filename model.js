@@ -60,7 +60,7 @@ export default class User {
     signOut() {
         this.auth.signOut();
    //     window.location = 'loginpage.html';
-        alert("Signed Out");
+       // alert("Signed Out");
     }
 
     newNote(notename) {

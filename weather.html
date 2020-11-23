@@ -8,9 +8,12 @@
         <script src = "node_modules/jquery/dist/jquery.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script type = "module" src = "weather.js"></script>
+        <script type = "module" src = "app.js"></script>
+        <script type = "module" src = "view.js"></script>
+        <script type = "module" src = "model.js"></script>
+        <script type = "module" src = "controller.js"></script>
         <script src="questions.js"></script>
-        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
-         rel = "stylesheet">
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
         <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -21,14 +24,19 @@
        
     </head>
     <body>
-        <div id="root">
-            <nav>
-                <ul>
-                  <li><a href="user.html">PROFILE</a></li>
-                  <li><a href="weather.html">WEATHER</a></li>
-                  <li><a href="activities.html">ACTIVITIES</a></li>
-                </ul>
-              </nav>
+        <div id="root"> 
+            <div class = "user topBar" style="padding: 1em"><h1 id="header" class="title is-1" style="font-family: 'Poppins', sans-serif">heelscation    
+                </h1></div>
+            <div>
+                <nav>
+                    <ul>
+                      <li><a href="user.html">PROFILE</a></li>
+                      <li><a href="weather.html">WEATHER</a></li>
+                      <li><a href="activities.html">ACTIVITIES</a></li>
+                    </ul>
+                  </nav>
+            </div>
+            
               <div class = "user" style="padding: 1em">
                 <h1 class="title is-2" style="font-family: 'Poppins', sans-serif">Weather Center</h1><br>
                 <em>Get a real-time forecast for any destination!</em><br><br>
@@ -39,10 +47,6 @@
                 <div id="weather1" class="columns"></div><br><br>
                 <div id="weather2" class="columns"></div>
             </div>
-                
-            
-              
         </div>
     </body>
-    
 </html>
