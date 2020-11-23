@@ -33,11 +33,8 @@ $(document).ready(() => {
       //     $(".formContainer").replaceWith(x);
       //      $(".signOut").click(signOut);
             
-<<<<<<< HEAD
            
-=======
             
->>>>>>> 2cba1e77bba2478e530509bd02b6c49ced3da9ff
             const curr = auth.currentUser;
             console.log(curr.email);
             
