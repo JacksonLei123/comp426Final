@@ -32,7 +32,7 @@ $(document).ready(() => {
       //     $(".formContainer").replaceWith(x);
       //      $(".signOut").click(signOut);
             
-           // alert("Active user: " + user.email);
+            alert("Active user: " + user.email);
             const curr = auth.currentUser;
             console.log(curr.email);
             
@@ -66,7 +66,7 @@ $(document).ready(() => {
         } else {
        //     controller.signOut();
            // $('.user').replaceWith(x);
-        
+            alert("No active user");
            
         }
     
@@ -74,16 +74,8 @@ $(document).ready(() => {
       
 })
 
-function signOut() {
-  auth.signOut();
-  window.location.replace("index.html");
-}
-
-export async function getActivities(event) {
-   // console.log("hey");
-    event.preventDefault();
-    let data = event.data;
-    $('#activity0').empty();
+export async function initialActivities(event) {
+  $('#activity0').empty();
     $('#activity1').empty();
     $('#activity2').empty();
     $('#activitiesTitle').empty();
@@ -221,9 +213,8 @@ let debounce = function(fn, delay) {
 	}
 };
 
-$(function() {
-    $(document).on("click", ".searchCity", data, getActivities);
-    $(document).on("click", ".signOut", signOut);
+// $(function() {
+//     initialActivities();
 
     // $('#cityName').autocomplete({
 
@@ -254,4 +245,3 @@ $(function() {
     //     source: cities,
     //     delay: 200
     // });
-});
