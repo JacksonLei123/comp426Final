@@ -416,19 +416,22 @@ export default class User {
                                         lastname = docSnapshot.data().last;
                                         loc= docSnapshot.data().location;
                                         that.db.collection('users').doc(current.email).collection('friends').doc(emailaddress).set({
-    
+                                            email: emailaddress,
                                             first: firstname,
                                             last: lastname,
-                                            location: loc
+                                            location: loc,
+                                            messages: []
                                         })
                                         that.db.collection('users').doc(current.email)
                                             .get()
                                             .then((docSnapshot) => {
     
                                                 that.db.collection('users').doc(emailaddress).collection('friends').doc(current.email).set({
+                                                    email: current.email,
                                                     first: docSnapshot.data().first,
                                                     last: docSnapshot.data().last,
-                                                    location: docSnapshot.data().location
+                                                    location: docSnapshot.data().location,
+                                                    messages: []
                                                 })
                                             })
                                     
@@ -468,6 +471,46 @@ export default class User {
 
             
         }
+    }
+
+    sendMessage(message, receiveremail) {
+
+        let current = this.auth.currentUser;
+
+        this.db.collection('users').doc(receiveremail).collection('friends').doc(current.email)
+            .get()
+            .then((docSnapshot) => {
+
+                let messagesarray = docSnapshot.data().messages;
+
+                messagesarray.push(message + "RE");
+
+                this.db.collection('users').doc(receiveremail).collection('friends').doc(current.email).update({
+                    messages: messagesarray
+                })
+
+
+            })
+
+        
+        this.db.collection('users').doc(current.email).collection('friends').doc(receiveremail)
+            .get()
+            .then((docSnapshot) => {
+                
+                let messagesarray = docSnapshot.data().messages;
+    
+                messagesarray.push(message + "DE");
+    
+                this.db.collection('users').doc(current.email).collection('friends').doc(receiveremail).update({
+                    messages: messagesarray
+                })
+
+
+
+            })
+
+
+
     }
 
 

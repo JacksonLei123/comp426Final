@@ -13,22 +13,23 @@ var firebaseConfig = {
     appId: "1:311446455287:web:82692dda4340b7ae6f24f2"
   };
 
-  let model = null;
-  let controller = null;
-  let view = null;
-
-// Initialize firebase
+  // Initialize firebase
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
   const db = firebase.firestore();
 
+  export const model = new User(db, auth);
+  export const view = new AppView(model);
+  export const controller = new AppController(model, view);
+
+
 $(document).ready(() => {
+
+    
    
-    model = new User(db, auth);
-    view = new AppView(model);
-    controller = new AppController(model, view);
-    console.log(model);
-    console.log(view);
+    // model = new User(db, auth);
+    // view = new AppView(model);
+    // controller = new AppController(model, view);
 
     auth.onAuthStateChanged(function(user) {
         if (user) {
@@ -36,6 +37,10 @@ $(document).ready(() => {
       //     $(".formContainer").replaceWith(x);
       //      $(".signOut").click(signOut);
             view.renderUser();
+         
+            // model.sendMessage("whats up!", "bigbobho@bobmail.com");
+          //   model.sendMessage("whats up!", "jaklayson@gmail.com");
+      //      console.log(user.uid);
          //   alert("Active user: " + user.email);
     
         } else {

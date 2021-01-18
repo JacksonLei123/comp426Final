@@ -88,6 +88,19 @@ body {
     height: 600px;
     width: 350px;
 }
+.messagebox{
+    overflow: scroll;
+    height: 350px;
+    width: 350px;
+}
+.message {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.text {
+    text-align: left;
+}
 
 .title {
     opacity: 100%;
